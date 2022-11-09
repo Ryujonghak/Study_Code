@@ -1,0 +1,37 @@
+#container {
+  width: 800px;
+  height: 200px;
+  margin: 20px auto;
+}
+.origin {
+  /* container 안의 첫번째 박스 */
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 40px;
+    float : left;
+}
+
+.origin > div {
+    /* container 안에 두번째 박스 */
+    /* .origin > div -> 자식 선택자(부모) > 선택자(자식) */
+
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+
+/* 애니메이션 효과 */
+/* #movex:hover -> 선택자: 마우스위 이벤트 */
+/* translate x(가로 px), y(세로 px), xy(가로 px, 세로px) 이동 */
+#movex:hover {
+    transform: translatex(30px);
+}
+
+#movey:hover {
+    transform: translatey(30px);
+}
+
+#movexy:hover {
+    transform: translate(30px, 30px);
+}

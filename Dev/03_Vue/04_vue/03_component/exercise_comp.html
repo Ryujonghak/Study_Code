@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: "Malgun Gothic","맑은 고딕", serif;
+        }
+    
+        #app {
+          text-align: center;
+          margin: 60px;
+          max-width: 400px;
+          margin: 0 auto;
+          display: table;
+        }
+    
+        .num {
+          color: #AF007E;
+        }
+    
+        button {
+          font-family: 'Bitter';
+          background: #c62735;
+          color: white;
+          border: 0;
+          padding: 5px 15px;
+          margin: 0 10px;
+          border-radius: 4px;
+          outline: 0;
+          cursor: pointer;
+        }
+    
+        h4 {
+          margin: 0 0 15px;
+        }
+    
+        hr {
+          border-color: #F2FAFF;
+          opacity: 0.5;
+          margin: 15px 0;
+        }
+      </style>
+</head>
+<body>
+    <div id="app">
+        <h2>뷰 샘플</h2>
+        <h3>개발자 확인</h3>
+        <button v-on:click="toggleShow()">
+            <span v-if="isShowing">자식 보이기</span>
+            <span v-else>자식 숨기기</span>
+        </button>
+        <hr>
+        <!-- div isShowing == true 이면 컴포넌트 보여주기 -->
+        <!-- div isShowing == false 이면 컴포넌트 않보여주기 -->
+        <div v-if="isShowing">
+            <!-- 자식컴포넌트를 보여주기 -->
+            <app-child></app-child>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+    
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    isShowing: false
+                }
+            },
+            methods: {
+                toggleShow() {
+                    // 1) click이벤트 isShowing 이 true/false
+                    this.isShowing = !this.isShowing;
+                }
+            },
+            // 2) 지역컴포넌트 정의(등록)
+            // 이름 : app-child -> <app-child></app-child>
+            // template : <div><h4>컴포넌트 생성</h4></div>
+            components: {
+                // 컴포넌트 이름 : 소문자로 사용할 것
+                "app-child" : { 
+                    template: "<div><h4>컴포넌트 생성</h4></div>"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

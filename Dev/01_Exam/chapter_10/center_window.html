@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>문서를 열면 팝업 창이 표시됩니다.</p>
+    <script>
+      // 개발자가 띄우고 싶은 위치에 창을 띄우는 함수
+      function openCenter(doc, win, w, h) {
+        // 팝업창의 왼쪽 좌표
+        let left = (screen.availWidth - w) / 2;
+        // 팝업창의 위쪽 좌표
+        let top = (screen.availHeight - h) / 2;
+        let opt =
+          `left = ` +
+          left +
+          `,top = ` +
+          top +
+          `,width = ` +
+          w +
+          `,height = ` +
+          h;
+
+        window.open(doc, win, opt);
+      }
+      openCenter(`notice.html`, `pop`, 500, 500);
+    </script>
+  </body>
+</html>

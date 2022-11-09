@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{ list-style: none; padding: 0; }
+        li{ background-color: #a7ffeb; border: 2px solid teal; padding:5px; margin-bottom:5px; }
+        p{ background-color:blue; color:white; padding:5px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <span>노트북</span>
+        <!-- v-for 이용해서 아래 출력하세요 -->
+        <ul>
+            <!-- 1) companies : 배열[], company : 객체(속성,값) -->
+            <li v-for="(company, index) in companies" :key="index">
+                <input type="checkbox" 
+                    v-bind:value="company"
+                    v-model="selectedCompanies">
+                {{ company.name }}
+            </li>
+        </ul>
+        <button v-on:click="selectAll()">모두 선택</button>
+        <button v-on:click="reset()">모두 해제</button>
+
+        <!-- 2) selectedCompanies : v-for 를 이용해서 목록(ul/li)으로 
+            출력해주세요-->
+        <!-- selCom.name -->
+        <!-- selCom.product -->
+        <!-- selCom.price -->
+        <ul>
+            <!-- companies : 배열[], company : 객체(속성,값) -->
+            <li v-for="(selCom, index) in selectedCompanies" :key="index">
+                <strong>{{ selCom.name }}</strong><br>
+                <strong>{{ selCom.product }}</strong><br>
+                <strong>{{ selCom.price }} 원</strong>
+            </li>
+        </ul>
+
+        <!-- 3) 선택된 제품의 가격 총합을 화면에 표시해 주세요. -->
+        <p>선택 제품 합계 : {{ totalPrice }} 원</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    companies: [
+                        { name:"LG",
+                          product:"LG전자 그램",
+                          price:1400000
+                        },                        
+                        { name:"삼성",
+                          product:"삼성전자 Pen",
+                          price:1500000
+                        },                        
+                        { name:"Apple",
+                          product:"Apple 맥북",
+                          price:2000000
+                        },
+                    ],
+                    selectedCompanies: []
+                }
+            },
+            methods: {
+                selectAll() {
+                    this.selectedCompanies = this.companies;
+                },
+                reset() {
+                    // this.selectedCompanies = false;
+                    this.selectedCompanies = [];
+                }
+            },
+            computed: {
+                // {{ 함수 }} : 함수들 정의
+                totalPrice() {
+                    let totalAmount = 0;
+                    // for문 : this.selectedCompanies 배열안에서
+                    // totalAmount = price 다 더하기
+                    for(let i=0; i<this.selectedCompanies.length; i++) {
+                        // 누적합
+                        totalAmount += this.selectedCompanies[i].price;
+                    }
+                    return totalAmount;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

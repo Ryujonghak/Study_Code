@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>여러가지 객체를 표시하는 예제</h2>
+    <div id="app">
+        <!-- 객체배열를 출력 -->
+        <p>{{ myTea }}</p>
+        <!-- 얼그레이 500원 -->
+        <p>{{ myTea[1].name }} {{ myTea[1].price }}원</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    myTea: [
+                        { name: "다즐링", price:600},
+                        { name: "얼그레이", price:500},
+                        { name: "실론", price:500},
+                    ]
+                }
+            },
+        })
+    </script>
+</body>
+</html>

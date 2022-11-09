@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 연결 공간 -->
+    <div id="app">
+        <h3>Javascript 표현식1</h3>
+        <!-- 안녕하세요 강태경입니다. -->
+        <span>{{ str }}</span>
+        <br>
+        <!-- number * number 출력 -->
+        <span>{{ number * number }}</span>
+        <br>
+        <!-- condition ? "맞습니다.": "아닙니다." 출력 -->
+        <span>{{ condition ? "맞습니다.": "아닙니다." }}</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+        // Vue 생성 : data 속성 str : "안녕하세요 강태경입니다."
+        //          : data 속성 number: 15
+        //          : data 속성 condition : true
+        new Vue({
+            el: "#app",
+            data: {
+                str:"안녕하세요 강태경입니다.",
+                number: 15,
+                condition: true
+            }
+        })
+    </script>
+
+</body>
+</html>

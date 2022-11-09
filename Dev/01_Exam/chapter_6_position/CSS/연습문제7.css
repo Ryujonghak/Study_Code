@@ -1,0 +1,45 @@
+/* init(초기화) */
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+
+#container {
+    margin-top : 100px;
+    text-align: center;
+}
+h1 {
+    margin-right: 300px;
+}
+#user_info {
+    list-style-type: none;
+    display: inline-block;
+    text-align: right;
+}
+#user_info li{
+    margin: 15px;
+}
+#user_info input {
+    /* float: right; */
+    border: 1px solid black;
+    border-radius: 5px;
+    width : 300px;
+    height : 30px;
+    font-size : 1em;
+}
+#buttons {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+#buttons li {
+    margin: 10px;
+}
+#buttons button {
+    border: 1px solid black;
+    border-radius: 5px;
+    width : 200px;
+    height : 30px;
+    font-size : 1em;
+}
+/* 태그[속성] : 대괄호안의 속성을 가진 html 태그 선택 */

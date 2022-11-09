@@ -1,0 +1,16 @@
+/* 전체 헤더 */
+#main-header {
+  padding: 40px 50px;
+}
+/* 제목 헤더 */
+.master-title {
+    font-size: 30px;
+    color: black;
+}
+/* 설명 헤더 */
+.master-description {
+    font-size: 15px;
+    /* font-weight : 글자 두께(굵기) 숫자로 가능. */
+    font-weight: 500;
+    color: darkgray;
+}

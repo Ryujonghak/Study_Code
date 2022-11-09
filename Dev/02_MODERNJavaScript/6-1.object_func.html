@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 객체의 함수 다양한 정의
+      //  자바 스크립트 최상위 객체는 window
+      const test = {
+        //this = test
+        a: function () {
+          console.log(this);
+        },
+        // 자바 스크립트 : 화살표 함수 (자바: 람다)
+        // this == window
+        // 상위 함수(객체)의 this를 따름.
+        b: () => {
+          console.log(this);
+        },
+      };
+
+      test.a();
+      test.b();
+    </script>
+  </head>
+  <body></body>
+</html>

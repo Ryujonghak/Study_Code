@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>글 작성하기</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="./form_selectGroup.html">메뉴 - 1</a></li>
+            <li><a href="http://daum.net">메뉴 - 2</a></li>
+            <li><a href="http://google.com">메뉴 - 3</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <table border="1">
+            <tr>
+                <td><label for="name"> 작성자 </label></td>
+                <td><input id="name" type = "text"></td>
+            </tr>
+            <tr>
+                <td><label for="name"> 아이디 </label></td>
+                <td><input id="name" type = "text"></td>
+            </tr>
+            <tr>
+                <td><label for="mail"> 이메일 </label></td>
+                <td><input id="mail" type = "text">
+                @
+                <input id="" type = ""></td>
+            </tr>
+            <tr>
+                <td><label for="date"> 생년원일 </label></td>
+                <!-- placeholder 힌트, maxlength 글자수 최대 제한 -->
+                <td><input id="year" type = "text" maxlength = "4" placeholder = "년(4자)">
+                <select>
+                    <!-- select에 힌트를 넣고 싶은 경우 -->
+                    <option value="기본값" selected disabled hidden>월</option>
+                        <option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="3"> 3</option>
+                        <option value="4"> 4</option>
+                        <option value="5"> 5</option>
+                        <option value="6"> 6</option>
+                        <option value="7"> 7</option>
+                        <option value="8"> 8</option>
+                        <option value="9"> 9</option>
+                        <option value="10"> 10</option>
+                        <option value="11"> 11</option>
+                        <option value="12"> 12</option>
+                </select>
+            
+          <input id="day" type = "text" maxlength="2" placeholder="일"> </td>
+            </tr>
+            
+            <tr>
+            <td><label for=""> 휴대폰 </label></td>  
+            <td>
+            <select>
+                <!-- select에 힌트를 넣고 싶은 경우 -->
+                <option value="기본값" selected disabled hidden>010</option>
+                    <option value="1"> 010</option>
+                    <option value="2"> 011</option>
+               </select>
+               -
+               <input id="" type = "">
+               -
+               <input id="" type = "">
+            </td>
+            </tr>
+
+
+            <tr>
+                <td><label for="gender"> 성별 </label></td>
+                
+                <td><input in="man" type="radio" name="gender" value="m" checked="checked">
+                    <label for="man">남자</label>
+        
+                    <input in="woman" type="radio" name="gender" value="w">
+                    <label for="wowman">여자</label>
+            </tr>
+            <tr>
+                <td><label for="book"> 글제목 </label></td>
+                <td><input id="name" type = "text"></td>
+            </tr>
+            <tr>
+                <td><label for="aa"> 내용 </label></td>
+                <td> <textarea cols="30" rows="10"> </textarea></td>
+            </tr>
+            <tr>
+                <td>
+                    <td><label></label>
+                    <input type="submit"></td>
+                </td>
+            </tr>
+        </table>
+    
+    </section>
+<br>
+    <footer>
+        HTML5 Programming 게시판
+    </footer>
+</body>
+</html>

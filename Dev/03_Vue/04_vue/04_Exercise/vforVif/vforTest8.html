@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+</head>
+<body>
+    <h2>버튼을 클릭하면 짝수만 표시하는 예제</h2>
+    <div id="app">
+        <ul>
+            <li v-for="item in myArray"> {{ item }} </li>
+        </ul>
+        <!-- .filter() -->
+        <button v-on:click="evenData()">짝수만 표시</button>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myArray: [1,2,3,4,5,6] // [2,4,6]
+                }
+            },
+            methods: {
+                evenData() {
+                    // 배열함수 : 배열.filter(조건함수)
+                    // 기존배열에서 조건에 따라 줄어든 배열로 결과를 리턴
+                    this.myArray = 
+                        this.myArray.filter((value) => {
+                            return value % 2 == 0
+                        });
+                }
+            },
+        })
+    </script>
+</body>
+</html>

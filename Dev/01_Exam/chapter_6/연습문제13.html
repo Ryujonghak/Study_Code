@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            width:100px;
+        }
+        .line1 {
+            background-color: skyblue;
+        }
+        .line2 {
+            background-color: rgb(104, 61, 232);
+        }
+    </style>
+</head>
+<body>
+    <h1>고속버스 예매</h1>
+    <table>
+        <tr>
+            <th class="line1" colspan="4">서울 &lt;=&gt; 대전 2020.9.6 수</th>
+        </tr>
+        <tr>
+            <th class="line2">출발</th>
+            <th class="line2">버스회사</th>
+            <th class="line2">등급</th>
+            <th class="line2">예약가능</th>
+        </tr>
+        <tr>
+            <td>11:50</td>
+            <td>한진고속</td>
+            <td>우등</td>
+            <td><img src="./img/full.png" alt="만차" /></td>
+        </tr>        
+        <tr>
+            <td>12:50</td>
+            <td>천일고속</td>
+            <td>고속</td>
+            <td><img src="./img/empty.png" alt="예매가능" /></td>
+        </tr>        
+        <tr>
+            <td>13:50</td>
+            <td>한진고속</td>
+            <td>우등</td>
+            <td><img src="./img/full.png" alt="만차" /></td>
+        </tr>
+
+    </table>
+</body>
+</html>

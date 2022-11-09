@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/event.css" />
+  </head>
+  <body>
+    <div id="item">
+      <img src="./images/flower.jpg" alt="꽃" />
+      <div id="button">
+        <button class="over" id="open" onclick="showDeatail()">
+          상세 설명 보기
+        </button>
+      </div>
+      <!-- 상세 설명 부분 -->
+      <div id="desc" class="detail">
+        <h4>등심붓꽃</h4>
+        <p>
+          북아메리카 원산으로 각지에서 관상초로 심음 북아메리카 원산으로
+          각지에서 관상초로 심음 북아메리카 원산으로 각지에서 관상초로 심음
+          북아메리카 원산으로 각지에서 관상초로 심음
+        </p>
+        <button id="close" onclick="hideDetail()">close</button>
+      </div>
+    </div>
+    <script src="./js/detail_querySelector.js"></script>
+  </body>
+</html>

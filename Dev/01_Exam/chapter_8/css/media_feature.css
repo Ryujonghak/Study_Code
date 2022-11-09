@@ -1,0 +1,22 @@
+/* 반응형 웹 css 문법 */
+/* @media (min, max) 반응형 웹 사용 */
+/* 스마트폰 */
+@media (max-width: 767px) {
+    body {
+        background-color: red;
+    }
+}
+/* 태블릿 세로 */
+@media (min-width: 768px) and (max-width:959px) {
+    body {
+        background-color: green;
+    }
+    
+}
+/* 데스크톱  */
+@media (min-width: 960px) {
+    body {
+        background-color: blue;
+    }
+    
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+</head>
+<body>
+    <h2>버튼을 누르면 리스트가 증감할때 애니메이션 효과를 주는 예제</h2>
+    <div id="app">
+        <!-- 애니메이션 효과를 줄 부분 : 반복문일 경우 -->
+        <!-- 대상이 여러개일 경우 : transition-group -->
+        <!-- :key 꼭 사용 -->
+        <ul>
+            <transition-group>
+                <!-- v-for문 돌려서 목록 출력 -->
+                <li v-for="item in dataArray" :key="item"> 
+                    {{ item }}
+                </li>
+            </transition-group>
+        </ul>
+
+        <label>
+            <input type="text" v-model="addItem" placeholder="추가할 리스트">
+        </label>
+        <button v-on:click="addList()">추가</button>
+        <button v-on:click="removeLast">맨뒤 1개 삭제</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    dataArray: ["벛꽃", "산수유", "진달래", "철죽"],
+                    addItem: ""
+                }
+            },
+            methods: {
+                addList() {
+                    // 배열의 끝에 추가하기
+                    this.dataArray.push(this.addItem);
+                    // 입력박스 초기화
+                    this.addItem = "";
+                },
+                removeLast() {
+                    // 배열의 끝을 삭제하기
+                    let lastIdx = this.dataArray.length - 1;
+                    // 배열함수 .splice(인덱스번호, 삭제개수, 추가문자열);
+                    this.dataArray.splice(lastIdx, 1);
+                    // .pop() : 끝에 삭제
+                }
+            },
+        })
+    </script>
+
+    <style>
+        /* 나타나고 있을때와 사라질때 시간 표시 : 0.5초 */
+        .v-enter-active, .v-leave-active {
+            transition: 0.5s;
+        }
+
+        /* 나타나기전의 상태와 사라진 상태 투명도 0 */
+        /* 오른쪽으로 50 이동 */
+        .v-enter, .v-leave-to {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .search-word-wrapper {
+        /* grid-area: search-word; */
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        color: #fff;
+      }
+
+      #search-result {
+        /* grid-area: result; */
+        text-align: center;
+        /* flex-grow: 1; */
+        padding: 20px;
+        /* box-sizing : content-box(마진 등 전부 더한 크기), border-box(마진등 전부 뺀 크기) */
+        /* 전체 너비 = width + 2 * (margin + border + padding) */
+        /* 전체 높이 = height + 2 * (margin + border + padding) */
+        box-sizing: border-box;
+        font-size: 60px;
+      }
+    </style>
+  </head>
+  <body class="chapter-3">
+    <!-- main(본문) section 보다 상위 개념 -->
+    <!-- html 내에서 딱 1번만 사용! -->
+    <main class="main">
+      <div class="search-word-wrapper">
+        <label
+          >유저 ID
+          <input type="text" id="search-id-input" />
+        </label>
+      </div>
+      <p id="search-result">유저 검색 결과 없음</p>
+    </main>
+    <script src="./js/object.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed bar</title>
+    <style>
+      .container {
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+      /* 상단 고정 메뉴(바) */
+      .top_bar {
+        background: red;
+        /* position: fixed; */
+        position: sticky;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 50px;
+      }
+      /* 좌측 고정 메뉴(바) */
+      .left_bar {
+        background: blue;
+        /* position: fixed; */
+        position: sticky; 
+        /* sticky는 fixed와 비슷하지만 밑으로 내용물이 들어가지 않음. */
+        left: 0;
+        top: 50px;
+        bottom: 0;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top_bar"></div>
+    <div class="left_bar"></div>
+    <div class="container">
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+      <p>asdqwdqdqvqdqsdq</p>
+      <p>asdqwdqdqvqdqsdqqsdsdqdqs</p>
+      <p>qsdq dqsdqsdqdqsdqdqqsdsdq</p>
+      <p>sdqdqdqdqdqsdqsdqsewqdsdqweqdsqdq</p>
+    </div>
+  </body>
+</html>

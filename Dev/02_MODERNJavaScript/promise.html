@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // 비동기 : 성능 향상, 동기화 문제 발생.
+      // 동기 : 성능 낮음, 동기화 문제 없음.
+      // 라이브러리 : axios(promise)를 이용하여 동기화 문제 해결.
+
+      let promise = new Promise(function (resolve, reject) {
+        // 실행을 강제로 시간만큼 지연 이후 실행을 시킴.
+        setTimeout(() => {
+          console.log("B");
+          resolve();
+        }, 1000);
+      });
+      // resolve() 성공 / reject() 실패
+
+      // promise가 없다면
+      console.log("D");
+
+      // promise가 있다면
+      // 항상 B가 출력되고 C가 출력되게함.
+      //.then() promise가 성공하면 then이 실행됨.
+      // promise가 실패하면 .catch()함수가 실행됨.
+      promise
+        .then(function () {
+          console.log("C");
+        })
+        .catch((e) => console.log(e));
+      //upgrade 버젼(모던 자바 스크립트) : async() / await()
+    </script>
+  </head>
+  <body></body>
+</html>

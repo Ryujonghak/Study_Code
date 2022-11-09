@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <style>
+      .skrike-through {
+        text-decoration: line-through;
+        color: lightgray;
+      }
+      .dark {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Test</h2>
+    <div id="app">
+      <p class="skrike-through">직접 클래스 지정</p>
+      <p class="dark">직접 클래스 지정</p>
+
+      <div v-for="item in myClass">
+        <p v-bind:class="item">bind 클래스 지정</p>
+      </div>
+      <button v-on:click="onCl()">버튼</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            myClass: [{"skrike-through": this.isTrue},
+                     {"dark": this.isTrue}],
+            isTrue: true,
+          };
+        },
+        methods: {
+          onCl() {
+            this.isTrue = !this.isTrue;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

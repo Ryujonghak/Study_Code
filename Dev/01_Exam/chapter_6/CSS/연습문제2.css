@@ -1,0 +1,11 @@
+table {
+    border: 1px solid blue;
+    padding:8px;
+    /* border-collapse: collapse : 테이블 안쪽 여백 없애고 붙이기 */
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid red;
+    padding:8px;
+    border-collapse: collapse;
+  }

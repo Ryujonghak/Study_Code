@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my-comp></my-comp>
+        <my-comp2></my-comp2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+    
+    <script>
+        new Vue({
+            el: "#app",
+            components: {
+                "my-comp" : {
+                    /* html */
+                    template: `
+                        <div>첫번째 컴포넌트 :{{ cmpData }} </div>
+                    `,
+                    data() {
+                        return {
+                            cmpData:100
+                        }
+                    },
+                },
+                "my-comp2" : {
+                    template: `
+                        <div>두번째 컴포넌트 : {{ cmpData2 }}</div>
+                    `,
+                    data() {
+                        return {
+                            cmpData2: this.cmpData
+                        }
+                    },
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

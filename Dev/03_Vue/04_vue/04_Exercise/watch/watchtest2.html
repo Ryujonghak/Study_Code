@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>남은시간(초)를 감시하여 0초가되면 alert 띄우는 예제</h2>
+    <div id="app">
+        <p>앞으로 {{ restSec }} 초</p>
+        <button v-on:click="startTime()">Start</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    restSec: 5,
+                    timeObj: null
+                }
+            },
+            // 1) computed : {{ computed함수 }}
+            // 2) methods : click, mousemove 등 이벤트 함수
+            methods: {
+                startTime() {
+                    // 남은 시간
+                    this.restSec = 5;
+                    // 타이머를 start 해서 1초에 -1씩 감소
+                    // 사용법 : setInterval(함수, 반복시간);
+                    // 나중에 setInterval 중단 => clearInterval(this.timeObj);
+                    this.timeObj = setInterval(() => { this.restSec-- }, 1000)
+                },
+                watch: {
+                    // restSec 값이 변할때마다 function() 실행됨
+                    restSec: function() {
+                        // 0초 이하가 되면 alert 띄우고 타이머 중단
+                        // alert : 제한시간 입니다.
+                        if( this.restSec <= 0) {
+                            alert("제한시간 입니다.");
+                            // setInterval 중단
+                            clearInterval(this.timeObj);
+                        }
+
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+</html>

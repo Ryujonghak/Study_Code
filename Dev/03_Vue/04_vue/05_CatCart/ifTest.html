@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Vue cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="app">
+        <!-- 1) O/X 퀴즈 showMe = false : X -->
+        <p v-if="showMe">if 텍스트</p>
+        <p>보일까요?</p>
+        <p v-else>else 텍스트</p>
+    
+        <!-- 2) O/X 퀴즈 showMe = false : X  -->
+        <div>
+            <p v-if="showMe">if 텍스트</p>
+        </div>    
+        <div>
+            <p v-else>else 텍스트</p>
+        </div>
+    
+        <!-- 3) 정답 -->
+        <div v-if="showMe">
+            <p>the if text</p>
+            <p>the if text 2</p>
+        </div>
+        <div v-else>
+            <p>the else text</p>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    showMe: false
+                }
+            },
+        })
+    </script>
+</body>
+</html>

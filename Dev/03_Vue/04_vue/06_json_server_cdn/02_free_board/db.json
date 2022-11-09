@@ -1,0 +1,16 @@
+{
+  "freeboards": [
+    {
+      "id": 1,
+      "title": "자유게시판 테스트 1",
+      "content": "자유게시판 테스트 1번 입니다.",
+      "writer": "jwlee@google.com"
+    },
+    {
+      "id": 2,
+      "title": "자유게시판 테스트 2",
+      "content": "자유게시판 테스트 2번 입니다.",
+      "writer": "aaa@google.com"
+    }
+  ]
+}

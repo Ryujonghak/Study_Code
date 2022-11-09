@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- . : 현재경로 -->
+    <!-- .. : 상위경로 -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>빨강, 녹색, 파랑의 슬라이더를 움직이면 완성된 색을 표시하는 예제</h2>
+    <div id="app">
+        <p v-bind:style="{ backgroundColor: mixColor }">{{ mixColor }}</p>
+        <input type="range" v-model="Red" min="0" max="255"><br>
+        <input type="range" v-model="Green" min="0" max="255"><br>
+        <input type="range" v-model="Blue" min="0" max="255">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    Red: 255,
+                    Green: 150,
+                    Blue: 100
+                }
+            },
+            computed: {
+                mixColor() {
+                    // 슬라이더 바를 움직이면 바탕색이 변경되게 함
+                    // let ans = "RGB(100,100,100)"
+                    // let ans = "RGB(" + this.Red + ","
+                    // let ans = "RGB(" + this.Red + "," + this.Green + "," + this.Blue + ")";
+                    // 백틱(``) : `값은 ${변수}`
+                    let ans = `RGB(${this.Red} ,${this.Green} ,${this.Blue} )`
+                    console.log(ans);
+
+                    return ans;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

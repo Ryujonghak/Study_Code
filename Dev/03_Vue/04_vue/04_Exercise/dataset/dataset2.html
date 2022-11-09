@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>여러가지 데이터형을 표시하는 예제</h2>
+    <div id="app">
+        <!-- myPrice: 500 -->
+        <!-- myPrice * 1.08 -->
+        <p>{{ myPrice * 1.08 }}</p>
+        <!-- myName : "홍길동" -->
+        <!-- "안녕하세요" + myName + "님" -->
+        <p>{{ "안녕하세요" + myName + "님" }}</p>
+        <!-- myName 문자열자르기(첫번째 글자만 출력) .substring() -->
+        <!-- 사용법 : 문자열.substring(1st 배열번호, 자르고 싶은 배열번호) -->
+        <p>{{ myName.substring(0,1) }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    myPrice: 500,
+                    myName : "홍길동"
+                }
+            },
+        })
+    </script>
+</body>
+</html>

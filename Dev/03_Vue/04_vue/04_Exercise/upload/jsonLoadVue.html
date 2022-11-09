@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+</head>
+<body>
+    <h2>JSON을 읽어들이는 예제(Vue.js)</h2>
+    <div id="app">
+        <!-- 파일업로드 : type="file" 파일대화상자 -->
+        <!-- 기본이벤트 : onchange -->
+        <input type="file" v-on:change="onFileChange">
+        <p>읽어 들인 데이터 : {{ loadData }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    loadData:""
+                }
+            },
+            methods: {
+                // 매개변수 : e -> event 객체 ( window 객체 )
+                // event 객체 : 
+                // ex) 마우스 이벤트 -> 마우스의 위치정보 등
+                //     키보드 이벤트 -> 누른 키의 키코드 정보 등
+                // 속성 - target : 이벤트가 발생한 html태그
+                //        type : ex) click, mouseover, mouseout 등  
+                // e.target.files -> fileList 객체 선택(File등 있음)
+                // file 대화상자 : onchange 이벤트
+                onFileChange(e) {
+                    // e.target.files[0] : 첫번째 선택한 파일(json)
+                    // file = json 파일
+                    file = e.target.files[0];
+
+                    // file 을 선택했으면 null 아님
+                    if(file) {
+                        // FileReader 객체 : 자바스크립트 지원 파일 객체 
+                        let reader = new FileReader();
+
+                        // .readAsText(파일, charset) : 텍스트로 파일을 읽는 함수
+                        // 매개변수 charset 생략가능 : 기본 UTF-8
+                        reader.readAsText(file);
+
+                        // 함수 정의 : 함수 선언문, 함수 표현식
+                        // .onload() : 읽기 동작이 성공적으로 완료되었을때 이벤트
+                        // 참고) .onloadend() : 성공유무와 상관없이 다 읽었을때 실행
+                        reader.onload = (e) => {
+                            // e.target.result : 선택한 파일 내용
+                            // JSON.parse() 문자열 -> 객체
+                            json = e.target.result;
+
+                            // 뷰의 데이터에(바인딩) 넣음
+                            this.loadData = json;
+                        }
+                    }0
+                }
+            },
+        })
+    </script>
+</body>
+</html>

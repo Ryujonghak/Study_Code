@@ -1,0 +1,24 @@
+/* px(픽셀) 화면크기의 단위  요즘은 vw,vh 등 뷰포트 단위를 사용. */
+/* # = ID 호출로 값이 중복이 되어서는 안됨. */
+#header {
+    width: 800px; margin: 0 auto;
+    background-color: red;
+}
+
+#wrap {
+    width: 800px; margin: 0 auto;
+    overflow: scroll;
+    background-color: yellow;    
+}
+
+#aside{
+    width: 200px; margin: 0 auto;
+    background-color: blue;
+    float : right;
+}
+
+#content {
+    width: 600px; margin: 0 auto;
+    background-color: green;
+    float : left;
+}

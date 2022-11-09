@@ -1,0 +1,57 @@
+#container {
+  width: 1000px;
+  margin: 20px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.prod_list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.prod_list li {
+  float: left;
+  padding: 0;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  /* position: relative < 상대좌표*/
+}
+
+.prod_list img {
+  margin: 0;
+  padding: 0;
+  z-index: 5;
+  float: left;
+}
+
+.prod_list .caption h2,
+.prod_list .caption p {
+  color: #fff;
+  text-align: center;
+}
+
+/* 애니메이션 효과 */
+.prod_list .caption {
+  position: absolute;
+  /* position: absolute 부모의 상대좌표에 맞춰 좌표를 지정해주는 것 */
+  top: 200px;
+  width: 300px;
+  height: 200px;
+  padding-top: 20px;
+  opacity: 0;
+  /* opacity : 투명도 > 보이지 않게 설정*/
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  transition: all 0.6s ease-in;
+}
+
+.prod_list li:hover .caption {
+    opacity: 1;
+    /* 마우스가 올라가면 보이게 끔 설정 */
+    transform: translateY(-200px);
+    /* 위치이동 애니메이션 효과 */
+}

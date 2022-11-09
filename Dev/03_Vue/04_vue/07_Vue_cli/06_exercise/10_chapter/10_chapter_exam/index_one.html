@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/app.css" />
+    <!-- bootstrap css cdn -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <!-- 1) header 부분은 components : 자식 컴포넌트 HeaderCom.vue 로 아래를 분리하고 . -->
+      <!--      <HeaderCom></HeaderCom>으로 대체 코딩하세요 -->
+      <!--    1-1) cartItemCount : props로 데이터 전달 -->
+      <!--    1-2) showCheckout() 함수는 제거하고, button 대신 router-link to="/form" 으로 대체 -->
+      <header>
+        <div class="navbar navbar-default">
+          <div class="navbar-header">
+            <h1 v-text="sitename"></h1>
+          </div>
+          <!-- 장바구니 개수 표시 -->
+          <div class="nav navbar-nav navbar-right cart">
+            <button
+              type="button"
+              class="btn btn-default btn-lg"
+              v-on:click="showCheckout"
+            >
+              <span class="glyphicon glyphicon-shopping-cart"
+                >{{ cartItemCount }}</span
+              >
+              <span>체크아웃</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- 1) 문제 끝 -->
+
+      <main>
+        <div class="row">
+          <!-- 2) v-if/v-else는 제거함 -->
+
+          <!-- v-if 시작 -->
+          <div v-if="showProduct">
+            <div class="col-md-2 col-md-offset-1">
+              <figure>
+                <img v-bind:src="product.image" />
+              </figure>
+            </div>
+            <div class="col-md-6 col-md-offset-2 description">
+              <h1 v-text="product.title"></h1>
+              <p v-html="product.description"></p>
+
+              <p class="price">{{ formatPrice }}</p>
+
+              <button
+                class="btn btn-primary btn-lg"
+                v-on:click="addToCart"
+                v-if="canAddToCart"
+              >
+                장바구니 담기
+              </button>
+              <button disabled="true" class="btn btn-primary btn-lg" v-else>
+                장바구니 담기
+              </button>
+
+              <span
+                class="inventory-message"
+                v-if="product.availInven - cartItemCount == 0"
+              >
+                품절!!!
+              </span>
+              <!-- v-else-if -->
+              <span
+                class="inventory-message"
+                v-else-if="product.availInven - cartItemCount < 5"
+              >
+                {{ product.availInven - cartItemCount }} 남았습니다!!!
+              </span>
+              <!-- v-else -->
+              <span class="inventory-message" v-else> 지금 구매하세요!!! </span>
+              <!-- 추가 -->
+              <div class="rating">
+                <!-- v-for문 5개 -->
+                <span
+                  v-bind:class="{'rating-active': checkRating(n) }"
+                  v-for="n in 5"
+                  >☆
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- v-if 끝 -->
+
+          <!-- 3) v-else는 제거하고 form양식 태그들을 FormView.vue로 분리 작성한다.  -->
+          <!--     FormView.vue 소스 분리시 사용하는 데이터나 메소드가  있다면 같이 분리한다. -->
+          <!--    헤더에서 장바구니개수 링크를 클릭하면 FormView가 나오도록 라우팅 코딩한다. -->
+
+          <!-- v-else 시작 -->
+          <div v-else>
+            <div class="col-md-10 col-md-offset-1">
+              <div class="panel panel-info">
+                <div class="panel-heading">애완용품샵 체크아웃</div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <h4><strong>정보를 입력하세요</strong></h4>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-6">
+                      <strong>이름:</strong>
+                      <input v-model="order.firstName" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                      <strong>성:</strong>
+                      <input v-model="order.lastName" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-12"><strong>주소:</strong></div>
+                    <div class="col-md-12">
+                      <input v-model="order.address" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-12"><strong>도시:</strong></div>
+                    <div class="col-md-12">
+                      <input v-model="order.city" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-2">
+                      <strong>주:</strong>
+                      <select v-model="order.state" class="form-control">
+                        <!-- option value -->
+                        <option disabled value="">주</option>
+                        <!-- v-for문 소스 개선 -->
+                        <!-- 객체 v-for=(item, key) in 객체명 -->
+                        <!-- v-bind:value="item" -->
+                        <!-- state : 값 , item : 속성명 -->
+                        <option
+                          v-for="(state, item) in states"
+                          v-bind:value="state"
+                        >
+                          {{ item }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                      <strong>우편번호:</strong>
+                      <input v-model.number="order.zip" class="form-control" />
+                    </div>
+                  </div>
+                  <!-- 추가 -->
+                  <div class="form-group">
+                    <div class="col-md-6 boxes">
+                      <input
+                        type="checkbox"
+                        id="gift"
+                        value="true"
+                        v-bind:true-value="order.sendGift"
+                        v-bind:false-value="order.DontSendGift"
+                        v-model="order.gift"
+                      />
+                      <label for="gift">선물로 보내기?</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-6 boxes">
+                      <input
+                        type="radio"
+                        id="home"
+                        value="자택"
+                        v-model="order.method"
+                      />
+                      <label for="home">자택</label>
+
+                      <input
+                        type="radio"
+                        id="business"
+                        value="직장"
+                        v-model="order.method"
+                      />
+                      <label for="business">직장</label>
+                    </div>
+                    <!-- 제출 버튼 추가 -->
+                    <!-- 메소드 submitForm() -> alert("제출완료") -->
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <button
+                          type="submit"
+                          class="btn btn-primary submit"
+                          v-on:click="submitForm"
+                        >
+                          주문하기
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 verify">
+                    <pre>
+                          이름: {{order.firstName}}
+                          성: {{order.lastName}}
+                          주소: {{ order.address }}
+                          도시: {{ order.city }}
+                          우편번호: {{ order.zip }}
+                          주: {{ order.state }}
+                          배송지: {{ order.method }}
+                          선물: {{ order.gift }}
+                        </pre
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- v-else 끝 -->
+        </div>
+      </main>
+    </div>
+
+    <script>
+      let webstore = new Vue({
+        el: "#app",
+        data() {
+          return {
+            showProduct: true,
+            sitename: "Vue.js 애완용품샵",
+            // order 객체를 만들고, 속성 firstName, lastName
+            // 단, 속성의 값은 ""로 초기화하세요
+            // 추가 : address, city, zip, state 속성 추가
+            // 단, 속성의 값은 ""로 초기화하세요
+            // 배송지 추가 : method, ("자택")
+            // 선물 : gift (false)
+            // states 객체 추가
+            states: {
+              AL: "알라바마",
+              AR: "애리조나",
+              CA: "캘리포니아",
+              NV: "네바다",
+            },
+            order: {
+              firstName: "",
+              lastName: "",
+              address: "",
+              city: "",
+              zip: "",
+              state: "",
+              method: "자택",
+              gift: "선물로 보내기",
+              sendGift: "선물로 보내기",
+              DontSendGift: "선물로 보내지 않기",
+            },
+            product: {
+              id: 1001,
+              title: "고양이 사료, 25파운드",
+              description:
+                "당신의 고양이를 위한 <em>거부할 수 없는 </em>, 유기농 25파운드 사료입니다.",
+              price: 2000,
+              image: "assets/images/product_fullsize.png",
+              // 재고수량
+              availInven: 10,
+              // 별점
+              rating: 4,
+            },
+            // 장바구니 변수
+            cart: [],
+          };
+        },
+        methods: {
+          addToCart() {
+            // cart 배열 추가하는 로직 구현 : product.id
+            // .push()
+            this.cart.push(this.product.id);
+            console.log(this.cart);
+          },
+
+          submitForm() {
+            alert("제출완료");
+          },
+          // 함수 추가
+          checkRating(n) {
+            // 4 - 5 >= 0 -> true
+            return this.product.rating - n >= 0;
+          },
+        },
+        // 뷰가 생성될때 실행되는 이벤트
+        created() {
+          console.log("created 되었음");
+        },
+        // 뷰가 html화면과 연결될때 실행되는 이벤트
+        mounted() {
+          console.log("mouted 되었음");
+        },
+        computed: {
+          formatPrice() {
+            // 숫자.toLocaleString() :
+            //       숫자 -> 그나라의 돈으로 표기
+            return "$" + this.product.price.toLocaleString();
+          },
+          cartItemCount() {
+            // 장바구니 개수 표시하는 로직 구현
+            // 배열.length
+            return this.cart.length;
+          },
+          canAddToCart() {
+            // 재고수량이 5개 미만이 되면 false를 리턴하게 만듬
+            if (this.product.availInven > this.cart.length) {
+              return true;
+            } else {
+              return false;
+            }
+            // return this.product.availInven > this.cart.length;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 영역 -->
+    <div id="app">
+        <ul>
+            <!-- vue 반복문 : v-for -->
+            <!-- 사용법 : v-for="배열원소 in 배열명"  -->
+            <li v-for="(fruit, index) in fruits" :key="index">
+                {{ fruit }} : {{index}}
+            </li>
+        </ul>
+
+        <!-- ol 태그 이용해서 v-for 반복문을 작성하시요. -->
+        <ol>
+            <li v-for="toy in toys">{{ toy }}</li>
+        </ol>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    
+    <script>
+        // Vue 생성
+        new Vue({
+            // html과 연결 : div id=app
+            el: "#app",
+            data() {
+                return {
+                    fruits: ["딸기", "오렌지","사과","포도"],
+                    toys: ["마징가z", "태권브이","건담"]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

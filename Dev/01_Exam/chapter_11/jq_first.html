@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+      <li>내용4</li>
+    </ul>
+    <script>
+      $(function () {
+        $("#menu li:even").css({
+          //   "border-weight": "2px",
+          //   "border-style": "dashed",
+          //   "border-color": "#f00",
+          "background-color": "#0ff",
+        });
+        $("#menu li:odd").css({
+          //   "border-weight": "2px",
+          //   "border-style": "dashed",
+          //   "border-color": "#f00",
+          "background-color": "#f00",
+        });
+      });
+    </script>
+  </body>
+</html>

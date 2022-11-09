@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>true 일때만 표시하는 예제</h2>
+    <!-- html의 vue 영역 표시하는 부분 -->
+
+    <div id="app">
+        <label>
+            <input type="checkbox" v-model="myVisible">표시
+        </label>
+        <!-- 아래 체크박슬 체크하면 아래 부분이 출력되야함 -->
+        <!-- 체크 : 체크박스가 ON 보임-->
+        <p v-if="myVisible">체크박스가 ON</p>
+        <!-- 언체크 : 체크박스 OFF 보임 -->
+        <p v-else>체크박스가 OFF</p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myVisible:false
+                }
+            },
+        })
+    </script>
+</body>
+</html>

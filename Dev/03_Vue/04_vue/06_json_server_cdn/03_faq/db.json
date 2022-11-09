@@ -1,0 +1,24 @@
+{
+  "faqboards": [
+    {
+      "id": 1,
+      "subject": "FAQ 테스트 1",
+      "text": "FAQ 테스트 1번 입니다."
+    },
+    {
+      "id": 2,
+      "subject": "FAQ 테스트 2",
+      "text": "FAQ 테스트 2번 입니다."
+    },
+    {
+      "id": 3,
+      "subject": "FAQ 테스트 3",
+      "text": "FAQ 테스트 3번 입니다."
+    },
+    {
+      "id": 4,
+      "subject": "FAQ 테스트",
+      "text": "FAQ 테스트 4번 입니다."
+    }
+  ]
+}

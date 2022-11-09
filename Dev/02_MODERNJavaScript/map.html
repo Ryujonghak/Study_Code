@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // .map() : 배열의 값을 조작하는 함수, 리턴값이 있음(새로운 배열).
+      //   let num = [1, 2, 3, 4, 5];
+      //   let result = num.map((vlaue) => vlaue * vlaue);
+      //   console.log(num);
+      //   console.log("------------------");
+      //   console.log(result);
+
+      //문제풀이
+      //   const num = [1, 2, 3, 4, 5];
+      //   //   let result = num.map((vlaue) => Math.sqrt(vlaue));
+      //   let result = num.map(Math.sqrt);
+
+      //   console.log(result);
+
+      // 객체 조작
+      //   let users = [
+      //     {
+      //       name: "YD",
+      //       age: 22,
+      //     },
+      //     {
+      //       name: "Bill",
+      //       age: 32,
+      //     },
+      //     {
+      //       name: "Andy",
+      //       age: 21,
+      //     },
+      //     {
+      //       name: "Roky",
+      //       age: 35,
+      //     },
+      //   ];
+
+      //   // 나이만 뽑아서 저장할 배열
+      //   let age = [];
+
+      //   age = users.map((value) => value.age);
+      //   console.log(age);
+
+      let num = ["가", "나", "다"];
+      let char = num.map((value) => value + "붙임");
+      console.log(char);
+    </script>
+  </head>
+  <body></body>
+</html>

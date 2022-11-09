@@ -1,0 +1,9 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "이재원",
+      "email": "jwlee@google.com"
+    }
+  ]
+}

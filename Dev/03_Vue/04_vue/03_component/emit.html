@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{ 
+          background: blue;
+          padding: 6px;
+          color:white;
+        }
+        .box{ 
+          background: teal;
+          margin-top:10px;
+        }
+        .box button {
+          margin : 4px;
+        }
+      </style>  
+</head>
+<body>
+    <div id="app">
+        {{ name }}
+        <child-comp v-on:sendmsg2="receivemsg()"></child-comp>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+    
+    <script>
+        // 전역 컴포넌트 정의(자식)
+        Vue.component("child-comp", {
+            template: `
+                <div class="box">
+                    <button v-on:click="sendmsg()">부모로 신호 전달</button>
+                </div>
+            `,
+            methods: {
+                sendmsg() {
+                    this.$emit("sendmsg2");
+                }
+            },
+        })
+
+        // Vue 정의
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    name: "$emit를 이용한 전달"
+                }
+            },
+            methods: {
+                receivemsg() {
+                    this.name = "자식쪽에서 신호 받음"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

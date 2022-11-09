@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 영역 -->
+    <div id="app">
+        <h3>데이터 바인딩1(기본)</h3>
+        <span>{{ message }}</span>
+
+        <!-- html태그가 포함되었지만 적용 않되는 변수 -->
+        <h3>데이터 바인딩2(html태그포함)</h3>
+        <span>{{ message_not_html }}</span>
+
+        <!-- html태그가 포함되었지만 적용되는 변수 -->
+        <h3>데이터 바인딩3(html태그포함)</h3>
+        <!-- v-html : 태그가 적용되는 뷰의속성 -->
+        <span v-html="message_html"></span>
+
+        <!-- 버튼 속성 조작 -->
+        <h3>데이터 바인딩4(버튼)</h3>
+        <button v-bind:disabled="isButtonDisabled">버튼</button>
+
+        <!-- computed 속성 적용( 콧수염표기법안에 사용 : {{ 함수명 }}) -->
+        <!-- computed 성능 훨신 좋음 : () 붙이면 에러 -->
+        <!-- methods 속성 비교(click 이벤트) -->
+        <p>Computed: {{ reversedMessage }}</p>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    
+    <!-- 뷰 생성 -->
+    <!-- data - message : "바인딩 테스트"-->
+    <!-- data - message_not_html : "<h5>Tag 출력</h5>"-->
+    <!-- data - message_html : "<h5 style='color:#ff0000'>Tag 출력</h5>"-->
+    <!-- data - isButtonDisabled : true-->
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    message : "바인딩 테스트",
+                    message_not_html : "<h5>Tag 출력</h5>",
+                    message_html : "<h5 style='color:#ff0000'>Tag 출력</h5>",
+                    isButtonDisabled : true
+                }
+            },
+            computed: {
+                reversedMessage() {
+                    return this.message.split("").reverse().join("");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

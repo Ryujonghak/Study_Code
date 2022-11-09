@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+          background: blue;
+          padding: 6px;
+          color:white;
+        }
+        .box{
+          background: teal;
+          margin-top:10px;
+        }
+      </style>
+</head>
+<body>
+    <div id="app">
+        {{ name }}
+        <!-- 부모(message = "부모 컴포넌트로부터 전달") => 자식 -->
+        <child-comp v-bind:childmsg="message"></child-comp>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+
+    <script>
+        // 전역 컴포넌트 : 자식
+        Vue.component("child-comp", {
+            props: ["childmsg"],
+            template: `
+                <div class="box">{{ childmsg }}</div>
+            `
+        })
+
+        // 최상위 부모 컴포넌트
+        // 컴포넌트간에 변수 전달 : 부모 -> 자식 전달 (props) [단방향통신]
+        new Vue({
+            // Vue 와 html 연동(연결)
+            el:"#app",
+            data() {
+                return {
+                    name: "props를 이용한 데이터 전달",
+                    message: "부모 컴포넌트로부터 전달"
+                }
+            },
+
+        })
+    </script>
+</body>
+</html>

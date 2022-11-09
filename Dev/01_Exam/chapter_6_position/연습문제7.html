@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./CSS/연습문제7.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>회원 가입</h1>
+      <form action="#" id="register">
+        <!-- 입력란 -->
+        <ul id="user_info">
+          <li>
+            <!-- 아이디 입력 -->
+            <!-- label 클릭하면 input 양식에 포커스가 옴. -->
+            <label for="user-id" class="field">아이디</label>
+            <input
+              type="text"
+              id="user-id"
+              placeholder="영문과 숫자로 입력"
+              required
+            />
+            <!-- required : 필수 입력 -->
+          </li>
+
+          <li>
+            <!-- 비밀번호 입력 -->
+            <!-- 유효성 체크 : 자리수, 필수입력 -->
+            <label for="user-pw1" class="field">비밀번호</label>
+            <input
+              type="password"
+              id="user-pw1"
+              placeholder="8자리 이상 비밀번호 적기"
+              minlength="8"
+              required
+            />
+          </li>
+
+          <li>
+            <!-- 비밀번호 입력 -->
+            <!-- 유효성 체크 : 자리수, 필수입력 -->
+            <label for="user-pw2" class="field">비밀번호 확인</label>
+            <input
+              type="password"
+              id="user-pw2"
+              placeholder="8자리 이상 비밀번호 적기"
+              minlength="8"
+              required
+            />
+          </li>
+
+          <li>
+            <!-- email 입력 -->
+            <label for="user-id" class="field">E-mail</label>
+            <input type="email" id="user-id" required />
+          </li>
+
+          <li>
+            <!-- 전화번호 입력 -->
+            <label for="phone" class="field">전화번호</label>
+            <input type="number" id="phone" required />
+          </li>
+        </ul>
+        <!-- 입력란 끝 -->
+        <!-- submit/reset 버튼 시작 -->
+        <ul id="buttons">
+          <!-- submit 버튼 -->
+          <li><button type="submit" class="btn btnblack">가입하기</button></li>
+          <!-- reset 버튼 -->
+          <li><button type="reset" class="btn btnblack">취소</button></li>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>

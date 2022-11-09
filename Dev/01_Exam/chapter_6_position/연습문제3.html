@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #v_menu {
+            list-style-type: none;
+            display: inline-block;
+        }
+        #v_menu li {
+            /* 점선 밑줄 */
+            border-bottom: dashed 1px gray;
+            margin-bottom: 5px;
+        }
+        #h_menu {
+            list-style-type: none;
+        }
+        #h_menu li {
+            /* float: left; */
+            display: inline;
+            margin-right: 5px;
+        }
+        .menus {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.세로 메뉴</h3>
+    <ul id="v_menu">
+        <li>ceo 인사말</li>
+        <li>조직도</li>
+        <li>전화번호 안내</li>
+        <li>찾아오시는 길</li>
+    </ul>
+
+    <h3>2.가로 메뉴</h3>
+    <ul id="h_menu">
+        <li class="menus">회사소개</li>
+        <li>|</li>
+        <li class="menus">제품안내</li>
+        <li>|</li>
+        <li class="menus">고객센터</li>
+        <li>|</li>
+        <li class="menus">매장안내</li>
+    </ul>
+</body>
+</html>

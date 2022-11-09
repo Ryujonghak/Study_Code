@@ -1,0 +1,30 @@
+#container {
+  width: 200px;
+  margin: 30px auto;
+}
+
+/* img 스타일 정의 */
+img {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  /* box-shadow : 그림자 효과 */
+  box-shadow: 5px 5px 30px 2px black;
+  /* css 애니메이션 속성 (animation : 함수명 동작속도(초) 무한한작동시간) */
+  animation: rotateBear 2.5s infinite;
+}
+
+/* @keyframes 함수명(정의) */
+/* from { } : 최초실행, 50% { } : 중간시간, to { } : 마지막 */
+/* transform(회전) : perspective(z-index 거리(3D 원근감)) 
+rotateX(Y축을 기준으로 회전 0~360degree) rotateX(X축을 기준으로 회전) */
+@keyframes rotateBear {
+  from {
+    transform: perspective(200px) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(200px) rotateX(180deg);
+  }
+  to {
+    transform: perspective(200px) rotateX(360deg);
+  }
+}

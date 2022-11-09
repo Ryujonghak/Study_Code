@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imgdiv{
+          margin:4px;
+          border: 4px solid blue;
+          display:inline-block;
+        }
+        img{
+          width:240px;
+          height:180px;
+          padding: 3px;
+        }
+        a{
+          text-align: center;   
+          display:block;   
+        }
+      </style>
+</head>
+<body>
+    <!-- vue 영역 -->
+    <div id="app">
+        <!-- div 에 v-for 문 돌리기 : 이미지 화면 출력 -->
+        <!-- images : 배열 -->
+        <!-- img : 배열의 원소(객체) -->
+        <!-- 객체 속성 : (text, url, src) -->
+        <!-- images[0] == img -->
+        <!-- {text:'암스테르담', src:'./imgs/amsterdam.jpg', url:'http://www.raileurope.co.kr/place/amsterdam-centraal'}, -->
+        <!-- images[1] == img -->
+        <!-- {text:'파리', src:'./imgs/paris.jpg', url:'https://www.louvre.fr/en/homepage'}, -->
+        <div class="imgdiv" v-for="img in images">
+        <!--  -->
+            <a v-bind:href="img.url">{{ img.text }}</a>
+            <img v-bind:src="img.src">
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+
+    <script>
+        new Vue({
+            // html 과 연결
+            el:"#app",
+            data() {
+                return {
+                    images: [
+                        {text:'암스테르담', src:'./imgs/amsterdam.jpg', url:'http://www.raileurope.co.kr/place/amsterdam-centraal'},
+                        {text:'파리', src:'./imgs/paris.jpg', url:'https://www.louvre.fr/en/homepage'},
+                        {text:'프라하', src:'./imgs/praha.jpg', url:'https://www.prague.eu/en'},
+                        {text:'비엔나', src:'./imgs/vienna.jpg',url:'https://www.belvedere.at/en'},
+                    ]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

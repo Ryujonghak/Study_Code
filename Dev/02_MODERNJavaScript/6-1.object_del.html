@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 객체 외부 속성 정의
+      const student = {};
+      student.name = "Ryu";
+      student.number = "1";
+      student.email = "student@gmail.com";
+
+      // 속성 삭제
+      delete student.email;
+
+      // JSON.stringify(객체) : 객체를 문자열로 바꾸어 주는 함수.
+      console.log(JSON.stringify(student));
+    </script>
+  </head>
+  <body></body>
+</html>

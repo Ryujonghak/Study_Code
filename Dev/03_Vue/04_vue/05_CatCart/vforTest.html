@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Vue cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <!-- 참고 -->
+    <!-- v-for : 객체 -->
+    <div id="app">
+        <ul>
+            <li v-for="(value, name, index) in states">
+                {{ index }}, {{ name }} : {{ value }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    states: {
+                        AL: "알라바마",
+                        AR: "애리조나",
+                        CA: "캘리포니아",
+                        NV: "네바다"
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+</html>

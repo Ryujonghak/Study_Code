@@ -1,0 +1,9 @@
+#box {
+    display: inline-block;
+    /* inline 적용시 가로(width), 세로(height) 속성 무시. */
+    /* inline-block 적용시 가로,세로 속성 적용. */
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin : 10px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 영역 -->
+    <div id="app">
+        <!-- idA : 10 -->
+        <!-- classA : "container" -->
+        <!-- styleA : "color: blue" -->
+        <!-- 이벤트 뷰 문법 : v-on:  -->
+        <!-- 속성 뷰 문법 : v-bind: -->
+        <!-- 축약식 - v-on: == @  -->
+        <!-- 축약식 - v-bind: == : -->
+        <p :id="idA">아이디 바인딩 : {{ idA }}</p>
+        <p :class="classA">클래스 바인딩 : {{ classA }}</p>
+        <p :style="styleA">스타일 바인딩 : {{ styleA }}</p>
+    </div>
+    <!-- vue link -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <!-- vue 정의 -->
+    <script>
+        new Vue({
+            // el
+            // data() { return{} }
+            // html div 태그 연결
+            el: "#app",
+            data() {
+                return {
+                    idA : 10,
+                    classA : "container",
+                    styleA : "color: blue"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>클릭하면 카운트가 올라갑니다.</h2>
+    <div id="app">
+        <p> {{ count }} 회</p>
+        <!-- 아래 클릭이벤트 걸어서 클릭할때마다 count++ 증가시키세요 -->
+        <!-- 함수이름 : countUp() -->
+        <button v-on:click="countUp()">증가</button>
+        <button v-on:click="countDown()">감소</button>
+
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    count:0
+                }
+            },
+            methods: {
+                countUp() {
+                    // count 증가
+                    this.count++;
+                },
+                countDown() {
+                    // if문 this.count>0
+                    if(this.count > 0) {
+                        this.count--;
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+</html>

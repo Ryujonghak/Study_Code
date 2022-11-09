@@ -1,0 +1,32 @@
+div {
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  float: left;
+}
+
+/* transition: 속성들 모두 선택 (all) ease 몇초동안 애니메이션효과 부여 */
+.bg-tr {
+  background-color: skyblue;
+  transition: all ease 1s;
+  /* ease : 천천히 - 빠름 - 천천히
+        ease-in : 천천히 - 빠름
+        linear : 등속 */
+}
+
+.bg-tr:hover {
+  background-color: blue;
+  
+}
+
+.border-tr {
+  background-color: orange;
+  border: 1px solid black;
+  transition: all linear 1.5s;
+  /* transition: all ease 1s; */
+}
+
+.border-tr:hover {
+  border: 3px solid red;
+  border-radius: 50%;
+}

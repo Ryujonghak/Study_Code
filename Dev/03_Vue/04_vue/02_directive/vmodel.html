@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 영역 -->
+    <div id="app">
+        <label>이름 : </label>
+        <!-- v-bind:속성 - p, table, tr, li -->
+        <!-- v-model="변수명" - input, form -->
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
+        <!-- checkbox -->
+        <!-- 체크 속성 : checked -->
+        <!-- 뷰 문법 : v-model="checked" html checked -->
+        <input type="checkbox" v-model="checked">
+        <span>영화보러 갈래요? {{ checked? "예": "아니오" }}</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <script>
+        // vue 생성
+        new Vue({
+            el: "#app",
+            // 이 안의 속성(변수) 초기화 : "", 0
+            data() {
+                return {
+                    name: "",
+                    checked: true
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+h2 {
+    color: blue;
+    text-shadow: 10px 10px 10px gray;
+}
+p {
+    color: #444444;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p1 {
+    font-weight: bold;
+    color: #0e9bdc;
+    text-decoration: underline;
+}
+
+P2 {
+    text-decoration: underline;
+}
+
+li {
+    list-style: none;
+}

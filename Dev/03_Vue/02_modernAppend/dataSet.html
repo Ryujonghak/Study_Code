@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- html5 데이터를 태그 속성에 저장하는 방법 -->
+    <!-- data-변수(속성)명 = 값 으로 만들어 객체를 생성할 수 있음. -->
+    <p data-id="0" data-quest="question">- 영웅의 영어 철자는?</p>
+    <ul>
+      <li data-id="1" data-user-job="programmer">Zero</li>
+      <li data-id="2" data-user-job="designer">Nero</li>
+      <li data-id="3" data-user-job="programmer">hero</li>
+      <li data-id="4" data-user-job="ceo">Kero</li>
+    </ul>
+
+    <script>
+      let pData = document.querySelector(`p`);
+      // HTML 태그 값을 가져옴.
+      console.log(pData.dataset);
+
+      let data = document.querySelectorAll(`li`);
+      let result = data.forEach(function (value) {
+        console.log(value.dataset);
+      });
+    </script>
+  </body>
+</html>

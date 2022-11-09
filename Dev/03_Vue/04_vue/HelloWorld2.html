@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 1번 출력 -->
+    <div id="app">
+        {{ message }}
+    </div>    
+    <!-- vue 2번 출력 -->
+    <div id="app2">
+        {{ message }}
+    </div>    
+    <!-- vue 3번 출력 -->
+    <div id="app3">
+        {{ message }}
+    </div>
+    <!-- cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <script>
+        // vue 3개 만들기
+        // 1) message : "Hello Vue.js!"
+        new Vue({
+            el:"#app",
+            data: {
+                message: "Hello Vue.js!"
+            }
+        });
+        // 2) message : "두번째 뷰: 또 하나 만들었어요"
+        new Vue({
+            el:"#app2",
+            data: {
+                message: "두번째 뷰: 또 하나 만들었어요"
+            }
+        });
+        // 3) message : "세번째 뷰: 또 하나 더 만들었어요"
+        new Vue({
+            el:"#app3",
+            data: {
+                message: "세번째 뷰: 또 하나 더 만들었어요"
+            }
+        });
+    </script>
+</body>
+</html>

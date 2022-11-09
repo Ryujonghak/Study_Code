@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <style>
+        .blue-underline {
+            text-decoration: underline;
+            color: blue;
+        }
+        .strike-through {
+            text-decoration: line-through;
+            color: lightgray;
+        }
+        .dark {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>class 지정하는 예제</h2>
+    <div id="app">
+        <!-- 1) v-bind , a href="https://www.naver.com" : 네이버로 연결 -->
+        <p><a v-bind:href="naver_link">네이버로 연결</a></p>
+
+        <!-- 2) v-bind, 이미지표시 , face2.png -->
+        <p><img v-bind:src="face2_name"></p>
+
+        <!-- 3) v-bind, align , 텍스트를 왼쪽 정렬 -->
+        <p v-bind:align="align_left">텍스트를 왼쪽 정렬</p>
+
+        <!-- 3) v-bind, align , 텍스트를 중앙 정렬 -->
+        <p v-bind:align="align_center">텍스트를 왼쪽 정렬</p>
+
+        <!-- 3) v-bind, align , 텍스트를 오른쪽 정렬 -->
+        <p v-bind:align="align_right">텍스트를 왼쪽 정렬</p>
+
+        <!-- 4) v-bind, class="blue-underline" 적용 -->
+        <!--         blue-underline 클래스 지정 -->
+        <p v-bind:class="blue_underline_class">
+            blue-underline 클래스 지정
+        </p>
+    </div>
+    <!-- Vue 생성 -->
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    naver_link:"https://www.naver.com",
+                    face2_name:"face2.png",
+                    align_left:"left",
+                    align_center:"center",
+                    align_right:"right",
+                    blue_underline_class:"blue-underline"
+                }
+            },
+        })
+    </script>
+
+</body>
+</html>

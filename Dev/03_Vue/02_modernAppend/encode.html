@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 프론트엔드(vue) < - > (통신) 백엔드(springboot)
+      // url 주소 : www.naver.com/board?no=1
+      // url 기본 특징 : 영문주소(한글인식 X), 꼭 한글을 써야한다면 주는 쪽은 encoding(주소 포맷변환)을 이용, 받는 쪽 decoding을 해야함.
+
+      // 한글 인코딩
+      let encodeurl = `https://www.naver.com/${encodeURIComponent(`노드`)}`;
+      console.log(encodeurl);
+
+      // 한글 디코딩
+      console.log(decodeURIComponent(encodeurl));
+    </script>
+  </body>
+</html>

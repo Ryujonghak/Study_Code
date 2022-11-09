@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <table border="2">
+            <tr>
+                <!-- label 태그 : 입령양식 앞에 이름 붙여줄때 사용! -->
+                <td><label for="username">이름</label></td>
+                <td><input id="username" type="text" name="username"</td>
+            </tr>
+            <tr>
+                <!-- radio 태그 : 2개를 1쌍으로 사용, name 속상 값을 일치 시켜야함. -->
+                <td>성별</td>
+                <td><input in="man" type="radio" name="gender" value="m">
+                    <label for="man">남자</label>
+        
+                    <input in="woman" type="radio" name="gender" value="w">
+                    <label for="wowman">여자</label>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="가입">
+    </form>
+     
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* init(초기화) */
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+#head {
+    display: flex-start;
+}
+/* 좌측 이미지 */
+#front {
+    float: left;
+}
+/* 우측메뉴 */
+#end {
+    float: right;
+    /* padding-top: 30px; */
+    margin: 20px;
+}
+/* 우측메뉴 */
+#list {
+    list-style-type: none;
+}
+#list li {
+    display: inline;
+    font-size:20px;
+    margin : 10px;
+    /* height: 20px;
+    line-height: 20px; */
+}
+/* Main 이미지 */
+#img {
+    clear:both;
+    /* display: flex; */
+    padding-top: 10px;
+    margin: 20px;
+    /* float: left; */
+}

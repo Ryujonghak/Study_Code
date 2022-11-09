@@ -1,0 +1,7 @@
+     /* h1 : HTML 태그 선택자  */
+    h1 {
+    color: red;
+    background-color: orange;
+    }
+    
+    /* * << 모두 선택 */

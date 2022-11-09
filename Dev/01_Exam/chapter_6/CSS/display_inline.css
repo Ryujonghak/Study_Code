@@ -1,0 +1,21 @@
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 20px;
+  display: inline-block;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  margin: 20px;
+  display: inline-block;
+}
+.box3 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  margin: 20px;
+  display: inline-block;
+}

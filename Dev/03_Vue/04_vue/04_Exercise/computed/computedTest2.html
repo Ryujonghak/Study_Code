@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>금액을 입력하면 소비세가 포함된 금액으로 계산하는 예제</h2>
+    <div id="app">
+        <!-- 단가입력 -->
+        <input type="number" 
+            v-model.number="price"
+            placeholder="단가를 입력해 주세요"
+        >원 x        
+        <!-- 개수입력 -->
+        <input type="number" 
+            v-model.number="count"
+            placeholder="개수를 입력하세요"
+        >개
+        <!-- 합계 = 단가 * 개수  -->
+        <p>합계 {{ sumA }} 원</p>
+        <!-- 세금 = 합계 * 1.08 -->
+        <p>세금포함 {{ taxInclued }} 원</p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    price: 100,
+                    count: 1
+                }
+            },
+            computed: {
+                // 합계 = 단가 * 개수
+                sumA() {
+
+                    return this.price * this.count;
+                },
+                // 세금포함합계 = 합계 * 1.08
+                taxInclued() {
+                    // data() 값은 : this.변수명
+                    // computed, methods 함수 : this.함수명
+                    return this.sumA * 1.08;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

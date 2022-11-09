@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <style>
+        .my-comp {
+            width: 300px;
+            background-color: #ffffe0;
+            border: solid;
+            border-color: darkorange;
+            border-radius: 8px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>지역 컴포넌트 만들어서 표시하는 예제 </h2>
+    <div id="app">
+        <!-- 지역컴포넌트 출력 -->
+        <!-- 컴포넌트의 template 속성 안에 있는 태그가 적용 -->
+        <!-- 컴포넌트이름 : 새로운 html태그가 됨 -->
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
+
+    <script>
+        // 지역 컴포넌트 만들기
+        // 이름 : my-component
+        // template: "<p class='my-comp'>Hello</p>"
+        new Vue({
+            el: "#app",
+            components: {
+                /* 사용법 - 컴포넌트이름 : { template: "html태그들" } */
+                "my-component" : {
+                    template: "<p class='my-comp'>Hello</p>"
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* init(초기화) */
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+#container {
+  text-align: center;
+}
+fieldset {
+  display: inline-block;
+  width: 400px;
+  margin-top : 30px;
+}
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right : 300px;
+}
+ul {
+  list-style-type: none;
+  text-align: right;
+}
+li {
+  /* text-align: right; */
+  margin: 10px;
+}
+
+#container {
+  /* display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  width: 250px; */
+  /* height : 10px;
+    font-size : 10px;*/
+}
+
+button {
+  display: block;
+  margin-top : 20px;
+  /* justify-content: center; */
+}
+
+.input-box {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+  
+    width: 250px;
+}
+.check {
+    margin-right: 112px;
+}

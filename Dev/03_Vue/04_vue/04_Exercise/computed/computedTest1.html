@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>금액을 입력하면 소비세가 포함된 금액으로 계산하는 예제</h2>
+    <div id="app">
+        <input type="number" 
+            v-model.number="price"
+        >
+        <!-- 공식 : price * 1.08 -->
+        <p>소비세 포함 금액 {{ taxInclued }} 원</p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    price: 100
+                }
+            },
+            // computed 사용법 : 
+            //   1) 호출시 () 제거하고 호출 : ex) taxInclued
+            //   2) 주로 {{ 컴퓨티드함수명 }}               
+            //   3) 주로 간략한 함수작성시 사용
+            //   4) 함수인데 매개변수 줄 수 없음
+            //   5) 메소드 속성함수에 비하면 속도(성능)이 좋음(캐싱기능)
+            //  기타 : 뷰 코딩 시 주의점
+            //   1) computed / methods의 함수명과 data() 변수명이 중복(x)
+            computed: {
+                taxInclued() {
+                    // 로직 만들기
+                    // 결과를 return을 사용해서 밖으로 빼내기 
+                    return this.price * 1.08
+                }
+            }
+        })
+    </script>
+</body>
+</html>

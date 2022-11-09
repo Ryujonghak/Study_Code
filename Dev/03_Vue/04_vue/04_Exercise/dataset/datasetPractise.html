@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>여러가지 객체를 표시하는 예제</h2>
+    <div id="app">
+        <!-- html 태그를 적용해서 출력 -->
+        <p v-text="myText"></p>
+        <!-- myHTML -->
+        <p v-html="myHTML"></p>
+        <!-- 객체배열 출력 -->
+        <p>{{ myTea }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    myText: "Vue를 배워봅시다.",
+                    myHTML: "<h3>태그를 넣어서 출력도 가능</h3>",
+                    myTea: [
+                        { name: "다즐링", price:600},
+                        { name: "얼그레이", price:500},
+                        { name: "실론", price:500},
+                    ]
+                }
+            },
+        })
+    </script>
+</body>
+</html>

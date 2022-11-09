@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery CDN : 인터넷에서 링크를 참조 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.js"
+      integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <img />
+    <img />
+    <img />
+    <script>
+      $(function () {
+        // $(`img`).attr(`alt`, `jQuery 라이브러리를 사용한 속성 지정`);
+        // $(`img`).attr(`src`, `../chapter_10/images/cat1.jpg`);
+        // $(`img`).attr(`width`, `500`);
+        $(`img`).attr({
+          alt: `jQuery 라이브러리를 사용한 속성 지정`,
+          src: `../chapter_10/images/cat1.jpg`,
+          width: 500,
+        });
+      });
+    </script>
+  </body>
+</html>

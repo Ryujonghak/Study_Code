@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>입력문자를 감시하여 금지문자가 입력 되면 alert 띄우는 예제</h2>
+    <div id="app">
+        <p>금지문자는 [ {{ forbiddenText }} ]</p>
+        <textarea  v-model="inputText" cols="100" rows="30"></textarea>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    inputText: "오늘은 날씨가 좋습니다.",
+                    forbiddenText: "안되"
+                }
+            },
+            // 감시 속성
+            // 감시대상의 값이 변경되면 함수가 실행
+            // 사용법 - watch : {
+            //     감시대상 : 함수
+            //}
+            watch: {
+                inputText: function() {
+                    // 로직
+                    // 텍스트에어리어 금칙어가 있으면 양수
+                    // 없으면 음수
+                    let position 
+                        = this.inputText.indexOf(this.forbiddenText);
+                    if(position > -1) {
+                        alert(this.forbiddenText + "입력할 수 없습니다.");
+                        // 금칙어가 있으면 금칙어 삭제하고 초기화
+                        this.inputText = "오늘은 날씨가 좋습니다.";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

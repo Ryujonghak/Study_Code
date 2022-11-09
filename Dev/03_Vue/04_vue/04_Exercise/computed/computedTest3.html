@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>문장을 입력하면 남은 글자수를 표시하는 예제</h2>
+    <h3> 남은 글자수가 20자 미만이면 색깔 : orange</h3>
+    <h3> 남은 글자수가 10자 미만이면 색깔 : red</h3>
+    <div id="app">
+        <p>감상은 140자 이내로 입력해 주세요</p>
+        <textarea v-model="myText" cols="100" rows="20"></textarea>
+        <p v-bind:style="{color: computedColor }">
+            남은 글자는 {{ remaining }} 입니다.
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    myText: "오늘은 날씨가 좋습니다."
+                }
+            },
+            computed: {
+                remaining() {
+                    // 최대 140까지 입력되게 만드는 것 목표
+                    return 140 - this.myText.length;
+                },
+                computedColor() {
+                    let col = "green";
+                    // if문 사용해서 20자 미만이면 col = orange
+                    // 10자 미만이면 col = red; 
+                    if(this.remaining >= 10 && this.remaining < 20) {
+                        col = "orange";
+                    } else if(this.remaining < 10) {
+                        col = "red";
+                    }
+                    return col;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

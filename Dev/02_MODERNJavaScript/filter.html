@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // .filter() : return 값 있음, 기존 배열에서 몇 개만 추출.
+
+      //   let num = [1, 2, 3, 4, 5];
+      //   let res = num.filter(function (value) {
+      //     return value > 3;
+      //   });
+      //   console.log(res);
+
+      let guys = [
+        {
+          name: "YD",
+          money: "50000",
+        },
+        {
+          name: "Bill",
+          money: "40000",
+        },
+        {
+          name: "Andy",
+          money: "30000",
+        },
+        {
+          name: "Roky",
+          money: "20000",
+        },
+      ];
+      //   let num = guys.filter(function (value) {
+      //     return value.money >= 30000;
+      //   });
+
+      //   console.log(num);
+
+      let YD = guys.filter(function (value) {
+        return value.name == "YD";
+      });
+
+      console.log(YD[0].money);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 객체 (함수가 포함)
+      // 객체 = {속성 : 값(키), ++}
+      const pet = {
+        name: "구름",
+        eat: function (food) {
+          alert(this.name + " 은/는 " + food + " 을/를 먹습니다.");
+        },
+      };
+      // 객체의 함수를 호출
+      pet.eat("밥");
+      //   alert(pet.name);
+    </script>
+  </head>
+  <body></body>
+</html>

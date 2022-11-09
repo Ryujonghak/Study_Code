@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery CDN : 인터넷에서 링크를 참조 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.js"
+      integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>header - 0</h1>
+    <h1>header - 1</h1>
+
+    <script>
+      $(function () {
+        // textContent
+        // $(`h1:nth-child(1)`).text(`<a href="#">text()</a>`);
+        // innerHTML
+        // $(`h1:nth-child(2)`).html(`<a href="#">html()</a>`);
+
+        let text = $(`h1`).text();
+        let html = $(`h1`).html();
+
+        alert(`text: ` + text);
+        alert(`html: ` + html);
+      });
+    </script>
+  </body>
+</html>

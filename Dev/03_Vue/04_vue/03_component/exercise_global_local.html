@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>아래 전역/지역 컴포넌트 출력 문제</h3>
+        <!-- my-global-comp : 전역 컴포넌트 입니다. -->
+        <my-global-comp></my-global-comp>
+        <!-- my-local-comp : 로컬 컴포넌트 입니다. -->
+        <my-local-comp></my-local-comp>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+    
+    <script>
+        // 전역 컴포넌트 정의
+        Vue.component("my-global-comp", {
+            template: "<div>전역컴포넌트입니다.</div>"
+        });
+        
+        // 지역컴포넌트 정의
+        new Vue({
+            el:"#app",
+            components: {
+                "my-local-comp": {
+                    template: "<div>지역 컴포넌트입니다.</div>"
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+p {
+  font-size: 1.2em;
+}
+.display {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: blue;
+}

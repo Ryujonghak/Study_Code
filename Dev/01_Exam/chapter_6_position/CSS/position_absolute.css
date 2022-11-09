@@ -1,0 +1,22 @@
+.box {
+    width: 100px;
+    height: 100px;
+    /* absolute 절대좌표를 선택 표시 */
+    position: absolute;
+}
+/* :nth-child(순서) - 특수선택자 */
+.box:nth-child(1) {
+    background-color: red;
+    left : 10px; top: 10px;
+    z-index: 100;
+}
+.box:nth-child(2) {
+    background-color: blue;
+    left : 50px; top: 50px;
+    z-index: 10;
+}
+.box:nth-child(3) {
+    background-color: green;
+    left : 90px; top: 90px;
+    z-index: 1;
+}

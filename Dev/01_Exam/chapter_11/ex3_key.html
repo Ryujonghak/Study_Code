@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <p>- 아이디: <input type="text" placeholder="초기값 Admin" /></p>
+    <p>- 비밀번호: <input type="password" placeholder="초기값 `1234`" /></p>
+    <script>
+      let i = true;
+      let j = true;
+
+      $(function () {
+        $("input[type=text]").keyup(function () {
+          result1 = $("input[type=text]").val();
+
+          if (result1 == "Admin") {
+            $("input[type=text]").css({
+              "background-color": "green",
+            });
+            j = false;
+          } else {
+            $("input[type=text]").css({
+              "background-color": "yellow",
+            });
+          }
+        });
+
+        $("input[type=password]").keyup(function () {
+          result1 = $("input[type=password]").val();
+
+          if (result1 == "1234") {
+            $("input[type=password]").css({
+              "background-color": "green",
+            });
+            i = false;
+          } else {
+            $("input[type=password]").css({
+              "background-color": "yellow",
+            });
+          }
+        });
+      });
+      while (1) {
+        if (i == false && j == false) {
+          alert("success");
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>

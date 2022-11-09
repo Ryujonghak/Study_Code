@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .accordion {
+        margin: 30px;
+      }
+      .accordion dt,
+      .accordion dd {
+        padding: 10px;
+        border: 1px solid #cccccc;
+      }
+      .accordion dt:last-of-type,
+      .accordion dd:last-of-type {
+        border-bottom: 1px solid #cccccc;
+      }
+      .accordion dt a,
+      .accordion dd a {
+        display: block;
+        color: black;
+        font-weight: bold;
+      }
+      .accordion dd {
+        border-top: 0;
+        font-size: 14px;
+        line-height: 150%;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <dl class="accordion">
+      <dt><a href="#">웹이란?</a></dt>
+      <dd>
+        웹은"World Wide Web"의 약자임, 이것으로 인터넷 사용 웹은"World Wide
+        Web"의 약자임, 이것으로 인터넷 사용 웹은"World Wide Web"의 약자임,
+        이것으로 인터넷 사용 웹은"World Wide Web"의 약자임, 이것으로 인터넷 사용
+      </dd>
+      <dt><a href="#">웹이란?</a></dt>
+      <dd>
+        웹은"World Wide Web"의 약자임, 이것으로 인터넷 사용 웹은"World Wide
+        Web"의 약자임, 이것으로 인터넷 사용 웹은"World Wide Web"의 약자임,
+        이것으로 인터넷 사용 웹은"World Wide Web"의 약자임, 이것으로 인터넷 사용
+      </dd>
+      <dt><a href="#">웹이란?</a></dt>
+      <dd>
+        웹은"World Wide Web"의 약자임, 이것으로 인터넷 사용 웹은"World Wide
+        Web"의 약자임, 이것으로 인터넷 사용 웹은"World Wide Web"의 약자임,
+        이것으로 인터넷 사용 웹은"World Wide Web"의 약자임, 이것으로 인터넷 사용
+      </dd>
+    </dl>
+
+    <script>
+      $(function () {
+        // dt 사전 타이틀,  dd 사전 내용
+        let allPanels = $(".accordion > dd");
+        allPanels.hide();
+
+        $(".accordion > dt > a").click(function () {
+          allPanels.slideUp();
+          $(this).parent().next().slideDown();
+        });
+      });
+    </script>
+  </body>
+</html>

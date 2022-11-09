@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 1212 : 삼각형의 성립 조건
+      // 입력 : 2 3 4
+      // 출력 : yes
+
+      // 구조 분해 할당 : 모던 자바 스크립트 문법
+      let [first, second, third] = prompt("숫자를 입력해 주세요.")
+        .split(" ")
+        .map(Number);
+      // 배열로 만들면 좋은점 : for/while 문 사용 쉬움
+      // 나쁜점 : 가독성이 나쁨.
+      let long = Math.max(first, second, third);
+      let sum = first + second + third;
+
+      //   alert(long);
+      //   alert(sum);
+      // sum - long = 두변(두개의 짧은 변)
+      let m = sum - long;
+      // 삼각형 성립 조건 : 긴변 < 두변
+      if (long < m) {
+        alert("yes");
+      } else {
+        alert("no");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

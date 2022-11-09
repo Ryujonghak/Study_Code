@@ -1,0 +1,101 @@
+<html>
+
+<head>
+  <title>Vue.js 애완용품샵</title>
+  <meta charset="UTF-8">
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./css/app.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <!-- 제목을 뷰의 데이터로 설정 : sitename -->
+          <!-- sitename : "Vue.js 애완용품샵" -->
+          <h1>{{ sitename }}</h1>
+        </div>
+        <div class="nav navbar-nav navbar-right cart">
+          <!-- 클릭이벤트를 추가 : showCheckout  -->
+          <!-- 클릭시 아래 고양이 물품 및 상세정보가 안보이게 만들기 -->
+          <!-- 변수명 : showProduct -->
+          <button type="button" class="btn btn-default btn-lg">
+            <!-- computed 이용 -->
+            <!-- cart 배열의 크기를 가져오는 변수 추가 -->
+            <span class="glyphicon glyphicon-shopping-cart">{{ cartItemCount }}</span>
+            <span>체크아웃</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="row product">
+        <div>
+          <div class="col-md-2 col-md-offset-1">
+            <figure>
+              <img v-bind:src="product.image">
+            </figure>
+          </div>
+          <div class="col-md-6 col-md-offset-2 description">
+            <h1 v-text="product.title"></h1>
+            <p v-html="product.description"></p>
+            <p class="price">
+              {{product.price}}
+            </p>
+            <!-- 장바구니 담기 이벤트 추가 : addToCart -->
+            <!-- 데이터 : cart 배열 추가 -->
+            <!-- addToCart 버튼클릭 시 cart배열에 product.id 추가 -->
+            <!-- computed : canAddToCart() : availableInventory 가 다 소진되면 버튼 비활성화 -->
+            <button class="btn btn-primary btn-lg" v-on:click="addToCart">장바구니 담기
+            </button>
+
+            <!-- 장바구니 삭제버튼 -->
+            <button class="btn btn-primary btn-lg" v-on:click="removeToCart">장바구니 빼기
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--end of row-->
+    </main>
+    <!--end of main-->
+  </div>
+
+  <script>
+    var webstore = new Vue({
+      el: '#app',
+      data: {
+        sitename: "Vue.js 애완용품샵",
+        product: {
+          id: 1001,
+          title: "고양이 사료, 25파운드",
+          description: "당신의 고양이를 위한 <em>거부할 수 없는</em>, 유기농 25파운드 사료입니다.",
+          price: 2000,
+          image: "./images/product-fullsize.png"
+        },
+        cart: 0
+      },
+      methods: {
+        addToCart() {
+          this.cart++;
+        },        
+        removeToCart() {
+          if(this.cart > 0) {
+            this.cart--;
+          }
+        },
+      },
+      computed: {
+        cartItemCount() {
+          return this.cart || '';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

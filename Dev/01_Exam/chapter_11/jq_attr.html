@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <p><a href="http://easypub.co.kr" target="_blank">EasyPub</a></p>
+      <p><a href="https://naver.com">Naver</a></p>
+      <p><a href="http://daum.net">Daum</a></p>
+      <p><a href="http://google.co.kr">Google</a></p>
+    </div>
+    <script>
+      $(function () {
+        // []기본 ^ 앞부터 $ 뒤부터 * 전체
+        $("a[target]").css({
+          color: "purple",
+        });
+        $("a[href^='https']").css({
+          color: "#0f0",
+        });
+        $("a[href$='net']").css({
+          color: "#00f",
+        });
+        $("a[href*='google']").css({
+          color: "red",
+        });
+      });
+    </script>
+  </body>
+</html>

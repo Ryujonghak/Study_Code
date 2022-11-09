@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 영역 -->
+    <div id="app">
+        {{ message }}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    
+    <script>
+        // Vue 생성
+        new Vue({
+            el: "#app",
+            // 2.x 버젼 사용
+            // data: {
+            //     message: "Hello Vue.js!!"
+            // },
+            // 2.x / 3.x버젼 사용
+            data() {
+                return {
+                    message: "Hello Vue.js!!"
+                }
+            },
+            // Vue객체가 생성되는 시점
+            beforeCreate() {
+                console.log("beforeCreate")
+            },
+            created() {
+                console.log("created")
+
+            },
+            // 화면과 연결되는 시점
+            // 기억(중요)
+            mounted() {
+                console.log("mounted")
+
+            },
+            // 화면에 변수(속성)이 변경되었을때 자동실행
+            updated() {
+                console.log("updated")
+
+            }
+        })
+    </script>
+</body>
+</html>

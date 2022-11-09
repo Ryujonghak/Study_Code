@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 의 공간 -->
+    <div id="app">
+        <!-- html 속성의 값 출력 : {{ data의 속성 }} (콧수염 표기법) -->
+        {{ message }}
+    </div>
+
+    <!-- 1) vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+// 2) VUE 생성(2.x) : new Vue({
+//                      el : html에서 vue로 사용할 공간연결
+//                      data : { 속성:값, 속성2:값2,... 등}
+//                    });
+        new Vue({
+            el:"#app",
+            data: {
+                message: "Hello Vue.js!"
+            }
+        });
+    </script>
+</body>
+</html>

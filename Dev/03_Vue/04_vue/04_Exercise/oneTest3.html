@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>enter키를 누르면 alert 실행되는 예제</h2>
+    <div id="app">
+        <input type="text"
+            v-on:keyup.enter="showAlert()"
+            v-model="myText"
+        >
+        <p>{{ myText }}</p>
+
+        <input type="text"
+        v-on:keyup.enter.shift="showAlert2()"
+        v-model="myText2"
+        >
+
+        <p>{{ myText2 }}</p>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myText:"Hello!",
+                    myText2:"Hello!"
+                }
+            },
+            methods: {
+                showAlert() {
+                    alert("Enter 키를 눌렀습니다.");
+                }         ,       
+                showAlert2() {
+                    alert(" Shift + Enter 키를 눌렀습니다.");
+                }
+            },
+        })
+    </script>
+</body>
+</html>

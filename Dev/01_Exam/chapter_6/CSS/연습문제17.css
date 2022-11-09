@@ -1,0 +1,13 @@
+body {
+    background-image: url(../img/sale_bg.png);
+    /* background-repeat: no-repeat; */
+
+}
+#flower {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+#button {
+    margin-left: 250px;
+    margin-top: 20px;
+}

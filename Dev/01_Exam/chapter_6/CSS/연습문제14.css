@@ -1,0 +1,47 @@
+        table {
+            border-collapse: collapse;
+            border: 1 solid black;
+        }
+        .line1 {
+            border: 1px solid black;
+            text-align: center;
+            width : 100px;
+            height : 40px;
+            background-color:gray;
+        }
+        .line2 {
+            border: 1px solid black;
+            text-align: center;
+            width : 70px;
+            height : 40px;
+            background-color:gray;
+        }
+        .line3 {
+            border: 1px solid black;
+            text-align: center;
+            text-decoration: underline;
+            width : 100px;
+            height : 40px;
+            background-color:pink;
+            color: red;
+            font-weight : bold;
+        }
+        .line4 {
+            border: 1px solid black;
+            text-align: center;
+            width : 70px;
+            height : 40px;
+        }
+        .line5 {
+            border: 1px solid black;
+            text-align: center;
+            width : 100px;
+            height : 40px;
+        }
+        .line6 {
+            border: 1px solid black;
+            text-align: center;
+            width : 100px;
+            height : 40px;
+            vertical-align: middle;
+        }

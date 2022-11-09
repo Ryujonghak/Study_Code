@@ -1,0 +1,21 @@
+.a {
+    /* font-size : 글자크기
+    font-family : 글꼴 */
+    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    /* 글자 정렬 */
+    text-align: center;
+}
+.b {
+    /* em = 배수 */
+    /* p태그는 16px 사이즈를 가짐. */
+    font-size: 2em;
+    font-weight: bold;
+}
+.c {
+    font-size: large;
+}
+.d {
+    font-size: small;
+}

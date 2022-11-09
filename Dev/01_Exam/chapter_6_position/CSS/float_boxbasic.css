@@ -1,0 +1,18 @@
+.box1 {
+    width : 100px;
+    height : 100px;
+    background-color : red;
+    margin: 10px;
+    padding: 10px;
+    /* 태그를 왼쪽으로 붙입니다. */
+    float: left;
+}
+.box2 {
+    width : 100px;
+    height : 100px;
+    background-color : blue;
+    margin: 10px;
+    padding: 10px;
+    /* 태그를 오른쪽으로 붙입니다. */
+    float: right;
+}

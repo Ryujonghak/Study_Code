@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="sign">
+      <input type="text" name="first" value="Bora" />
+      <input type="text" name="last" value="Kim" />
+    </form>
+    <script>
+      // formData 객체 : 위의 form 다루는 객체
+      // formData 사용 : 이미지 업로드, 이미지 보여주기
+
+      // form 빈객체
+      let formData = new FormData();
+      // formData.append(속성명, 값);
+      formData.append(`name`, `zerocho`);
+      formData.append(`item`, `orange`);
+
+      console.log(formData.get(`name`));
+      console.log(formData.get(`item`));
+
+      // 삭제
+      formData.delete(`name`);
+      console.log(formData.get(`name`));
+
+      // 수정
+      formData.set(`item`, `yellow`);
+      console.log(formData.get(`item`));
+
+      // 기존 form 데이터 접근
+      let sign = document.querySelector(`#sign`); // 선택자를 통해 값을 가져와
+      let formData2 = new FormData(sign); // 매게변수로 값을 넣어줌.
+
+      console.log(formData2.get(`first`));
+      console.log(formData2.get(`last`));
+    </script>
+  </body>
+</html>

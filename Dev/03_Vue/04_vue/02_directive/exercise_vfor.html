@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 4.x : 디자인(css) 프레임워크 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 영역 :  -->
+    <div id="app">
+        <!-- class="container" -=> bootstrap class 들 -->
+        <!-- 적당한 박스로 중앙정렬 : container -->
+        <div class="container">
+            <!-- 샘플 테이블 추가 -->
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">도시</th>
+                    <th scope="col">동작</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <!-- v-for 반복문 : cities , city, index-->
+                  <tr v-for="(city, index) in cities" :key="index">
+                    <th scope="row">{{ index }}</th>
+                    <td>{{ city }}</td>
+                    <!-- v-on:click= "handleEvent(city)" -->
+                    <td>
+                        <button class="btn btn-primary"
+                                v-on:click= "handleEvent(city)"
+                        >선택</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- 테이블의 한 행을 선택하면 선택한 도시가 아래 표시 -->
+              <h4 class="text-success">{{ message }}</h4>
+        </div>
+        <!-- vue cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+        <script>
+            new Vue({
+                // html 과 뷰를 연결
+                el:"#app",
+                data() {
+                    return {
+                        message : "",
+                        cities : ["파리", "잘쯔부르크", "베네치아", "드라스덴"]
+                    }
+                },
+                methods: {
+                    handleEvent(val) {
+                        // 화면에 message 에 출력 val <- city("파리")
+                        // this.message = val
+                        this.message = "선택된 도시 : " + val;
+                    }
+                },
+            });
+        </script>
+    </div>
+</body>
+</html>

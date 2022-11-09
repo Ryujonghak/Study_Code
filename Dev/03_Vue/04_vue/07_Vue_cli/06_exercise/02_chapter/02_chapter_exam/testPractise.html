@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+		<style>
+			.strike-through {
+				text-decoration: line-through;
+				color:lightgray
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h2>이미지를 지정하는 예제</h2>
+		<div id="app">
+			<p v-bind:class="{'strike-through': isON}">데이터로 클래스 ON/OFF</p>
+			<button v-on:click="OnOff()">토글</button>
+			<p>{{ result }}</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					isON: true
+				},
+				methods: {
+					OnOff() {
+						this.isON = !this.isON;
+					}
+				},
+				computed: {
+				    result() {
+						return this.isON ? true : false
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

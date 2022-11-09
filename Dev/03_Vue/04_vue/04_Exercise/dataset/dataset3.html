@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>여러가지 데이터형을 표시하는 예제</h2>
+    <div id="app">
+        <!-- 배열을 출력 -->
+        <p>{{ myArray }}</p>
+        <!-- 배열 첫번째만 출력 -->
+        <p>{{ myArray[0] }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    myArray : ["다즐링", "얼그레이", "실론"]
+                }
+            },
+        })
+    </script>
+</body>
+</html>

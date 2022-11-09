@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>다 쓴 후에 입력되는 예제(다치면 엔터키 누름)</h2>
+    <div id="app">
+        <input type="text"
+            v-model.lazy="myText"
+        >
+        <p>입력후 표시 [{{ myText }}]</p>
+
+        <h2>입력을 자동으로 수식으로 변경 예제</h2>
+        <input type="number"
+            v-model.number="myNumber"
+        >
+        <p>100을 더해서 표시 {{ 100 + myNumber }}</p>
+
+        <h2>입력을 자동으로 수식으로 변경 않하는 예제</h2>
+        <input type="number"
+            v-model="myNumber"
+        >
+        <p>100을 더해서 표시 {{ 100 + myNumber }}</p>
+
+        <h2>앞뒤의 공백을 자동으로 제거하는(trim) 예제</h2>
+        <input type="text"
+            v-model.trim="myText2"
+        >
+        <p>앞뒤 공백을 제거 [{{ myText2 }}]</p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myText2:"",
+                    myText:"",
+                    myNumber:0
+                }
+            },
+        })
+    </script>
+
+</body>
+</html>

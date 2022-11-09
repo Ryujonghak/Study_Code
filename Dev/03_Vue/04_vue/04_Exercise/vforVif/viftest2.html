@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+<body>
+    <h2>클릭하면 "좋아~" 버튼을 안보이게 만드는 예제</h2>
+    <!-- html의 vue 영역 표시하는 부분 -->
+
+    <div id="app">
+        <button v-if="myVisible" 
+                v-on:click="good()"
+        >좋아~
+        </button>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myVisible:true
+                }
+            },
+            methods: {
+                good() {
+                    alert("곧 사라집니다." + "this.myVisible :" + this.myVisible);
+                    this.myVisible = false;
+                    alert("곧 사라졌네요." + "this.myVisible :" + this.myVisible);
+                }
+            },
+        })
+    </script>
+</body>
+</html>

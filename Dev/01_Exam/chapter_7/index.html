@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 공통디자인을 위한 css -->
+    <link rel="stylesheet" href="./CSS/common.css" />
+    <!-- header css(머리말) -->
+    <link rel="stylesheet" href="./CSS/header.css" />
+    <!-- nav css(메뉴) -->
+    <link rel="stylesheet" href="./CSS/navigation.css" />
+    <!-- section css (본문) -->
+    <link rel="stylesheet" href="./CSS/section.css" />
+  </head>
+  <body>
+    <div id="page-wrapper">
+      <!-- 시멘틱 태그(웹) : header, section, article, aside, footer -->
+      <!-- 머리말(Header) 시작 -->
+      <header id="main-header">
+        <h1 class="master-title">다양한 정보 소개 사이트</h1>
+        <h2 class="master-description">잡학사전</h2>
+      </header>
+      <!-- 머리말(Header) 끝 -->
+      <!-- 상단 메뉴 시작 -->
+      <nav id="main-navigation">
+        <!-- 좌측 메뉴 -->
+        <div class="pull-left">
+          <ul class="outer-menu">
+            <!-- 대메뉴 #1 -->
+            <li class="outer-menu-item">
+              <span class="menu-title">About</span>
+            </li>
+            <!-- 대메뉴 #2 -->
+            <li class="outer-menu-item">
+              <span class="menu-title">상품정보</span>
+            </li>
+          </ul>
+        </div>
+        <!-- 우측 검색엔진 -->
+        <div class="pull-right">
+          <div class="search-bar">
+            <input type="text" class="input-search" />
+            <input type="submit" value="검색" class="input-search-submit" />
+          </div>
+        </div>
+      </nav>
+      <!-- 상단 메뉴 끝 -->
+    </div>
+
+    <!-- 본문 시작 -->
+    <div id="content">
+      <!-- section(본문) 시작 -->
+      <section id="main-section">
+        <!-- article(소본문)#1 시작 -->
+        <article>
+          <div class="article-header">
+            <!-- Html5 개요 -->
+            <h1 class="article-title">HTML5 개요와 활용</h1>
+            <!-- 2013년 02월 14일 -->
+            <p class="article-date">2013년 02월 14일</p>
+          </div>
+          <div class="article-body">
+            <!-- 이미지 -->
+            <img
+              src="/chapter_6_position/IMG/cat.jpg"
+              alt="cat"
+              width="100px"
+              height="100px"
+            />
+            <!-- lorem -->
+            <br />
+            <br />
+            <p>고양이 입니다.</p>
+          </div>
+        </article>
+        <!-- article(소본문)#1 끝 -->
+
+        <!-- article(소본문)#2 시작 -->
+        <article>
+          <div class="article-header">
+            <!-- Html5 개요 -->
+            <h1 class="article-title">HTML5 개요와 활용</h1>
+            <!-- 2013년 02월 14일 -->
+            <p class="article-date">2013년 02월 14일</p>
+          </div>
+          <div class="article-body">
+            <!-- 이미지 -->
+            <img
+              src="/chapter_6_position/IMG/cat.jpg"
+              alt="cat"
+              width="100px"
+              height="100px"
+            />
+            <!-- lorem -->
+            <br />
+            <br />
+            <p>고양이 입니다.</p>
+          </div>
+        </article>
+        <!-- article(소본문)#2 끝 -->
+      </section>
+      <!-- section(본문) 끝 -->
+
+      <!-- aside(우측 메뉴) 시작 -->
+      <aside id="main-aside">
+        <div class="aside-list">
+          <!-- 카테고리 -->
+          <h3>카테고리</h3>
+          <!-- 데이터 -->
+          <ul>
+            <li>
+              <a href="#">네이버</a>
+            </li>
+            <li>
+              <a href="#">구글</a>
+            </li>
+          </ul>
+        </div>
+        <div class="aside-list">
+          <!-- 카테고리 -->
+          <h3>카테고리</h3>
+          <!-- 데이터 -->
+          <ul>
+            <li>
+              <a href="#">네이버</a>
+            </li>
+            <li>
+              <a href="#">구글</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!-- aside(우측 메뉴) 끝 -->
+    </div>
+    <!-- 본문 끝 -->
+
+    <!-- 꼬리말(footer) 시작 -->
+    <footer id="main-footer">
+      <a href="">made by Ryu jong hak</a>
+    </footer>
+    <!-- 꼬리말(footer) 끝 -->
+  </body>
+</html>

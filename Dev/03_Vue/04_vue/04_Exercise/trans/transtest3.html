@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <!-- lodash cdn -->
+    <!-- (배열,객체)기능 : 정렬(오름,내림), 셔플(랜덤), 중복값 제거 등 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+</head>
+</head>
+<body>
+    <h2>리스트의 순서가 랜덤 또는 sort하는 애니메이션 예제</h2>
+    <div id="app">
+        <ul>
+            <transition-group>
+                <!-- v-for문 돌려서 목록 출력 -->
+                <li v-for="item in dataArray" :key="item"> 
+                    {{ item }}
+                </li>
+            </transition-group>
+        </ul>
+        <!-- 자바스크립트 내장 함수 : .sort(), 로직짜야됨(.random()) -->
+        <!-- lodash 사용 _.orderBy(), _.shuffle() -->
+        <button v-on:click="sortData()">소트</button>
+        <button v-on:click="shuffleData()">셔플</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    dataArray: ["one", "two", "three", "four", "five"],
+                }
+            },
+            methods: {
+                sortData() {
+                    // this.dataArray = _.orderBy(this.dataArray);
+                    // 내림차순
+                    // 사용법 : _orderBy(배열, 대상컬럼, ["desc", "asc"])
+                    // this.dataArray = _.orderBy(this.dataArray, 0, "desc");
+                    // 오름차순
+                    this.dataArray = _.orderBy(this.dataArray, 0, "asc");
+                },
+                shuffleData() {
+                    this.dataArray = _.shuffle(this.dataArray);
+                }
+            },
+        })
+    </script>
+
+    <style>
+        /* 나타나고 있을때와 사라질때 시간 표시 : 0.5초 */
+        .v-enter-active, .v-leave-active {
+            transition: 0.5s;
+        }
+
+        /* 나타나기전의 상태와 사라진 상태 투명도 0 */
+        /* 오른쪽으로 50 이동 */
+        .v-enter, .v-leave-to {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+    </style>
+</body>
+</html>

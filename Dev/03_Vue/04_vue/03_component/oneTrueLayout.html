@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- header-com 컴포넌트 -->
+        <header-com></header-com>
+        <!-- nav-com 컴포넌트 -->
+        <nav-com></nav-com>
+        <!-- section-com 컴포넌트 -->
+        <section-com></section-com>
+        <!-- footer-com 컴포넌트 -->
+        <footer-com></footer-com>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+
+    <script>
+        new Vue({
+            el:"#app",
+            components: {
+                "header-com" : {
+                    template: "<header>헤더입니다.</header>"
+                },                
+                "nav-com" : {
+                    template: "<nav>메뉴입니다.</nav>"
+                },                
+                "section-com" : {
+                    template: `
+                    <section>
+                        <p>본문입니다.</p>
+                        <p>본문입니다.</p>
+                        <p>본문입니다.</p>
+                        <p>본문입니다.</p>
+                        <p>본문입니다.</p>
+                        <p>본문입니다.</p>
+                    </section>
+                    `
+                },                
+                "footer-com" : {
+                    template: "<footer>꼬리말입니다.</footer>"
+                },
+
+            }
+        })
+    </script>
+</body>
+</html>

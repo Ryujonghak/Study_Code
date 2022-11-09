@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>인접 관계 선택자</h1>
+      <p>내용1</p>
+      <p class="txt">내용2</p>
+      <p>내용3</p>
+      <p>내용4</p>
+    </div>
+    <!-- .prev() .next() 전체선택 원할시 All 사용-->
+    <script>
+      $(function () {
+        $(".txt").prev().css({
+          "background-color": "#0ff",
+        });
+        $(".txt").next().css({
+          "border-weight": "2px",
+          "border-style": "dashed",
+          "border-color": "#f00",
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/register_member.css" />
+  </head>
+  <body>
+    <div id="view">
+      <form>
+        <h1>회원가입 정보</h1>
+        <ul>
+          <li>
+            <!-- 유효성 체크 : 필수, 최대자리수 8자리  -->
+
+            <label class="field" for="nikId">회원 ID : </label>
+            <input
+              type="text"
+              id="user-id"
+              placeholder="영문과 숫자로 입력"
+              required
+            />
+          </li>
+          <li>
+            <!-- 유효성 체크 : 필수, 최소자리수 8자리  -->
+
+            <label class="field" for="niktel">비밀번호 : </label>
+            <input
+              type="password"
+              id="user-pw1"
+              placeholder="8자리 이상 비밀번호 적기"
+              minlength="8"
+              required
+            />
+          </li>
+          <li>
+            <!-- 유효성 체크 : 필수, 최대자리수 8자리  -->
+
+            <label class="field" for="nikName">이름 : </label>
+            <input
+              type="text"
+              class="input-box"
+              id="nikName"
+              name="nikName"
+              maxlength="8"
+              required
+            />
+          </li>
+          <li>
+            <!-- 유효성 체크 : 필수, 최소자리수 8자리  -->
+            <label class="field" for="niktel">전화번호 : </label>
+            <input
+              type="number"
+              class="pwd-box"
+              id="nikTel"
+              name="nikTel"
+              minlength="8"
+              required
+            />
+          </li>
+          <li>
+            <!-- 유효성 체크 : 필수, 최대자리수 8자리  -->
+
+            <label class="field" for="nikName">이메일 : </label>
+            <input
+              type="text"
+              class="input-box"
+              id="nikName"
+              name="nikName"
+              required
+            />
+          </li>
+        </ul>
+        <ul id="buttons">
+          <!-- submit 버튼 -->
+          <li><button type="submit" class="btn btnblack">가입하기</button></li>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>

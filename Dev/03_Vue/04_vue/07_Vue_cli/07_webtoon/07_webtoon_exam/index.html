@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js sample</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        a {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .wrap {
+            max-width: 450px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* position: relative 추가 */
+        .item {
+            position: relative;
+            border-bottom: 1px solid #ebebeb;
+            margin-bottom: 25px;
+        }
+
+        .tit {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            padding: 20px 15px;
+        }
+
+        img {
+            width: 100%;
+            background: #ebebeb;
+            border-radius: 4px;
+        }
+
+        /* .tag 추가 */
+        .tag {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            padding: 5px 30px;
+            color: #fff;
+            border-radius: 4px;
+            background: #fc2332;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <webtoon-component :items="webtoons" ></webtoon-component>
+    </div>
+
+    <script>
+        var WebtoonComponent = {
+            /* html */
+            template: `
+            <div class="wrap">
+                <!-- 토글 버튼 추가 : show가 true이면 웹툰, 아니면 설문조사 -->
+                <button v-on:click="show = !show">웹툰 / 설문조사 보기</button>
+                <!-- 웹툰 -->
+                <div v-if="show">
+                    <h2>Webtoon</h2>
+                    <ul>
+                        <li class="item" v-for="item in items" :key="item.id">
+                            <a :href="item.link" target="_blank">
+                                <img :src="item.img" />
+                                <input
+                                    type="checkbox"
+                                    :id="item.id"
+                                    :value="item.name"
+                                    v-model="checkedWebtoons"
+                                />
+                                <span class="tit">제목: {{ item.name }}</span>
+                            </a>
+                            <span class="tag" v-if="item.isUpdate">N</span>
+                        </li>
+                        <!-- 찜한 웹툰 추가하기 -->
+                        <span class="tit">{{ title }} : </span>
+                        <span
+                            class="tit"
+                            v-for="(checkedWebtoon, idx) in checkedWebtoons"
+                            :key="idx"
+                            >{{ checkedWebtoon }}</span
+                        >
+                    </ul>
+                </div>
+                <!-- 간단한 설문 조사 추가 -->
+                <div v-else>
+                    <h2>성별</h2>
+                    <input type="radio" id="male" value="남" v-model="gender" />
+                    <label for="male">남</label>
+                    <input type="radio" id="female" value="여" v-model="gender" />
+                    <label for="female">여</label>
+                    <br />
+                    <span>당신의 성별을 알려주세요: {{ gender }}</span>
+                    <!-- 선호 장르 추가 -->
+                    <h2>선호 장르</h2>
+                    <select v-model="category">
+                        <option disabled value>선택해주세요</option>
+                        <option>로맨스</option>
+                        <option>호러</option>
+                        <option>스릴러</option>
+                    </select>
+                    <span> 선택: {{ category }}</span>
+                </div>
+            </div>
+                    `,
+            props: ["items"],
+            data() {
+                return {
+                    // 찜한 웹툰 추가하기
+                    title: "찜한 웹툰",
+                    checkedWebtoons: [],
+                    // 성별, 장르 추가하기
+                    gender: "남",
+                    category: "",
+                    // 설문조사 보이기 안보이기
+                    show: true,
+                };
+            },
+        }
+
+        new Vue({
+            el: '#app',
+            components: {
+                'webtoon-component': WebtoonComponent
+            },
+            data() {
+                return {
+                    webtoons: [
+                        {
+                            name: "햄스터와 그녀",
+                            link: "http://webtoon.daum.net/webtoon/view/hamsterandher",
+                            img: "http://t1.daumcdn.net/webtoon/op/478cdf37f585607982ffa9e35b432e8503be8a54",
+                            isUpdate: true,
+                        },
+                        {
+                            name: "프롬 스타",
+                            link: "http://webtoon.daum.net/webtoon/view/fromstar",
+                            img: "http://t1.daumcdn.net/webtoon/op/a7fb953d722c1130bfc18440f7e3ce448ece57a1",
+                            isUpdate: true,
+                        },
+                        {
+                            name: "위대한 로맨스",
+                            link: "http://webtoon.daum.net/webtoon/view/greatromance",
+                            img: "http://t1.daumcdn.net/webtoon/op/a816281cb4df5c50a20ac386fd6e496643d0f085",
+                            isUpdate: false,
+                        },
+                        {
+                            name: "빛나는 손을",
+                            link: "http://webtoon.daum.net/webtoon/view/Hand",
+                            img: "http://t1.daumcdn.net/cartoon/5913FCAC0234C50001",
+                            isUpdate: false,
+                        },
+                    ],
+                };
+            },
+        })
+    </script>
+</body>
+
+</html>

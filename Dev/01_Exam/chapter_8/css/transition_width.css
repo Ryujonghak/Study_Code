@@ -1,0 +1,16 @@
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background-color: blue;
+    border:1px solid black;
+    transition-property: width, height;
+    /* property : 속성 */
+    transition-duration: 2s, 1s;
+    /* duration : 지속시간 */
+}
+
+.box:hover {
+    width: 200px;
+    height: 120px;
+}

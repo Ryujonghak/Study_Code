@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #box {
+        width: 120px;
+        height: 30px;
+        margin-top: 10px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">클릭</button>
+    <button id="btn2">더블클릭</button>
+    <div id="box">div 요소</div>
+    <p id="show"></p>
+
+    <script>
+      $(function () {
+        $("#btn1").click(function () {
+          $("#show").text("SG Show");
+          $("#box").css({
+            "background-color": "red",
+          });
+        });
+        $("#btn2").dblclick(function () {
+          $("#show").text("DB Show");
+          $("#box").css({
+            "background-color": "blue",
+          });
+        });
+        $("#box").mouseenter(function () {
+          $("#show").text("MouseEnter");
+          $(this).css({
+            "background-color": "orange",
+          });
+        });
+        $("#box").mouseleave(function () {
+          $("#show").text(" ");
+          $(this).css({
+            "background-color": "yellow",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

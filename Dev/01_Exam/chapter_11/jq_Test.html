@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 class="tit">제이쿼리</h1>
+    <h2>선택자</h2>
+    <h3 class="tit">직접 선택자</h3>
+    <h4>인접 선택자</h4>
+
+    <script>
+      $(function () {
+        $("h1.tit").css({
+          "border-weight": "5px",
+          "border-color": "black",
+          "border-style": "dashed",
+          "background-color": "aqua",
+        });
+        $("h3.tit").css({
+          "border-weight": "10px",
+          "border-color": "red",
+          "border-style": "dashed",
+        });
+      });
+    </script>
+  </body>
+</html>

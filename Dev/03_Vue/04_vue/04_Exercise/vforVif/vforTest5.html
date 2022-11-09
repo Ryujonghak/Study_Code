@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+</head>
+<body>
+    <h2>버튼으로 리스트에 추가/삭제 예제</h2>
+    <div id="app">
+        <ul>
+            <!-- v-for문 -->
+            <li v-for="item in myArray">{{ item }}</li>
+            <!-- 1st 결과화면 : 첫번째 => 수정 -->
+
+        </ul>
+        <!-- 힌트 : 배열 자바스크립트 함수 - .push() -->
+        <button v-on:click="addLast()">맨 뒤에 추가</button>
+        <!-- 힌트 : 배열 자바스크립트 함수 - .splice() -->
+        <button v-on:click="deleteObj()">두번째를 삭제</button>
+        <!-- 힌트 : 배열 자바스크립트 함수 - .splice() -->
+        <button v-on:click="addObj()">네번째에 추가</button>
+        <!-- 힌트 : 배열 자바스크립트 함수 - .splice() -->
+        <!-- 삭제 후 추가 -->
+        <button v-on:click="changeObj()">첫번째를 수정</button>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myArray: ["첫번째", "두번째","세번째", "네번째", "다섯번째"]
+                }
+            },
+            methods: {
+                // 추가 함수
+                addLast() {
+                    // 자바스크립트 내장함수 : .push()
+                    // 사용법 : 배열.push(배열에 추가할원소)
+                    // 배열의 끝에 원소를 추가
+                    this.myArray.push("맨뒤에 추가");
+                },
+                // 삭제 함수
+                deleteObj() {
+                    // 배열번호 : 0 ~ n
+                    // 사용법 : 배열.splice(인덱스번호, 삭제할개수, 추가할원소)
+                    this.myArray.splice(1,1)
+                },
+                // 어떤 위치에 추가 함수
+                addObj() {
+                    // 사용법 : 배열.splice(인덱스번호, 삭제할개수, 추가할원소)
+                    this.myArray.splice(3,0,"추가");
+                },
+                changeObj() {
+                    // 사용법 : 배열.splice(인덱스번호, 삭제할개수, 추가할원소)
+                    this.myArray.splice(0,1,"수정");
+                }
+            },
+        })
+    </script>
+</body>
+</html>

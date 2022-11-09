@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /* margin, padding 초기화 */
+        /* 이유: 웹브라우저 마다 html 태그에 기본마진, 패딩이 조금씩 다름 */
+      img {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        float: left;
+      }
+      #desc {
+        border: 1px solid red;
+        float: left;
+        margin-left: 20px;
+      }
+      #menu {
+        border: 1px solid red;
+        /* margin: 0 0 0 0; */
+        float: right;
+      }
+      #menu ul {
+        padding: 10px;
+      }
+      #menu li {
+        padding: 5px;
+        list-style-type: none;
+        border-bottom: dashed 1px gray;
+        /* text-decoration: underline;
+        text-decoration-style: dotted; */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/chapter_6/img/salad.jpg" alt="salad" />
+    <div id="desc">
+      <h1>강아지풀</h1>
+      <p>
+        길가나 들에서 자라는 풀로써 <br>꽃은 9월에 피고 연한 녹색 또는 자주색입니다.
+      </p>
+    </div>
+    <div id="menu">
+      <ul>
+        <li>강아지풀</li>
+        <li>패랭이꽃</li>
+        <li>할미꽃</li>
+        <li>코스모스</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+#main-navigation {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 40px;
+  height: 40px;
+  width:960px;
+  /* margin: 0 auto; */
+  /* text-align: center; */
+}
+
+/* 좌측 nav */
+.pull-left {
+  float: left;
+}
+
+/* .outer-menu {} */
+
+/* 대메뉴 #1,#2 li (About, 상품정보)  */
+.outer-menu-item {
+  border: 1px solid black;
+  /* float: left; */
+  display: inline-block;
+}
+.outer-menu-item:hover {
+  /* :hover -> 마우스가 위로 올라오면 중괄호의 디자인이 적용됨.*/
+  background-color: black;
+  color: white;
+}
+
+/* 대메뉴 안에 있는 글자 (About, 상품정보) */
+.menu-title {
+  /* 글자 수평정렬 */
+  text-align: center;
+  height: 30px;
+  width: 130px;
+  /* 글자 수직정렬 */
+  line-height: 30px;
+  padding: 5px 20px;
+}
+
+/* 검색엔진 스타일 정의 */
+.pull-right {
+  float: right;
+}
+
+.search-bar {
+  height: 26px;
+  padding: 7px;
+}
+
+/* 검색 입력 박스 스타일 정의 */
+.input-search {
+  color: black;
+  padding: 0 0 0 10px;
+  /* border-radius : 왼쪽 위 , 오른쪽 위, 오른쪽 아래, 왼쪽 아래 */
+  border: 1px solid #ccc;
+  border-radius: 15px 0 0 15px;
+  width : 120px;
+  height: 24px;
+  /* input박스 안의 입력 글자 크기 지정 */
+  font-size: 12px;
+  float: left;
+}
+.input-search:focus {
+  /* rgba(r(0~255), g, b, a(투명도)) */
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+}
+
+/* 검색 버튼 스타일 정의 */
+.input-search-submit {
+  float: left;
+  width: 50px;
+  height: 26px;
+  border: 1px solid #ccc;
+  /* border-radius : 왼쪽 위 , 오른쪽 위, 오른쪽 아래, 왼쪽 아래 */
+  border-radius: 0 15px 15px 0;
+  margin-left: 5px;
+}

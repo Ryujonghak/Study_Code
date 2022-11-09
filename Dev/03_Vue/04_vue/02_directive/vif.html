@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            border: 4px solid teal;
+            background: yellow;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        #app > div {
+            border: 4px solid teal;
+            background: yellow;
+            padding: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 뷰 영역 -->
+    <div id="app">
+        <h3>v-if directive를 이용한 조건처리</h3>
+        <p v-if="error">에러 발생 : 이미지를 로드하지 못했습니다.</p>
+        <!-- v-show -->
+        <p v-show="appear"><img src="./img/prod1.jpg"></p>
+        <!-- <p v-else-if="appear"><img src="./img/prod1.jpg"></p>
+        <p v-else>에러가 발생하지 않았습니다.</p> -->
+        <!-- 이미지 보여주기 -->
+        <button v-on:click="errorToggle()">에러 ON/OFF</button>
+    </div>
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    
+    <!-- vue 생성 -->
+    <script>
+        new Vue({
+            // 뷰와 html div id와 연결
+            el: "#app",
+            // 뷰에서 사용한 데이터(변수(속성))
+            data() {
+                return {
+                    error: true,
+                    appear: false // 이미지 상태 변수(false)
+                }
+            },
+            methods: {
+                // 함수(메소드)
+                errorToggle() {
+                    this.error = !this.error; // !true == false
+                    // error == false 이면 이미지를 보여주고
+                    // error == true 이면 이미지를 안보여주기
+                    if(this.error == false) {
+                        // 이미지 보여주기 : appear = true
+                        this.appear = true;
+                    } else {
+                        // 이미지 안보여주기
+                        this.appear = false;
+                    }
+                }
+            },
+        });
+    </script>
+</body>
+</html>

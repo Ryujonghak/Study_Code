@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>뷰 라우터 예제</h1>
+        <p>
+            <!-- router-link to="/main" == a href="/main" -->
+            <!-- home 메뉴추가(root) : / == 최초에 화면이 뜰때 보여줄 페이지 -->
+            <router-link to="/">Home 컴포넌트로 이동</router-link>
+            <router-link to="/main">Main 컴포넌트로 이동</router-link>
+            <router-link to="/login">Login 컴포넌트로 이동</router-link>
+            <router-link to="/board">board 컴포넌트로 이동</router-link>
+            <!-- board 메뉴추가 : /board -->
+
+        </p>
+        <!-- 컴포넌트가 보여질 공간 -->
+        <router-view></router-view>
+    </div>
+    <!-- Vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>  
+    <!-- Vue Router(메뉴) cdn -->
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <!-- Vue 정의 : 라우터 자바스크립트 분리 -->
+    <script src="./js/route/router.js"></script>
+</body>
+</html>

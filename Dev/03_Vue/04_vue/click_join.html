@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 영역 -->
+    <div id="app">
+        <p>{{ message }}</p>
+        <!-- <button v-on:click="reverseMsg">문자열 역순</button> -->
+        <!-- 축약식 : v-on: == @ -->
+        <button @click="reverseMsg">문자열 역순</button>
+    </div>
+
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            // 1) message : "Hello Vue!"
+            // 2) methods : reverseMsg() -> 
+            //    문자열 -> 배열(split) -> 역순배열(reverse) -> 문자열(join)  
+            //    this.message = this.message.split("").reverse().join("");
+            //    return this.message;
+            // message 값이 뒤집어져서 화면에 표시됨
+            el: "#app",
+            data() {
+                return {
+                    message: "Hello Vue"
+                }
+            },
+            methods: {
+                reverseMsg() {
+                    // this.변수(속성명) == data() { 변수(속성명) }
+                    this.message = this.message.split("").reverse().join("");
+                    return this.message;
+                }
+            },
+        });
+    </script>
+</body>
+</html>

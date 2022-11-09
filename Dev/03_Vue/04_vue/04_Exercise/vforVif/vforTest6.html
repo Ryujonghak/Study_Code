@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+</head>
+<body>
+    <h2>버튼으로 클릭하면 sort(정렬)하는 예제</h2>
+    <div id="app">
+        <ul>
+            <!-- v-for문 -->
+            <li v-for="item in myArray">{{ item }}</li>
+            <!-- 자바스크립트 내장함수 : .sort() (오름차순정렬) -->
+            <!-- 오름차순 : a,b,c,d,e,f 정렬-->
+            <!-- 내림차순 : f,e,d,c,b,a 정렬-->
+            <!-- 배열 : 배열.sort(), 배열.push(), 배열.splice() -->
+            <button v-on:click="sortData(myArray)">정렬(sort)</button>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myArray:["one", "two", "three", "four","five"]
+                }
+            },
+            methods: {
+                // 매개변수 : myArray -> listData
+                sortData(listData) {
+                    // .sort() : 문자열기준으로 오름차순 정렬
+                    // listData.sort();
+
+                    // 매개변수 넣는 형태
+                    // 자바스크립트 내장함수 : .sort(비교함수)
+                    // 오름차순 정렬
+                    listData.sort(function(a, b) {
+                        return (a < b ? -1 : 1);
+                    }) 
+
+                    // 내림차순 정렬
+                    // listData.sort(function(a, b) {
+                    //     return (a > b ? -1 : 1);
+                    // }) 
+                }
+            },
+        })
+    </script>
+</body>
+</html>

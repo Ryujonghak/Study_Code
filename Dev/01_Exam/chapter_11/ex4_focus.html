@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- .focus() .blur() .change() -->
+    <p>- ID: <input type="text" /></p>
+    <select>
+      <option>2020</option>
+      <option>2021</option>
+      <option>2022</option>
+      <option>2023</option>
+    </select>
+    <p id="show"></p>
+    <script>
+      $(function () {
+        $("input")
+          //커서 생김.
+          .focus(function () {
+            $(this).css({
+              "background-color": "yellow",
+            });
+          })
+          //커서 없어짐.
+          .blur(function () {
+            $(this).css({
+              "background-color": "pink",
+            });
+          });
+        $("select").change(function () {
+          $("#show").text("선택박스의 값이 바뀌었습니다.");
+        });
+      });
+    </script>
+  </body>
+</html>

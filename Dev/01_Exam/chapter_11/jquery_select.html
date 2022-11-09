@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery CDN : 인터넷에서 링크를 참조 -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.js"
+      integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <script>
+      // 바닐라 스크립트(전통 js) 선택자 : querySelector(`#id, .class, tag 등`);
+      // jQuery 선택자 : $.(`#id, .class, tag 등`).function();
+
+      // 예전 방식
+      //   $(document).ready(function () {}); => window.onload() 와 같이 항상 자바스크립트를 마지막에 실행되게 해줌.
+      //   $(document).ready(function () {
+      //     // 스타일 속성 변경
+      //     $(`h1`).css(`color`, `red`);
+      //     $(`h1`).css(`background`, `black`);
+      //   });
+
+      $(function () {
+        // 스타일 속성 변경
+        $(`h1`).css(`color`, `red`);
+        $(`h1`).css(`background`, `black`);
+      });
+    </script>
+  </body>
+</html>

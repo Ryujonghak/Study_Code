@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+</head>
+</head>
+<body>
+    <h2>배열 데이터를 리스트로 표시하는 예제</h2>
+    <div id="app">
+        <!-- 순서없는 목록(ul, li) 배열 데이터 출력하세요 -->
+        <!-- 힌트 : v-for문 쓰기 -->
+        <ul>
+            <li v-for="item in myArray">
+                <!-- item : myArray[0] -->
+                <!-- item : myArray[1] -->
+                <!-- item : myArray[2] -->
+                <!-- 값이 없으므로 v-for 종료 -->
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    myArray: ["찜빵", "멜론빵", "크로와사"]
+                }
+            },
+        })
+    </script>
+</body>
+</html>
