@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <!--테이블 형태로 객체정보 출력하기: Bootstrap 사용-->
+
+
+    <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">DNO</th>
+                <th scope="col">DNAME</th>
+                <th scope="col">LOC</th>
+            </tr>
+            </thead>
+            </tr>
+
+            <tbody th:each="element : ${list}">
+            <tr>
+                <th scope="row"></th>
+                <td>[[${element.dno}]]</td>
+                <td>[[${element.dName}]]</td>
+                <td>[[${element.loc}]]</td>
+
+        </tbody>
+        </table>
+    <script th:inline="javascript">
+        let obj = [[${list}]];
+        console.log(obj); // 데이터가 잘넘어왔는지 확인
+    </script>
+</div>
+</body>
+</html>

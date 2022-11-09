@@ -1,0 +1,4022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>1조 Code Up 풀이</h1>
+    <span>1조 조원: 류종학, 강수빈, 김철원, 문영석, 정주희, 최아리</span>
+  </body>
+  <script>
+    // TODO: CodeUp 100제
+
+    // // #1001 Hello 출력
+    // document.write("#1001 Hello<br>")
+
+    // // #1002 Hello World 출력
+    // document.write("#1002 Hello World<br>")
+
+    // // #1003 Hello World 출력
+    // document.write("#1003 Hello" + "<br> World<br>")
+
+    // // #1004 'hello' 출력
+    // document.write("#1004 'Hello'<br>")
+
+    // // #1005 "Hello World" 출력 // 큰따옴표, 작은따옴표 병행사용
+    // document.write('#1005 "Hello World"<br>')
+
+    // // #1006 특수문자 출력
+    // document.write('#1006 "!@#$%^&*()"<br>')
+
+    // // #1007 파일 경로 출력 // 역슬래시 2개 사용
+    // document.write('#1007 "C:\\Download\hello.cpp"<br>')
+
+    // // #1008 유니코드 특수문자(선문자) 출력
+    // document.write('#1008<br>' + "\u250F\u2533\u2513" +'<br>' + "\u2523\u254b\u252b" + '<br>' + "\u2517\u253b\u251b")
+
+    // // #1010 정수 1개 입력받아 그대로 출력하기
+    // let k1010 = Number(prompt("#1010 정수를 입력하세욥"))
+    // document.write("#1010  " + k1010 + "<br>")
+
+    // #1011 문자 1개 입력받아 그대로 출력하기
+    // let k1011 = prompt("#1011 문자를 입력하세욥")
+    // document.write("#1011  " + k1011+ "<br>")
+
+    // #1012 실수 1개 입력받아 그대로 출력하기
+    // let k1012 = Number(prompt("#1012 실수를 입력하세욥"))
+    // document.write("#1012  " + k1012+ "<br>")
+
+    // // #1013 정수 2개 입력받아 그대로 출력하기
+    // let k1013 = prompt("#1013 정수 2개를 입력하세욥 입력사이 공백").split(" ")
+    // // 1개 변수에 split(공백) 으로 정수 2개를 동시 입력받은 뒤
+    // let a1013 = Number(k1013[0]); let b1013 = Number(k1013[1])
+    // // 변수 2개에 각각 Number 형변환 하여 저장해준다. (입력조건 충족위해)
+    // document.write("#1013  " + a1013 + " " + b1013 + "<br>")
+
+    // // #1014 문자 2개 입력 받아 순서 바꿔 출력하기
+    // let k1014 = prompt("문자 2개 입력 해주세요 입력사이 공백").split(" ");
+    // // 문자 2개를 스플릿(공백)으로 입력을 받고
+    // document.write("#1014  " + k1014[1] + k1014[0] + "<br>")
+    // // 배열화된 변수를 인덱스 순서를 바꿔 출력
+
+    // #1015 실수 입력받아 소숫점 둘째자리까지 출력하기
+    // let k1015 = Number(prompt());
+    // document.write("입력값 : " + k1015 + "    출력값 : " + k1015.toFixed(2))
+    // // .toFixed(n) n+1째 자리에서 반올림하여 n번째 자리까지 출력
+
+    // #1017 1개 정수 입력 받아 3번 출력
+    // let k1017 = Number(prompt("정수를 입력해주세욥"))
+    // document.write("#1016  " + k1017 + " " + k1017 + " " + k1017 + "<br>")
+
+    // #1018 시간 입력 받아 그대로 출력하기, 시와 분은 : 으로 구분되어 입력 입력예시(8:45)
+    // let k1018 = prompt("시간을 입력해주세요   입력예)8:45").split(":");
+    // document.write("#1018  " + k1018[0] + ":" + k1018[1] + "<br>")
+
+    // // #1019 연원일을 입력받아 지정형식으로 출력, 입력예시 2013.8.5
+    // let k1019 = prompt("시간을 입력해주세요   입력예)2015.5.19").split(".");
+    // k1019[1] = k1019[1] >= 10 ? k1019[1] : '0'+k1019[1];
+    // k1019[2] = k1019[2] >= 10 ? k1019[2] : '0'+k1019[2];
+    // // 삼항연산자를 이용, 월(k1019[1])과 일(k1019[2])가 10보다 작을경우 문자열'0'을 앞에 붙여 출력을 충족시킨다
+    // document.write("#1019  " + k1019[0] + "." + k1019[1] + "." + k1019[2] +"<br>")
+
+    // #1020 주민등록번호 13자리 입력받아 앞6, 뒤7자리를 붙여서 한줄로 출력
+    // let k1020 = prompt("주민등록번호를 입력해주세요").split("-")
+    // document.write("#1020  " + k1020[0] + k1020[1])
+
+    // #1021 1개 단어 입력받아 그대로 출력(단, 단어의 길이는 50자 이하)
+    // let k1021 = prompt("단어를 입력해주세요, 단 단어는 50자 이하")
+    // k1021 = k1021.length > 50 ? alert("50자 초과") :   document.write("#1021  " + k1021);
+    // 삼항연산자 사용, 50자 초과시 alert 발생, 50자 이하시 출력
+
+    // #1022 문장 1개 입력받아 그대로 출력하기(단, 문장의 길이는 2000자 이하)
+    // let k1022 = prompt("문장을 입력해주세요, 단 문장의 총 길이는 2000자 이하")
+    // k1022 = k1022.length > 2000 ? alert("2000자 초과") : document.write("#1022  " + k1022);
+
+    // #1023 실수 1개 입력 받아 부분별로 출력하기 // 정수(10000이하) 출력 , 실수부분(소숫점 최대 6자리) 출력
+    // let k1023 = prompt("실수를 입력해주세요, 절대값 10000 이하, 소숫점 6자리 까지").split(".")
+    // if(k1023[0] < 10000 && k1023[1].length < 7)
+    //     // 정수부가 1만보다 작고, 소숫점자리의 길이가 7보다 작을 때 결과 출력
+    // document.write("#1023  " + k1023[0] + "<br>#1023  " + k1023[1])
+    // else
+    // alert("입력조건 미충족")
+
+    // // #1024 단어 1개 입력받아 나누어 출력하기, 단 길이는 20자 이하
+    // let k1024 = prompt("단어를 입력해주세요, 단 길이는 20자 이하")
+    // if (k1024.length < 21) {
+    //     for (let i = 0; i < k1024.length; i++)
+    //         document.write("#1024  " + k1024[i] + "<br>")
+    // }
+    // else
+    //     alert("입력조건 미충족")
+
+    // #1025 다섯자리의 정수 1개를 입력받아 각 자리로 나누어 출력 입력값은 10000 <= n <= 99999
+    // let k1025 = prompt("다섯자리 정수를 입력해주세요, 10000 <= n <= 99999")
+    // if(Number(k1025) < 10000 || Number(k1025) > 100000)        //
+    //     alert("입력조건 미충족")        //
+    // else
+    //     document.write("#1025  " + k1025[0]+"0000<br>#1025  " + k1025[1] + "000<br>#1025  " +
+    //      k1025[2] + "00<br>#1025  " + k1025[3]+ "0<br>#1025  " + k1025[4])
+
+    // #1026 시분초 입력받아 분만 출력하기 (입력예시 17:18:19) 출력 : 18
+    // let k1026 = prompt("시간을 입력해주세요, 입력예시 11:22:33").split(":")
+    // if(k1026[0] < 24 && k1026[1] < 60 && k1026[2] < 60)
+    // 시가 24 이하이며 분과 초가 60 이하일때만 정상출력, 외에 오류처리
+    //     document.write("#1026  " + k1026[1])
+    //     else
+    //     alert("시간 범위 초과")
+
+    // // #1027 년월일 입력받아 형식 바꿔서 출력 (입력예시 2015.05.19 -> 출력예시 19-05-2015)
+    // let k1027 = prompt("년월일을 입력해주세요. 입력예시 2015.05.19").split(".");
+    // document.write("#1027  " + k1027[2] + "-" + k1027[1] + "-" + k1027[0])
+
+    // #1028 입력받은 정수(0 ~ 4294967295) 그대로 출력
+    // let k1028 = Number(prompt("정수를 입력해주세요 입력범위 0 ~ 4294967295"))
+    // if(k1028 >= 0 && k1028 < 4294967296)
+    //     document.write("#1028  " + k1028)
+    //     else
+    //     alert("입력범위 미충족")
+
+    // #1029 실수 1개 입력받아 그대로 출력하기, 소수점 이하 11자리 까지 반올림하여 출력.
+    // 코드업의 문제 출제 의도는 C에서 자료형의 사용이지만 귀찮아서 대충함..
+    // let k1029 = prompt("실수를 입력해주세요").split(".")
+    // if (k1029[1].length < 309) {
+    //     let aa = k1029[0] + "."+k1029[1]
+    //     let bb = Number(aa)
+    //     // 실수 범위 충족시 입력된 값 string을 aa에(정수 + . + 실수) 다시 모은뒤 bb로 Number로 형변환
+    //     document.write("#1029  " +bb.toFixed(11))
+    //     // toFixed(11) 로 11번째 자리까지 출력
+    // }
+    // else
+    //     alert("입력범위 초과")
+
+    // #1030 정수 1개 입력받아 그대로 출력하기
+    // let k1030 = Number(prompt("정수를 입력해주세요"))
+    // document.write("#1030  " + k1030)
+
+    // #1031 10진수 입력받아 8진수로 출력
+    // let k1031 = Number(prompt("정수를 입력해주세요"))
+    // document.write("#1031  " + k1031.toString(8))
+
+    // #1032 10진수 입력받아 16진수(소문자)로 출력
+    // let k1032 = Number(prompt("정수를 입력해주세요"))
+    // document.write("#1032  " + k1032.toString(16))
+
+    // // #1033 10진수 입력받아 16진수(대문자)로 출력
+    // let k1033 = Number(prompt("정수를 입력해주세요"))
+    // document.write("#1033  " + k1033.toString(16).toUpperCase())
+
+    // #1034 8진수 입력받아 10진수로 출력
+    // let k1034 = prompt("8진수를 입력해주세요")
+    // document.write("#1034  " + parseInt(k1034, 8))
+
+    // #1035 16진수 1개 입력 받아 8진수로 출력
+    // let k1035 = prompt("16진수를 입력해주세요")
+    //  k1035 =  parseInt(k1035, 16)
+    // document.write("#1035  " + k1035.toString(8))
+
+    // #1036 영문자 1개 입력받아 ASCI 코드 출력
+    // let k1036 = prompt("영단어 1자를 입력해주세요")
+    // let regExp = /[A-Za-z/]/;
+    // // regExp = /[A-Za-z]/ -> 영어 대소문자 알파벳만 들어왔는지 검사 .test 메소드 사용
+    // if (regExp.test(k1036)) {
+    //     k1036 = k1036.charCodeAt()
+    //     document.write("#1036  " + k1036)
+    // }
+    // else
+    // { alert("영단어 대/소문자만 입력"); }
+
+    // #1037 정수 입력받아 아스키 문자 출력하기
+    // let k1037 = Number(prompt("정수를 입력해주세요 0-255 범위"))
+    // if(k1037 >= 0 && k1037 < 256)
+    //     document.write("#1037  " + String.fromCharCode(k1037))
+    //     else
+    //     alert("입력범위 오류, 0-255")
+
+    // #1038, #1039 2개의 정수 입력받아 합 출력하기 // C언어 자료형 문제라 하나로 묶어서 감
+    // let k1038 = prompt("정수 2개를 입력해주세요").split(" ")
+    // let k1038a = Number(k1038[0])
+    // let k1038b = Number(k1038[1])
+    // document.write("#1038  " + k1038[0] + " + " + k1038[1] + " = " + (k1038a+k1038b))
+
+    // #1041 문자 1개 입력받아 다음 문자 출력하기
+    // let k1041 = prompt("영문자 1개 입력 해주세요")
+    // let regExp = /[A-Za-z/]/;
+    // // regExp = /[A-Za-z]/ -> 영어 대소문자 알파벳만 들어왔는지 검사 .test 메소드 사용
+    // if (regExp.test(k1041))
+    //     document.write("#1041  " + String.fromCharCode(k1041.charCodeAt() + 1))
+    // else { alert("영문자만 입력") }
+
+    // // #1042 정수 2개 입력받아 나눈 몫 출력하기
+    // let k1042 = prompt("정수 2개를 입력해주세요\n단, -2147483648 <= a <= b <= +2147483647, b는 0이 아니다.").split(" ")
+    // let k1042a = Number(k1042[0])
+    // let k1042b = Number(k1042[1])
+    // if (k1042a > -2147483649 && k1042a < 2147483648)
+    // {
+    //     if (k1042b > -2147483649 && k1042b < 2147483648)
+    //     {
+    //         if (k1042b != 0)
+    //         {
+    //             document.write("#1042  " + k1042a + " / " + k1042b + " = " k1042a / k1042b)
+    //         }
+    //         else
+    //             alert("입력조건 불충족 b = 0")
+    //     }
+    //     else
+    //         alert("입력조건 불충족 b")
+    // }
+    // else
+    //     alert("입력조건 불충족 a")
+
+    // #1043 정수 2개 입력받아 나눈 나머지 출력하기 단, 0 <= a, b <= +2147483647, b는 0이 아니다.
+    // let k1043 = prompt("정수 2개를 입력해주세요\n단, 0 <= a, b <= +2147483647, b는 0이 아니다.").split(" ")
+    // let k1043a = Number(k1043[0])
+    // let k1043b = Number(k1043[1])
+
+    // if (k1043a > -1 && k1043b < 2147483648)
+    // {
+    //     if (k1043b != 0) {
+    //         document.write("#1043  " + k1043a + " % " + k1043b + " = " + k1043a % k1043b)
+    //     }
+    //     else
+    //         alert("입력조건 불충족 b는 0이 아니다")
+    // }
+    // else
+    //     alert("입력조건 불충족 a가 0보다 작거나 b 입력범위 초과")
+
+    // #1044 정수 1개 입력받아 1 증가하여 출력하기
+    // let k1044 = Number(prompt("정수 1개를 입력해주세요\n단, -2147483648 ~ +2147483647 의 범위로 입력"))
+    // if(k1044 > -2147483649 && k1044 < 2147483648 )
+    //     document.write("#1044  " + (k1044+1))
+    //     else alert("입력조건 미충족")
+
+    // #1045 정수 2개 입력받아 자동 계산하기
+    // let k1045 = prompt("정수 2개를 공백을 두고 입력해주세요\n단 0 <= a, b <= 2147483647, b는 0이 아니다.").split(" ")
+    // let k1045a = Number(k1045[0])
+    // let k1045b = Number(k1045[1])
+    // if(k1045a > -1 && k1045b < 2147483648)
+    // {
+    //     if(k1045b != 0)
+    //     {
+    //         document.write("#1045 정수 2개 합/차/곱/몫/나머지/나눈 값<br>")
+    //         document.write("#1045 합   :  " + k1045a + " + " + k1045b + " = " + (k1045a+k1045b) + "<br>")
+    //         document.write("#1045 차   :  " + k1045a + " - " + k1045b + " = " + (k1045a-k1045b) + "<br>")
+    //         document.write("#1045 곱   :  " + k1045a + " * " + k1045b + " = " + (k1045a*k1045b) + "<br>")
+    //         document.write("#1045 몫   :  " + k1045a + " / " + k1045b + " = " + parseInt(k1045a/k1045b) + "<br>")
+    //         document.write("#1045 나머지 :  " + k1045a + " % " + k1045b + " = " + (k1045a%k1045b) + "<br>")
+    //         document.write("#1045 나눈값 :  " + k1045a + " / " + k1045b + " = " + (k1045a/k1045b).toFixed(2) + "<br>")
+    //         // 연산 확인위해 출력예시 임의변경
+    //     }
+    //     else
+    //     alert("b가 0입니다")
+    // }
+    // else
+    // alert("입력조건 미충족")
+
+    // #1046 정수 3개 입력받아 합과 평균 출력하기
+    // let k1046 = prompt("정수 3개를 공백을 두고 입력해주세요\n 단 -2147483648 ~ +2147483647").split(" ")
+    // if ( Number(k1046[0]) > -2147483649 && k1046[0] < 2147483648)
+    // {
+    //     let k1046a = Number(k1046[0])
+    //     if (k1046[1] > -2147483649 && k1046[1] < 2147483648)
+    //     {
+    //         let k1046b = Number(k1046[1])
+    //         if (k1046[2] > -2147483649 && k1046[2] < 2147483648)
+    //         {
+    //             let k1046c = Number(k1046[2])
+    //             let summ = k1046a+k1046b+k1046c
+    //             document.write("#1046  " + k1046a + " " + k1046b + " " + k1046c + "<br>")
+    //             document.write("#1046  합 : " + summ + " 평균 : " + (summ/3).toFixed(1))
+    //         }
+    //         else alert("세번째 입력값 범위 초과")
+    //     }
+    //     else alert("두번째 입력값 범위 초과")
+    // }
+    // else alert("첫번째 입력값 범위 초과")
+
+    // #1047 비트시프트 - 정수 1개 입력받아 2배 곱해 출력하기
+    // let k1047 = Number(prompt("정수 1개 입력해주세요\n단, -1073741824 ~ +1073741823"))
+    // if(k1047 > -1073741825 && k1047 < 1073741823)
+    // document.write("#1047  입력값 : " + k1047 + " 시프트 연산값 : " + (k1047<<1))
+    // else alert("입력범위 미충족")
+
+    //#1048 비트시프트 - 정수 2개 입력받아 a를 2^b배 곱한 값으로 출력
+    // let k1048 = prompt("정수 2개 입력해주세요\n0 <= a <= 10, 0 <= b <= 10").split(" ")
+    // let k1048a = Number(k1048[0])
+    // let k1048b = Number(k1048[1])
+
+    // if(k1048a > -1 && k1048a < 11)
+    // {
+    //     if(k1048b > -1 && k1048b < 11)
+    //     {
+    //         document.write("#1048  " + k1048a + "*2^" + k1048b + " : " + (k1048a<<k1048b))
+
+    //     }
+    //     else alert("두번째 입력값 범위초과")
+    // }
+    // else alert("첫번째 입력값 범위초과")
+
+    // // #1049 두 정수 입력받아 비교하기 a가 b보다 크면 1을, a가 b보다 작거나 같으면 0
+    // let k1049 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+    // let k1049a = k1049[0]
+    // let k1049b = k1049[1]
+
+    // if(k1049a > -2147483649 && k1049a < 2147483648)
+    // {
+    //     if(k1049b > -2147483649 && k1049b < 2147483648)
+    //     {
+    //         if(k1049a > k1049b) document.write("#1049  a : " + k1049a + " b : " + k1049b + " 결과 1 ")
+    //         else document.write("#1049  a : " + k1049a + " b : " + k1049b + " 결과 0 ")
+    //     }
+    //     else alert("b 입력범위 초과")
+    // }else alert("a 입력범위 초과")
+
+    // #1050 두 정수 입력받아 비교하기 a=b 면 1을, A!=b 면 0
+
+    // let k1050 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+    // let k1050a = k1050[0]
+    // let k1050b = k1050[1]
+
+    // if(k1050a > -2147483649 && k1050a < 2147483648)
+    // {
+    //     if(k1050b > -2147483649 && k1050b < 2147483648)
+    //     {
+    //         if(k1050a == k1050b) document.write("#1050  a : " + k1050a + " b : " + k1050b + " 결과 1 ")
+    //         else document.write("#1050  a : " + k1050a + " b : " + k1050b + " 결과 0 ")
+    //     }
+    //     else alert("b 입력범위 초과")
+    // }else alert("a 입력범위 초과")
+
+    // #1051 두 정수 입력받아 비교하기 3
+
+    // let k1051 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+    // let k1051a = k1051[0]
+    // let k1051b = k1051[1]
+
+    // if(k1051a > -2147483649 && k1051a < 2147483648)
+    // {
+    //     if(k1051b > -2147483649 && k1051b < 2147483648)
+    //     {
+    //         if(k1051a <= k1051b) document.write("#1051  a : " + k1051a + " b : " + k1051b + " 결과 1 ")
+    //         else document.write("#1051  a : " + k1051a + " b : " + k1051b + " 결과 0 ")
+    //     }
+    //     else alert("b 입력범위 초과")
+    // }else alert("a 입력범위 초과")
+
+    // #1052 두 정수 입력받아 비교하기4
+    // let k1052 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+    // let k1052a = k1052[0]
+    // let k1052b = k1052[1]
+
+    // if(k1052a > -2147483649 && k1052a < 2147483648)
+    // {
+    //     if(k1052b > -2147483649 && k1052b < 2147483648)
+    //     {
+    //         if(k1052a != k1052b) document.write("#1052  a : " + k1052a + " b : " + k1052b + " 결과 1 ")
+    //         else document.write("#1052  a : " + k1052a + " b : " + k1052b + " 결과 0 ")
+    //     }
+    //     else alert("b 입력범위 초과")
+    // }else alert("a 입력범위 초과")
+
+    // #1053 참 거짓 바꾸기
+
+    // let k1053 = Number(prompt("정수 하나(0 or 1)를 입력해주세요"))
+    // if(k1053 == 1 || k1053 == 0)
+    // {
+    //     document.write("#1053  : " + !k1053)
+    // }
+    // else alert("정수 0 or 1 만 입력해주세요")
+
+    // #1054 둘 다 참일때 참 and
+
+    // let k1054 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+    // let k1054a = k1054[0]
+    // let k1054b = k1054[1]
+
+    // if(k1054a == 1 || k1054a == 0)
+    // {
+    //     if(k1054b == 1 || k1054b == 0)
+    //     {
+    //         if(k1054a == 1 & k1054b == 1)
+    //         {
+    //             document.write("#1054  : 1")
+    //         }
+    //         else document.write("#1054  : 0")
+    //     }
+    //     else alert("두번째 입력값은 0 또는 1입니다")
+    // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+    // #1055 하나라도 참이면 참 or
+    // let k1055 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+    // let k1055a = k1055[0]
+    // let k1055b = k1055[1]
+
+    // if(k1055a == 1 || k1055a == 0)
+    // {
+    //     if(k1055b == 1 || k1055b == 0)
+    //     {
+    //         if(k1055a == 1 || k1055b == 1)
+    //         {
+    //             document.write("#1055  : 1")
+    //         }
+    //         else document.write("#1055  : 0")
+    //     }
+    //     else alert("두번째 입력값은 0 또는 1입니다")
+    // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+    // #1056 XOR 연산
+    // let k1056 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+    // let k1056a = k1056[0]
+    // let k1056b = k1056[1]
+
+    // if(k1056a == 1 || k1056a == 0)
+    // {
+    //     if(k1056b == 1 || k1056b == 0)
+    //     {
+    //         if(k1056a != k1056b)
+    //         {
+    //             document.write("#1056  : 1")
+    //         }
+    //         else document.write("#1056  : 0")
+    //     }
+    //     else alert("두번째 입력값은 0 또는 1입니다")
+    // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+    // #1057 참/거짓이 서로 같을때만 1
+    // let k1057 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+    // let k1057a = k1057[0]
+    // let k1057b = k1057[1]
+
+    // if(k1057a == 1 || k1057a == 0)
+    // {
+    //     if(k1057b == 1 || k1057b == 0)
+    //     {
+    //         if(k1057a == k1057b)
+    //         {
+    //             document.write("#1057  : 1")
+    //         }
+    //         else document.write("#1057  : 0")
+    //     }
+    //     else alert("두번째 입력값은 0 또는 1입니다")
+    // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+    // #1058 NAND연산
+    // let k1058 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+    // let k1058a = k1058[0]
+    // let k1058b = k1058[1]
+
+    // if(k1058a == 1 || k1058a == 0)
+    // {
+    //     if(k1058b == 1 || k1058b == 0)
+    //     {
+    //         if(k1058a == 0 && k1058b == 0)
+    //         {
+    //             document.write("#1057  : 1")
+    //         }
+    //         else document.write("#1057  : 0")
+    //     }
+    //     else alert("두번째 입력값은 0 또는 1입니다")
+    // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+    // //#1059 Bit연산
+    // let k1059 = Number(prompt("정수 1개를 입력해주세요\n-2147483648 ~ +2147483647"))
+
+    // let temp = ~k1059
+
+    // document.write("#1059  :" + temp)
+
+    // #1060 BIT연산
+    // let k1060 = prompt("정수 2개를 입력해주세요\n단 -2147483648 ~ +2147483647 범위").split(" ")
+    //         let k1060a = Number(k1060[0])
+    //         let k1060b = Number(k1060[1])
+
+    //         if((k1060a < -2147483648 || k1060a > 2147483647 ) ||(k1060b < -2147483648 || k1060b > 2147483647 ) )
+    //         {
+    //             alert("입력범위 오류")
+    //         }
+    //         else
+    //         {
+    //             document.write("#1060  : " + (k1060a & k1060b))
+    // }
+
+    // #1061 bit or연산
+
+    // let k1061 = prompt("정수 2개를 입력해주세요\n단 -2147483648 ~ +2147483647 범위").split(" ")
+    // let k1061a = Number(k1061[0])
+    // let k1061b = Number(k1061[1])
+
+    // if((k1061a < -2147483648 || k1061a > 2147483647 ) ||(k1061b < -2147483648 || k1061b > 2147483647 ) )
+    // {
+    //     alert("입력범위 오류")
+    // }
+    // else
+    // {
+    //     document.write("#1060  : " + (k1061a | k1061b))
+    // }
+
+    // #1062 bit xor연산
+
+    // let k1062 = prompt("정수 2개를 입력해주세요\n단 -2147483648 ~ +2147483647 범위").split(" ")
+    // let k1062a = Number(k1062[0])
+    // let k1062b = Number(k1062[1])
+
+    // if((k1062a < -2147483648 || k1062a > 2147483647 ) ||(k1062b < -2147483648 || k1062b > 2147483647 ) )
+    // {
+    //     alert("입력범위 오류")
+    // }
+    // else
+    // {
+    //     document.write("#1062  : " + (k1062a ^ k1062b))
+    // }
+
+    // // #1063 삼항연산
+    // let k1063 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+    // let k1063a = k1063[0]
+    // let k1063b = k1063[1]
+
+    // if (k1063a > -2147483649 && k1063a < 2147483648) {
+    //     if (k1063b > -2147483649 && k1063b < 2147483648) {
+    //         k1063a = k1063a > k1063b ? document.write("#1063  : " + k1063a) : document.write("#1063  : " + k1063b)
+    //     }
+    //     else alert("b 입력범위 초과")
+    // } else alert("a 입력범위 초과")
+
+    // #1064 삼항연산 3개 입력받아 가장 작은값
+    // let k1064 = prompt("정수 3개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+    // let k1064a = Number(k1064[0])
+    // let k1064b = Number(k1064[1])
+    // let k1064c = Number(k1064[2])
+
+    // if (k1064a > -2147483649 && k1064a < 2147483648) {
+    //     if (k1064b > -2147483649 && k1064b < 2147483648) {
+    //         if (k1064c > -2147483649 && k1064c < 2147483648) {
+
+    //             k1064a = (k1064a < k1064b && k1064a < k1064c) ? document.write("#1064 :" + k1064a) : (k1064a > k1064b && k1064c > k1064b ? document.write("#1064 :" + k1064b) : document.write("#1064 :" + k1064c))
+
+    //             //(k1064b = k1064b > k1064c ? document.write(document.write("#1064  : " + k1064c)) : ("#1064  : " + k1064b)) : document.write("#1064  : " + k1064a)
+    //         }
+    //         else alert("c 입력범위 초과")
+    //     }
+
+    //     else alert("b 입력범위 초과")
+    // }
+    // else alert("a 입력범위 초과")
+
+    // // #1065 정수 3개 입력받아 짝수만
+
+    // let k1065 = prompt("정수 3개를 입력해주세요\na, b, c = 0 ~ +2147483647").split(" ")
+    // let k1065a = Number(k1065[0])
+    // let k1065b = Number(k1065[1])
+    // let k1065c = Number(k1065[2])
+
+    // if (k1065a > -1 && k1065a < 2147483648) {
+    //     if (k1065b > -1 && k1065b < 2147483648) {
+    //         if (k1065c > -1 && k1065c < 2147483649) {
+
+    //             if (k1065a % 2 != 0 && k1065b % 2 != 0 && k1065c % 2 != 0) { alert("짝수가 최소 하나는 있어야함") }
+    //             else {
+    //                 for (let i = 0; i < k1065.length; i++) {
+    //                     if (Number(k1065[i] % 2 == 0)) {
+    //                         document.write("#1065 : " + k1065[i] + "<br>")
+    //                     }
+    //                 }
+    //             }
+
+    //         }
+    //         else alert("세번째 입력값 범위초과")
+    //     } else alert("두번째 입력값 범위초과")
+    // } else alert("첫번째 입력값 범위초과")
+
+    // #1066 정수 3개 입력받아 짝수/홀수 출력
+
+    // let k1066 = prompt("정수 3개를 입력해주세요\na, b, c = 0 ~ +2147483647").split(" ")
+    // let k1066a = Number(k1066[0])
+    // let k1066b = Number(k1066[1])
+    // let k1066c = Number(k1066[2])
+
+    // if (k1066a > -1 && k1066a < 2147483648) {
+    //     if (k1066b > -1 && k1066b < 2147483648) {
+    //         if (k1066c > -1 && k1066c < 2147483649)
+    //          {
+    //             for (let i = 0; i < k1066.length; i++)
+    //              {
+    //                 if (Number(k1066[i] % 2 == 0))
+    //                 {
+    //                     document.write("#1066 :  짝수 <br>")
+    //                 }
+    //                 else
+    //                     document.write("#1066 : 홀수 <br>")
+    //             }
+    //         }else alert("세번째 입력값 범위초과")
+    //     } else alert("두번째 입력값 범위초과")
+    // }else alert("첫번째 입력값 범위초과")
+
+    // #1067
+    // let k1067 = Number(prompt("정수 1개 입력\n-2147483648 ~ +2147483647 a != 0"))
+
+    // if (k1067 == 0)
+    //     alert("0 넣으면 안된다고!")
+    // else if (k1067 < -2147483648 || k1067 > 2147483647)
+    //     alert("입력값 범위 초과")
+    // else {
+
+    //     if (k1067 < 0)
+    //         document.write("#1067  : Minus<br>")
+    //     else
+    //         document.write("#1067  : Plus<br>")
+    // }
+
+    // if (k1067 % 2 == 0) {
+    //     document.write("#1067  : Even <br>")
+    // }
+    // else
+    //     document.write("#1067  : Odd<br>")
+
+    // #1068 점수 입력받아 평가
+
+    // let k1068 = Number(prompt("점수를 입력해주세요 (0-100"))
+
+    // if(k1068 > -1 && k1068 < 101)
+    // {
+
+    //     if(k1068 >= 90)
+    //     document.write("#1068  : A")
+    //     else if(k1068 < 90 && k1068 > 69)
+    //     document.write("#1068  : B")
+    //     else if(k1068 < 70 && k1068 > 39)
+    //     document.write("#1068  : C")
+    //     else
+    //     document.write("#1068  : D")
+    // }
+    // else
+    // alert("입력범위 초과")
+
+    // #1069 평가 입력받아 다르게 출력하기 (switch사용)
+    // let k1069 = prompt("A-D 를 입력해주세욤")
+    // let regExp = /[A-Za-z/]/;
+    // if (regExp.test(k1069))
+    // {
+    //    k1069 = k1069.charCodeAt()
+
+    //     switch(k1069)
+    //     {
+    //         case 65 : case 97 : document.write("#1069  Best!!!");
+    //         break;
+    //         case 66 : case 98 : document.write("#1069  Good!!!");
+    //         break;
+    //         case 67 : case 99 : document.write("#1069  Run!!!");
+    //         break;
+    //         case 68 : case 100 : document.write("#1069  Slowly!!!");
+    //         break;
+    //         default: document.write("#1069  What are you Doing!?");
+    //     }
+    // }
+    // else
+    // { alert("영단어 대/소문자만 입력"); }
+
+    // #1070 월이 입력될떄 계절 출력(switch)
+    // let k1070 = Number(prompt("월을 입력해주세요 1-12"))
+
+    // if(k1070 <= 0 || k1070 > 12)
+    // {
+    //     alert("1-12월 만 입력")
+    // }
+    // else
+    // {
+    //     switch(k1070)
+    //     {
+    //         case 12: case 1: case 2 : document.write("#1070   WINTER");break;
+    //         case 3 : case 4 : case 5 : document.write("#1070   SPRING"); break;
+    //         case 6 : case 7 : case 8 : document.write("#1070   SUMMER"); break;
+    //         case 9 : case 10 : case 11 : document.write("#1070   FALL"); break;
+    //     }
+    // }
+
+    // #1071 0이 입력될 때 까지 계속 입력받다가 0이 입력되면 지금까지 입력 순서대로 출력
+
+    // let k1071 = [];
+    // while (1) {
+    //     let inp = Number(prompt("정수를 입력해주세요 0 입력시 종료\n-2147483648 ~ +2147483647"))
+
+    //     if (inp < -2147483648 || inp > 2147483648) {
+    //         alert("입력 범위 초과")
+    //         break;
+    //     }
+    //     else {
+    //         if (inp != 0) {
+    //             k1071 += inp + "<br>";
+    //         }
+    //         else {
+    //             document.write("#1071  :" + k1071)
+    //             break;
+    //         }
+
+    //     }
+    // }
+
+    // #1072 첫줄에 정수의 갯수 n개 입력, 둘째줄에 n개의 정수가 공백을 두고 입력된다
+    // n개의 정수를 줄바꿔 출력
+
+    // let k1072 = [];
+    // let k1072_max = Number(prompt("정수의 갯수 n개 입력"));
+
+    // k1072 = prompt("정수 입력\n-2147483648 ~ +2147483647").split(" ");
+
+    // for(let i = 0; i < k1072_max ; i++)
+    // {
+    //     if(k1072[i] < -2147483649 || k1072[i] > 2147483647)
+    //     {
+    //         alert("입력 범위 초과" + i + "번쨰");
+    //     }
+    //     else
+    //         {
+    //         document.write("#1072 "+ (i+1) + "번째 : " + k1072[i] + "<br>")
+    //         }
+    // }
+
+    // #1073 0 이 들어올때 까지 무한이 입력받고, 0이 들어오면 입력된 값들을 모두 출력.
+    // let k1073 = [];
+    // let temp='';
+    // while (1) {
+    //     temp = Number(prompt("정수를 입력하세요\n-2147483648 ~ +2147483647"))
+
+    //     if (temp < -2147483648 || temp > 2147483647) {
+    //         alert("입력 범위 초과!")
+    //     }
+    //     else if (temp === 0) {
+    //         document.write(k1073)
+    //         break;
+    //     }
+    //     else {
+    //         k1073 += "#1073  " + temp + "<br>"
+
+    //     }
+
+    // }
+
+    // #1074 정수 1개 입력받아 카운트다운 출력 1이 나올때 까지만(while)
+
+    // let k1074 = Number(prompt("정수를 입력하세요 1-100"))
+    // if(k1074 < 1 || k1074 > 100)
+    // {
+    //     alert("입력범위 초과")
+    // }
+    // else
+    // {
+    //     while(k1074 != 0)
+    //     {
+    //         document.write("#1074  : " + k1074 + "<br>")
+    //         k1074--;
+    //     }
+    // }
+
+    // #1075 정수 1개 입력받아 카운트다운 출력 0이 나올때 까지만(while)
+
+    // let k1075 = Number(prompt("정수를 입력하세요 1-100"))
+    // if(k1075 < 1 || k1075 > 100)
+    // {
+    //     alert("입력범위 초과")
+    // }
+    // else
+    // {
+    //     while(k1075 > -1)
+    //     {
+    //         document.write("#1075  : " + k1075 + "<br>")
+    //         k1075--;
+    //     }
+    // }
+
+    // #1076 문자 1개 입력받아 알파벳 출력
+
+    // let k1076 = prompt("알파벳 입력 A-Za-z")
+    // let regExp = /[A-Za-z/]/;
+    // if (regExp.test(k1076)) {
+    //     k1076 = k1076.charCodeAt()
+    //     alert(k1076)
+
+    //     if (64 < k1076 && k1076 < 91)
+    //     {
+    //         document.write("#1076  ")
+    //         for (let i = 65; i < (k1076 + 1); i++)
+    //         {
+    //             document.write(String.fromCharCode(i) + " ")
+    //         }
+    //     }
+    //     else {
+    //         document.write("#1076  ")
+    //         for (let j = 97; j < (k1076 + 1); j++)
+    //         {
+    //             document.write(String.fromCharCode(j) + " ")
+    //         }
+    //     }
+    // }
+    // else { alert("영단어 대/소문자만 입력"); }
+
+    // #1077 정수 1개 입력받아 그 수까지 출력
+
+    // let k1077 = Number(prompt("정수를 입력하세요 0-100"))
+
+    // if(k1077 > 100 || k1077 < 0)
+    // {
+    //     alert("입력범위 미충족")
+    // }
+    // else
+    // {
+    //     for(let i = 0; i < (k1077+1) ; i++)
+    //     {
+    //         document.write("#1077 : " + i + " <br>")
+    //     }
+    // }
+
+    // #1078
+
+    // let k1078 = Number(prompt("정수를 입력하세요 0-100"))
+    // let evennum =0;
+    // if(k1078 > 100 || k1078 < 0)
+    // {
+    //     alert("입력범위 미충족")
+    // }
+    // else
+    // {
+    //     for(let i = 0; i < (k1078+1) ; i++)
+    //     {
+    //         if(i % 2 == 0)
+    //         {
+    //             evennum += i;
+    //         }
+    //     }
+    //     document.write("#1078 add EVEN : " + evennum)
+    // }
+
+    // #1079
+    // while (1)
+    // {
+    //     let char = prompt("Q 를 누르면 종료");
+    //     if (char == "q")
+    //     {
+    //         break;
+    //     }
+    //     else
+    //     {
+    //         document.write(char + "<br>")
+    //     }
+    // }
+
+    // #1080
+
+    // let k1080 = Number(prompt("정수를 입력하세요 0 ~ 1000 "));
+    // let result=0;
+
+    // if(k1080 < 0 || k1080 > 1000)
+    // {
+    //     alert("입력범위 미충족")
+    // }
+
+    // else
+    // {
+    //     for(let i = 0; i < 1000 ; i++)
+    //     {
+    //         if(k1080 <= result)
+    //         {
+    //             document.write("#1080  " + (i-1))
+    //             break;
+    //         }
+    //         else
+    //         {
+    //             result += i;
+    //         }
+    //     }
+    // }
+
+    // #1081 DUAL DICE
+
+    // let dice = prompt().split(" ");
+
+    // let fir = Number(dice[0]);
+    // let sec = Number(dice[1]);
+    // // alert (dice)
+
+    // if (fir > 10 || sec > 10) {
+    //     alert("10 이하의 자연수만 입력하세욥")
+    // }
+    // else {
+    //     alert(fir + "  " + sec)
+    //     //           입력값 확인차 alert 발생
+
+    //     for (let i = 1; i <= fir; i++) {
+    //         for (let j = 1; j <= sec; j++) {
+    //             document.write(i + "  " + j + "<br>")
+    //         }
+    //         document.write("<br>")
+    //     }
+    // }
+
+    // Codeup #1082 hex
+
+    // let indec = prompt()
+
+    // let inhex = parseInt(indec, 16)
+
+    // document.write( "입력값 hex to dec " + inhex + "<br>" );
+
+    // if(inhex > 9 && inhex< 17)
+    // {
+    //     for(let i = 1 ; i < 17 ; i++)
+    //     {
+    //     document.write("(hex) " + indec.toUpperCase() + " x " + i.toString(16).toUpperCase() + " = " + ((inhex*i).toString(16).toUpperCase()) + "<br>")
+    //     }
+    // }
+    // else
+    //     alert("입력범위 오류")
+
+    // #1083 369King
+
+    // let k1083 = Number(prompt("정수를 입력하세요 1-9 "))
+
+    // if(k1083 > 0 && k1083 < 10)
+    // {
+    //     for(let i = 1 ; i <= k1083 ; i++)
+    //     {
+    //         if(i % 3 == 0)
+    //         {
+    //             document.write(" X ")
+    //         }
+    //         else
+    //         document.write(" "+i+" ")
+    //     }
+    // }
+    // else alert("입력범위 초과 1-9")
+
+    // #1084 R.G.B
+
+    // let k1084 = prompt("숫자 3개를 공백을 두고 입력하세욥\n각 자리마다 0~128").split(" ")
+
+    // let k1084r = Number(k1084[0]);
+    // let k1084g = Number(k1084[1]);
+    // let k1084b = Number(k1084[2]);
+
+    // if(k1084r > -1 && k1084r < 129)
+    // {
+    //     if(k1084g > -1 && k1084g < 129)
+    //     {
+    //         if(k1084b > -1 && k1084b < 129)
+    //         {
+    //             for(let i = 0 ; i < k1084r ; i++)
+    //             {
+    //                 for(let j = 0 ; j < k1084g ; j++)
+    //                 {
+    //                     for(let k = 0 ; k < k1084b ; k++)
+    //                     {
+    //                         document.write(i + " " + j + " " + k + "<br>")
+    //                     }
+
+    //                 }document.write("<br>")
+
+    //             }
+    //         }
+    //         else alert("세번째 숫자 입력범위 초과")
+    //     }else alert("두번째 숫자 입력범위 초과")
+    // }else alert("첫번째 숫자 입력범위 초과")
+
+    // // #1085 소리파일 저장용량 계산
+
+    // let k1085 = prompt("HZ BIT CHANNEL SEC 순으로 입력해주세요").split(" ")
+
+    // let k1085h = Number(k1085[0]);
+    // let k1085b = Number(k1085[1]);
+    // let k1085c = Number(k1085[2]);
+    // let k1085s = Number(k1085[3]);
+    // let result = 0;
+
+    // if (k1085h < 48001 && k1085b % 8 == 0 && k1085b < 33 && k1085c < 6 && k1085s < 6001)
+    //  {
+    //     result += (k1085h * k1085b * k1085c * k1085s) / 8 // Byte
+    //     result = result / 1024 // KB
+    //     if (result > 1025) {
+    //         result = result / 1024 // MB
+    //         document.write("#1085  " + result.toFixed(1) + "MB")
+    //     }
+    //     else
+    //         document.write("#1085  " + result.toFixed(1) + "KB")
+    // }
+    // else alert("입력값 오류")
+
+    // // #1086 그림파일 크기 계산
+    // let k1086 = prompt("Weidh Height Bit 순으로 입력해주세요").split(" ")
+    // let k1086w = Number(k1086[0])
+    // let k1086h = Number(k1086[1])
+    // let k1086b = Number(k1086[2])
+    // let result = 0;
+
+    // if (k1086w > 0 && k1086w < 1025 && k1086h > 0 && k1086h < 1025 && k1086b < 41 && k1086b % 4 == 0)
+    //  {
+    //     result = (k1086w * k1086h * k1086b) / 8 // byte
+    //     if (result > 1024)
+    //     {
+    //         result = result / 1024 // KB
+
+    //         if (result > 1024) {
+    //             result = result / 1024; // MB
+    //             document.write("#1086  " + result + "MB")
+    //         }
+    //         else {
+    //             document.write("#1086  " + result + "KB")
+    //         }
+
+    //     }
+    //     else document.write("#1086  " + result + "Byte")
+    // }
+    // else alert("W 1-1024 / H 1-1024 / B 40이하 4의배수")
+
+    // #1087
+
+    // let k1087 = Number(prompt("정수를 입력해주세요 \n단100,000,000이하"))
+    // let result =0;
+    // let cnt=0;
+
+    // if(k1087 > 100000000)
+    // {
+    //     alert("입력범위 초과")
+    // }
+    // else
+    // {
+    //     while(result <= k1087)
+    //     {
+    //         result += cnt;
+    //         cnt++
+    //     }
+    //     document.write("#1087  :" + result)
+    // }
+
+    // codeup #1088
+
+    // let dec = Number(prompt());
+
+    // if(dec > 0 && dec < 101)
+    // {
+    //     for(let i = 1 ; i < dec ; i++)
+    //     {
+    //         if(i % 3 == 0)
+    //         {
+    //             continue
+    //         }
+    //         else if(i % 50 == 0) // 50쯤에서보기 편하게 줄바꿈 한번 해주고
+    //         {
+    //             document.write(" <br> ")
+    //         }
+    //         else
+    //         {
+    //             document.write(i + " ")
+    //         }
+    //     }
+    // }
+    // else
+    // {
+    //     alert("입력범위 초과 , 입력 범위는 1-100")
+    // }
+
+    //#1089
+
+    // let k1089 = prompt("시작값(a) 등차값(d) 몇번째 수(n)을 공백을 두고 입력해주세요\n단 모든 수는 0-100범위").split(" ")
+    // let k1089a = Number(k1089[0])
+    // let k1089b = Number(k1089[1])
+    // let k1089c = Number(k1089[2])
+
+    // if( (k1089a < 0 || k1089a > 100) || (k1089b < 0 || k1089b > 100) || (k1089c < 0 || k1089c > 100) )
+    // {
+    //     alert("입력범위값은 0-100")
+    // }
+    // else
+    // {
+    //     let result = k1089a;
+
+    //     for(let i = 1 ; i < k1089c ; i++)
+    //     {
+    //         result += k1089b;
+    //     }
+    //     document.write("#1089  : " + result)
+    // }
+
+    // #1090
+    // codeup #1090
+
+    // let targ = prompt().split(" ");
+    // let res =  targ[0] * targ[1];
+
+    // document.write("step 1 = " + targ[0] + "<br>" + "step 2 = " + res + "<br>")
+
+    // for(let i = 2 ; i < targ[2] ; i++)
+    // {
+    //     res  = (res * targ[1])
+    //     document.write("step " + (i+1) + " = " + res + "<br>")
+    // }
+
+    // document.write( "<<" + res + ">>")
+
+    // #1091
+
+    // let k1091 = prompt("시작값(a), 곱할값(m), 더할값(d), 몇번째인지(n)을 공백을 두고 입력해주세요\n a,m,d는 -50~+50, n은 10 이하 자연수").split(" ")
+    // let k1091a = Number(k1091[0])
+    // let k1091b = Number(k1091[1])
+    // let k1091c = Number(k1091[2])
+    // let k1091d = Number(k1091[3])
+    // let result = k1091a;
+
+    // if( (k1091a < -50 || k1091a > 50) || (k1091b < -50 || k1091b > 50) || (k1091c < -50 || k1091c > 50) || (k1091 > 10) )
+    // {
+    //     alert("입력값 오류")
+    // }
+    // else
+    // {
+    //     for(let i = 1 ; i < k1091d ; i++) // 순서상 첫번째는 시작값 a이기 때문에 for문의 첫번째는 2번째 위치가 된다.
+    //     {
+    //         result = (result * k1091b) + k1091c
+    //     }
+    //     document.write("#1091  :" + result)
+    // }
+
+    // #1092
+
+    // let k1092 = prompt("숫자 3개를 공백을 두고 입력해주세요\n단 숫자는 100이하 자연수").split(" ")
+    // let k1092a = Number(k1092[0])
+    // let k1092b = Number(k1092[1])
+    // let k1092c = Number(k1092[2])
+
+    // if (k1092a < 101 && k1092b < 101 && k1092c < 101)
+    //  {let day = 1;
+    //     while (1)
+    //     {
+    //         if(day % k1092a == 0 && day % k1092b == 0 && day % k1092c == 0)
+    //         {
+    //             document.write("#1092  : " + day)
+    //             break;
+    //         }
+    //         day++;
+
+    //     }
+
+    // }
+    // else alert("입력값 오류")
+
+    // #1093
+
+    // let cnt = Number(prompt("정수 입력 1-10000"));
+    // let k1093 = prompt("번호 순서").split(" ");
+    // let pos = new Array(23);
+
+    // for (i = 0; i < pos.length; i++) pos[i] = 0;
+
+    // for (let i = 0; i < cnt; i++) {
+    //   pos[k1093 - 1] = +1;
+    // }
+
+    // document.write("#1093 ");
+    // for (let j = 0; j < cnt; j++) {
+    //   document.write(pos[j] + " ");
+    // }
+
+    // codeup #1094
+
+    // let cnt = prompt()
+    // let callsign = prompt().split(" ")
+
+    // document.write("최초 순서 <br> ")
+    // for(let i = 0 ; i < cnt ; i++)
+    // {
+    //     document.write(callsign[i] + " ")
+    // }
+
+    // document.write("  <br> 역순 출력 <br> ")
+    // for(let j = (cnt-1) ; j >= 0 ; j--)
+    // {
+    //     document.write(callsign[j] + " ")
+    // }
+
+    // #1095
+    // let cntr = Number(prompt("정수 입력 1-10000"))
+    // let k1095 = prompt("번호 순서").split(" ")
+    // let call_sign = k1095[0];
+
+    // for(let i = 1; i <= cntr-1 ; i++)
+    // {
+    //     if(Number(call_sign) > Number(k1095[i-1]))
+    //     {
+    //         call_sign = k1095[i-1]
+    //     }
+    // }
+    // document.write("#1095  : " + call_sign)
+
+    // TODO: CodeUp 기초 2.입출력문 및 연산자
+
+    // #1110 정수 그대로 출력하기
+    // let num = Number(prompt("정수를 입력하세요."));
+    // document.write(num);
+
+    // #1111 % 출력
+    // let num = Number(prompt("정수를 입력하세요."));
+    // document.write(num + "%");
+
+    // #1112 두 정수 출력
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // document.write(num[0] + " " + num[1]);
+
+    // #1113 바꿔서 출력하기
+    // let num = prompt("정수를 입력하세요.").split(" ")
+    // document.write(num[1] + " " + num[0]);
+
+    // #1114 두 정수의 덧셈
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let first = Number(num[0]);
+    // let second = Number(num[1]);
+
+    // document.write(first + second);
+
+    // #1115 두 정수의 덧셈 (64비트)
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let first = Number(num[0]);
+    // let second = Number(num[1]);
+
+    // document.write(first + second);
+
+    // #1116 사칙연산 계산기
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let first = Number(num[0]);
+    // let second = Number(num[1]);
+
+    // document.write(
+    // first + "+" + second + "=" + (first + second) + "<br>"
+    // + first + "-" + second + "=" + (first - second) + "<br>"
+    // + first + "*" + second + "=" + (first * second) + "<br>"
+    // + first + "/" + second + "=" + (first % second) + "<br>");
+
+    // #1117 두 실수의 곱
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let first = Number(num[0]);
+    // let second = Number(num[1]);
+
+    // document.write((first*second).toFixed(2));
+
+    // #1118 삼각형의 넓이 구하기
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let first = Number(num[0]);
+    // let second = Number(num[1]);
+
+    // document.write((first*second/2).toFixed(1));
+
+    // #1119 일을 시간으로 변환
+    // let num = Number(prompt("정수를 입력하세요."));
+
+    // document.write(num*24);
+
+    // #1120 세 수의 평균
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let first = Number(num[0]);
+    // let second = Number(num[1]);
+    // let third = Number(num[2]);
+
+    // document.write((first*second*third/3).toFixed(2));
+
+    // #1121 나머지 구하기
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let result = num[0]%num[1];
+
+    // document.write(result);
+
+    // #1122 초를 분/초로 변환
+    // / let num = Number(prompt("정수를 입력하세요."));
+    // let first = Math.floor(num/60);
+    // let second = num%60
+
+    // document.write(first + " " + second)
+    // #1123 섭씨온도를 화씨 온도로 변환
+    // let num = Number(prompt("섭씨온도를 입력하세요."));
+    // let result = 9/5*num+32;
+
+    // document.write(result.toFixed(3));
+
+    // #1125 8진수 16진수로 변환
+    // let num = Number(prompt("정수를 입력하세요."));
+
+    // let octal = parseInt(num, 10).toString(8); // 10진수를 8진수로
+    // let hex = parseInt(num, 10).toString(16).toUpperCase();
+
+    // document.write(octal + " " + hex);
+
+    // #1131 문자 출력하기
+    // let char = prompt("문자를 입력하세요.");
+    // document.write(char);
+
+    // #1132 문자열 출력하기
+    // let char = prompt("문자를 입력하세요.");
+    // document.write(char);
+
+    // #1133 공백이 있는 문자열 입출력
+    // let words = prompt("문자를 입력하세요.");
+    // document.write(words);
+
+    // #1135 관계연산자1
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let result = num.map(value => Number(value));
+
+    // if(result[0]>=result[1]) {
+    //     document.write(1)
+    // }
+
+    // else {
+    //     document.write(0)
+    // }
+
+    // #1136 관계연산자2
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let result = num.map(value => Number(value));
+
+    // if(result[0]==result[1]) {
+    //     document.write(1)
+    // }
+
+    // else {
+    //     document.write(0)
+    // }
+
+    // #1137 관계연산자3
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let result = num.map(value => Number(value));
+
+    // if(result[0]!==result[1]) {
+    //     document.write(1)
+    // }
+
+    // else {
+    //     document.write(0)
+    // }
+
+    // #1138 논리연산자(NOT)
+    // let num = Number(prompt("정수를 입력하세요."));
+
+    // if(num==0) {
+    //     document.write(1)
+    // }
+
+    // else if(num==1) {
+    //     document.write(0)
+    // }
+
+    // #1139 논리연산자(AND)
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let result = num.map(value => Number(value));
+
+    // if(result[0]==1&&result[1]==1) {
+    //     document.write(1)
+    // }
+
+    // else {
+    //     document.write(0)
+    // }
+
+    // #1140 논리연산자(OR)
+    // let num = prompt("정수를 입력하세요.").split(" ");
+    // let result = num.map(value => Number(value));
+
+    // if(result[0]==1||result[1]==1) {
+    //     document.write(1)
+    // }
+
+    // else {
+    //     document.write(0)
+    // }
+
+    // #1143 비트연산자(AND)
+    // let num = prompt("정수 2개를 입력하세요.").split(" ");
+    // document.write(num[0]&num[1]);
+
+    // #1144 비트연산자(OR)
+    // let num = prompt("정수 2개를 입력하세요.").split(" ");
+    // document.write(num[0]|num[1])
+
+    // #1147 비트연산자(<<)
+    // let num = prompt("정수 2개를 입력하세요.").split(" ");
+    // document.write(num[0]<<num[1])
+
+    // #1148 비트연산자(>>)
+    // let num = prompt("정수 2개를 입력하세요.").split(" ");
+    // document.write(num[0]>>num[1])
+
+    // #1149 두 수 중 큰 수
+    // let num = prompt("정수 2개를 입력하세요.").split(" ").map(Number);
+    // let max = Math.max(num[0], num[1]);
+
+    // document.write(max)
+
+    // #1150 세 수 중 가장 작은 수
+    // let num = prompt("정수 3개를 입력하세요.").split(" ").map(Number);
+    // let min = Math.min(num[0], num[1], num[2]);
+
+    // document.write(min)
+
+    // TODO: CodeUp 기초 3.if ~ else
+
+    // #1151 10보다 작은 수
+    // let num = Number(prompt("정수를 입력하세요."));
+
+    // if(num<10) {
+    //     document.write("small")
+    // }
+
+    // else {
+    //     document.write("")
+    // }
+
+    // #1152 10보다 작은 수 (else 버전)
+    // let num = Number(prompt("정수를 입력하세요."));
+
+    // if(num<10) {
+    //     document.write("small")
+    // }
+
+    // else {
+    //     document.write("big")
+    // }
+
+    // #1153 두 수의 대소 비교
+    // let num = prompt("정수 2개를 입력하세요.").split(" ").map(Number);
+
+    // if(num[0]>num[1]) {
+    //     document.write(">")
+    // }
+
+    // else if(num[0]<num[1]) {
+    //     document.write("<")
+    // }
+
+    // else if(num[0]==num[1]) {
+    //     document.write("=")
+    // }
+
+    // #1154 큰수 - 작은수
+    // let num = prompt("정수 2개를 입력하세요.").split(" ").map(Number);
+    // //Math() 함수의 max, min을 이용
+    // let result = Math.max(...num) - Math.min(...num);
+
+    // document.write(result)
+
+    // #1155 7의 배수
+    // let num = Number(prompt("숫자를 입력하세요."));
+
+    // if(num%7==0) {
+    //     document.write("multiple")
+    // }
+
+    // else {
+    //     document.write("not multiple")
+    // }
+
+    // #1156 홀수 짝수 구별
+    // let num = Number(prompt("숫자를 입력하세요."));
+
+    // if(num%2==0) {
+    //     document.write("even")
+    // }
+
+    // else {
+    //     document.write("odd")
+    // }
+
+    // #1157 특별한 공 던지기 1
+    // let num = Number(prompt("점수를 입력하세요."));
+
+    // if(50<=num&&num<=60) {
+    //     document.write("win")
+    // }
+
+    // else {
+    //     document.write("lose")
+    // }
+
+    // #1158 특별한 공 던지기 2
+    // let num = Number(prompt("점수를 입력하세요."));
+
+    // if(30<=num&&num<=40) {
+    //     document.write("win")
+    // }
+    // else if(60<=num&&num<=70) {
+    //     document.write("win")
+    // }
+    // else {
+    //     document.write("lose")
+    // }
+
+    // #1159 특별한 공 던지기 3
+    // let num = Number(prompt("점수를 입력하세요."));
+
+    // if(50<=num&&num<=70) {
+    //     document.write("win")
+    // }
+    // else if(num%6==0) {
+    //     document.write("win")
+    // }
+    // else {
+    //     document.write("lose")
+    // }
+
+    // #1160 아르바이트 가는 날
+    // let num = Number(prompt("점수를 입력하세요."));
+
+    // if(num==1||num==3||num==5||num==7) {
+    //     document.write("oh my god")
+    // }
+    // else {
+    //     document.write("enjoy")
+    // }
+
+    // #1161 홀수와 짝수 그리고 더하기
+    // let num = prompt("정수 2개를 입력하세요.").split(" ").map(Number);
+
+    // if(num[0] % 2 == 0 && num[1] % 2 == 0) {
+    //     document.write("짝수+짝수=짝수");
+    // } else if(num[0] % 2 == 1 && num[1] % 2 == 0) {
+    //     document.write("홀수+짝수=홀수");
+    // } else if(num[0] % 2 == 0 && num[1] % 2 == 1) {
+    //     document.write("짝수+홀수=홀수");
+    // } else {
+    //     document.write("홀수+홀수=짝수");
+    // }
+
+    // #1162 당신의 사주를 봐드립니다 1
+    // let num = prompt("생년월일을 입력하세요.").split(" ").map(Number);
+    // let result1 = num[0] - num[1] + num[2];
+
+    // if(result1 % 10 == 0) {
+    //     document.write("대박")
+    // }
+    // else {
+    //     document.write("그럭저럭")
+    // }
+
+    // #1163 당신의 사주를 봐드립니다 2
+    // let num = prompt("생년월일을 입력하세요.").split(" ").map(Number);
+    // let result1 = num[0] + num[1] + num[2];
+    // // Math() 함수의 floor : 소수점 제외.
+    // let result2 = Math.floor(result1/100%10)
+
+    // if(result2%2==0) {
+    //     document.write("대박")
+    // }
+    // else {
+    //     document.write("그럭저럭")
+    // }
+
+    // #1164 터널 통과하기 1
+    // let num = prompt("생년월일을 입력하세요.").split(" ").map(Number);
+
+    // if(num[0]<=170||num[1]<=170||num[2]<=170) {
+    //     document.write("CRASH")
+    // }
+    // else {
+    //     document.write("PASS")
+    // }
+
+    // #1165 축구의 신 1
+    // let num = prompt("시간과 점수를 입력하세요.").split(" ").map(Number);
+    // let time = 90 - num[0];
+    // let score = Math.floor(time/5 + num[1] + 1);
+
+    // document.write(score)
+
+    // #1166 윤년 판별
+    // let num = Number(prompt("해를 입력하세요."));
+
+    // if(num%400==0) {
+    //     document.write("Leap")
+    // }
+
+    // else {
+    //     if(num%4==0&&num%100!=0) {
+    //         document.write("Leap")
+    //     }
+    //     else {
+    //         document.write("Normal")
+    //     }
+    // }
+
+    // #1167 두 번째 수
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+    // // sort() 정렬 함수
+    // num.sort((a, b) => {
+    //   return a - b;
+    // });
+
+    // document.write(num[1]);
+
+    // #1168 나이 계산 1
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+    // let bir = Math.floor(num[0]/10000) //주민 앞 두자리 남음
+
+    // if(num[1]==1||num[1]==2) {
+    //     document.write(2012-(bir+1900)+1)
+    // }
+    // else if(num[1]==3||num[1]==4) {
+    //     document.write(2012-(bir+2000)+1)
+    // }
+
+    // #1169 나이 계산 2
+    // let num = Number(prompt("해를 입력하세요."));
+    // let bir1 = 2012 - num + 1;
+    // let bir2 = Math.floor((2012 - num + 1)/1000);
+
+    // if(bir2==1) {
+    //     document.write(bir1%100 + " " + "1")
+    // }
+    // else if(bir2==2) {
+    //     document.write(bir1%100 + " " + "3")
+    // }
+
+    // #1170 당신의 학번은? 1
+    // let num = prompt("숫자를 입력하세요.").split(" ");
+    // let result = ""
+
+    // if(num[2]<10) {
+    //     result = "0" + num[2]
+    // }
+    // else {
+    //     result = num[2]
+    // }
+
+    // document.write(result)
+
+    // #1171 당신의 학번은? 2
+    // 풀이 1)
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+    // document.write(100000*num[0]+1000*num[1]+num[2])
+
+    // 풀이 2)
+    // let num = prompt("숫자를 입력하세요.").split(" ");
+    // let result1 = "";
+    // let result2 = "";
+
+    // if(num[1]<10) {
+    //     result1 = "0" + num[1]
+    // }
+    // else {
+    //     result1 = num[1]
+    // }
+
+    // if(num[2]<10) {
+    //     result1 = "00" + num[2]
+    // }
+    // else if(10<=num[2]&&num[2]<100) {
+    //     result1 = "0" + num[2]
+
+    // }
+
+    // else {
+    //     result1 = num[2]
+    // }
+
+    // document.write(num[0] + result1 + result2);
+
+    // #1172 세 수 정렬하기
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+
+    // num.sort(function(a, b){
+    //     return a - b;
+    //   });
+
+    // document.write(num)
+
+    // #1173 30분전
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+
+    //     if(num[1] >= 30){
+    //         document.write(num[0] + " " + (num[1] -30));
+    //     }
+    //     else if(num[1] < 30) {
+    //         document.write(num[0] + " " + (59 -30));
+    //     }
+    //     else{
+    //         if(num[0]=0&&num[1]<30)
+    //         document.write((23 - 1) + " " + (num[1] -30));
+    //     }
+
+    // #1180 만능 휴지통
+
+    // #1201 정수 판별
+    // let inp=Number(prompt("정수를 입력하세요"));
+
+    // if (inp>0){
+    //     document.write("양수")
+    // }
+    // else if(inp<0){
+    //     document.write("음수")
+    // }
+    // else if(inp == 0){
+    //     document.write("0")
+    // };
+    // #1202 등급 판정
+    // let score = prompt("점수를 입력해주세요")
+    // if(score>= 90 && score<=100){
+    //     document.write("A");
+    // }else if(score>= 80 && score<90){
+    //     document.write("B");
+    // }else if(score>= 70 && score<80){
+    //     document.write("C");
+    // }else if(score>= 60 && score<70){
+    //     document.write("D");
+    // }else{
+    //     document.write("F");
+    // }
+
+    // #1203 비만도 측정
+    //비만을 판단하기 위해서 BMI 수치가 필요하다.
+
+    // BMI 수치가 입력되면 비만을 판단하시오.
+    // BMI 수치	비만 판정  ~10 이하	정상, ~20 이하	과체중, 20 초과	비만
+    // 입력: BMI 수치 정수 입력
+    // 출력: BMI가 정상, 과체중, 비만 입니다.
+
+    // let num = Number(prompt('수를 입력하세요.'));
+    // if (num <= 0) {
+    //     document.write(`Error`)
+    // } else if (num >= 1 && num <= 10) {
+    //     document.write(`BMI가 정상입니다.`)
+    // } else if (num > 10 && num <= 20) {
+    //     document.write(`BMI가 과체중입니다.`)
+    // } else if (num > 20) {
+    //     document.write(`BMI가 비만입니다.`)
+    // } else { `Error` }
+
+    // #1204 영어 서수로 표현하기
+    // let k1204 = prompt("1~99중 한 정수를 입력 해주세요")
+
+    // if(k1204 < 1 || k1204 > 99)
+    // {
+    //     document.write("입력 범위 오류")
+    // }
+    // else
+    // {
+    //     if(k1204 == 1)
+    //     {
+    //         document.write("입력값 : "+k1204 + "  서수표현 : " + k1204 + "st")
+    //     }
+    //     else if(k1204 == 2)
+    //     {
+    //         document.write("입력값 : "+k1204 + "  서수표현 : " + k1204 + "nd")
+    //     }
+    //     else if(k1204 == 3)
+    //     {
+    //         document.write("입력값 : "+k1204 + "  서수표현 : " + k1204 + "rd")
+    //     }
+    //     else
+    //     {
+    //         document.write("입력값 : "+k1204 + "  서수표현 : " + k1204 + "th")
+    //     }
+    // }
+
+    // #1205 최댓값
+    //     let nums = prompt("실수 a,b를 공백으로 구분해 입력하세요").split(" ")
+    //     let a = Number(nums[0])
+    //     let b = Number(nums[1])
+    //     let arr = [a+b, a-b, b-a, a*b, a**b, b**a]
+    //     let max = Math.max.apply(null, arr)
+
+    //     document.write(max)
+
+    // #1206 배수
+    // let nums = prompt("두 정수를 입력해주세요.").split(" ").map(Number); // [a, b]
+
+    // let a = nums[0];
+    // let b = nums[1]
+
+    // if(b%a==0) {
+    //     result1 = b/a
+    //     document.write(a + "*" + result1 + "=" + b)
+    // }
+    // else if(a%b==0) {
+    //     result1 = a/b
+    //     document.write(b + "*" +result1 + "=" + a)
+    // }
+    // else {
+    //     document.write("none")
+    // }
+
+    // #1207 윷놀이
+    // let inp=prompt("0 또는 1을 입력하세요").split(' ');
+    // let num=0;
+    // for(let i=0; i<inp.length; i++){
+
+    //     num += Number(inp[i]);
+    // }
+
+    // if (num == 1){
+    //     document.write("도")
+    // }
+    // else if (num == 2){
+    //     document.write("개")
+    // }
+    // else if (num == 3){
+    //     document.write("걸")
+    // }
+    // else if (num == 4){
+    //     document.write("윷")
+    // }
+
+    // #1210 칼로리 계산하기
+    // let number = prompt("주문할 메뉴번호를 공백을 두고 입력해주세요").split(" ");
+    // let calorie = 0;
+
+    // if(number[0] == 1){
+    //     calorie += 400;
+    // }else if(number[0] == 2){
+    //     calorie += 340;
+    // }else if(number[0] == 3){
+    //     calorie += 170;
+    // }else if(number[0] == 4){
+    //     calorie += 100;
+    // }else if(number[0] == 5){
+    //     calorie += 70;
+    // }
+
+    // if(number[1] == 1){
+    //     calorie += 400;
+    // }else if(number[1] == 2){
+    //     calorie += 340;
+    // }else if(number[1] == 3){
+    //     calorie += 170;
+    // }else if(number[1] == 4){
+    //     calorie += 100;
+    // }else if(number[1] == 5){
+    //     calorie += 70;
+    // }
+
+    // if(calorie > 500){
+    //     document.write("angry")
+    // }else{
+    //     document.write("no angry")
+    // }
+
+    // #1212 삼각형의 성립조건
+    // 문제 설명: 세 개의 직선이 있다. 숫자의 의미는 직선의 길이를 말한다. 이 직선으로 삼각형을 만들 수 있는지 판단하는 프로그램을 작성하시오.
+    // 삼각형의 성립 조건) a, b, c 가 변의 길이이고 c가 제일 긴 길이라고 한다면  c < a + b 이면 삼각형이 성립됨.
+
+    // 입력 :2 3 4
+    // 출력 c가 a+b보다 길면 yes 아니면 no
+    // let num = prompt(`입력해주세요.`).split(` `);
+    // if (num[0] + num[1] < num[2]) {
+    //     document.write(`yes`);
+    // } else { document.write(`no`); }
+
+    // #1214 이 달은 며칠까지 있을까?
+    // let k1214 = prompt("년, 월을 공백을 두고 입력해주세요").split(" ")
+
+    // if(k1214[1] < 0 || k1214[1] > 12)
+    // {
+    //     document.write("월은 1-12 범위입니다")
+    // }
+    // else
+    // {
+    //     if(k1214[1] == 1 || k1214[1] == 3 || k1214[1] == 5 || k1214[1] == 7 || k1214[1] == 8 || k1214[1] == 10 || k1214[1] == 12)
+    //     {
+    //         document.write("이 달은 31일 까지 있습니다")
+    //     }
+    //     else if(k1214[1] == 4 || k1214[1] == 6 || k1214[1] == 9 || k1214[1] == 11)
+    //     {
+    //         document.write("이 달은 30일 까지 있습니다")
+    //     }
+    //     else
+    //     {
+    //         if(k1214[0] % 4 == 0 && k1214[0] != 0 || k1214[0]%400 == 0)
+    //         {
+    //             document.write("이 달은 29일 까지 있습니다 윤년")
+    //         }
+    //         else
+    //         {
+    //             document.write("이 달은 28일 까지 있습니다 윤년아님")
+    //         }
+    //     }
+    // }
+
+    // #1216 컨설팅 회사
+    //     let cost = prompt("홍보 안할때 수입, 홍보 할 때 수입, 홍보비용을 공백을 두고 입력하세요").split(" ")
+    //     let a = Number(cost[0])
+    //     let b = Number(cost[1])
+    //     let c = Number(cost[2])
+    //     let proO = b-c
+    //     let proX = a-c
+
+    //     if(proO>proX){
+    //         document.write("advertise")
+    //     } else if(proO<proX){
+    //         document.write("do no advertise")
+    //     } else document.write("does not matter")
+
+    // #1218 삼각형 판단하기
+    // let nums = prompt("두 정수를 입력해주세요.").split(" ").map(Number); // [a, b, c]
+
+    // let a = nums[0];
+    // let b = nums[1];
+    // let c = nums[2];
+
+    // if(a==b&&b==c&&c==a) {
+    //     document.write("정삼각형")
+    // }
+    // else if(a==b||b==c||c==a) {
+    //     document.write("이등변삼각형")
+    // }
+    // else if(a*a + b*b == c*c) {
+    //     document.write("직각삼각형")
+    // }
+    // else {
+    //     document.write("삼각형")
+    // }
+
+    // if(nums.length!=3||c>=a+b) {
+    //     document.write("삼각형아님")
+    // }
+
+    // #1222 축구의 신 2
+    // let num = prompt("시간과 점수를 입력하세요.").split(" ").map(Number); // [80, 5, 7] ( 현재 경기 타임,  1반득점, 2반득점 )
+    // let time = 90 - num[0];
+    // // let score = Math.floor(time/5 + num[1] + 1);
+    // let score1 = time/5 + num[1]; //1반의 총 득점
+
+    // if(score1 > num[2]) {
+    //     document.write("win")
+    // }
+    // else if(score1 == num[2]) {
+    //     document.write("same")
+    // }
+    // else {
+    //     document.write("lose")
+    // }
+
+    // #1224 분수 크기 비교
+    // let a=Number(prompt("정수를 입력하세요"));
+    // let b=Number(prompt("정수를 입력하세요"));
+    // let c=Number(prompt("정수를 입력하세요"));
+    // let d=Number(prompt("정수를 입력하세요"));
+
+    // if(a/b > c/d){
+    //     document.write(">")
+    // }
+    // else if(a/b == c/d){
+    //     document.write("=")
+    // }
+    // else if(a/b < c/d){
+    //     document.write("<");
+    // }
+
+    // #1226 이번 주 로또
+    // 등수	방법
+    // 1등	당첨번호 6개 일치
+    // 2등	당첨번호 5개 일치 + 보너스번호 일치
+    // 3등	5개 번호 일치
+    // 4등	4개 번호 일치
+    // 5등	3개 번호 일치
+    // 꽝	2개 이하 일치
+
+    // 예)
+    // 13 23 24 35 40 45 7     ===> 로또 당첨번호 + 보너스 번호
+    //  2  6  7 23  40 44      ====> 지혜가 가진 로또 번호
+    // 따라서 지혜는 "꽝"
+    // 입력: 13 23 24 35 40 45 7
+    //      2 6 7 23 40 44
+    // 출력: 0(지혜의 당첨 결과를 출력한다. )
+    // 출력방법)
+    // 1등 = 1 출력, 2등 = 2 출력, 3등 = 3 출력, 4등 = 4 출력, 5등 = 5 출력, 꽝 = 0 출력
+
+    // 풀이 1)
+    // let lotto = [13, 23, 24, 35, 40, 45, 7];
+    // let num = prompt(`입력`).split(` `);
+    // let count = 0;
+    // let lucky = 0;
+
+    // for (let i = 0; i < lotto.length; i++) {
+    //     for (let j = 0; j < num.length; j++) {
+    //         if (lotto[i] == num[j]) {
+    //             if (num[j] == "7") {
+    //                 lucky++;
+    //             }
+    //             count++;
+    //         }
+    //     }
+    // }
+    // if (count <= 2) {
+    //     document.write(`꽝`);
+    // } else if (count == 3) {
+    //     document.write(`5등`);
+    // } else if (count == 4) {
+    //     document.write(`4등`);
+    // } else if (count == 5) {
+    //     document.write(`3등`);
+    // } else if (count == 5 && lucky == 1) {
+    //     document.write(`2등`);
+    // } else if (count == 6) {
+    //     document.write(`1등`);
+    // }
+
+    // 풀이 2)
+    // let num1 = prompt("당첨번호를 입력하세요.").split(" "); // [13, 23, 24, 35, 40, 45, 7]
+    // let num2 = prompt("응모번호를 입력하세요.").split(" ");
+    // let result = "";
+
+    // for (i = 0; i < num1.length - 1; i++) {
+    //   for (j = 0; j < num2.length; j++) {
+    //     if (num1[i] == num2[j]) {
+    //       result = result + num2[j] + " ";
+    //     }
+    //   }
+    // }
+
+    // for (i = 0; i < num2.length; i++) {}
+
+    // let result2 = result.split(" "); // [23, 40, (공백)]
+
+    // if (result2.length == 7) {
+    //   document.write(1);
+    // } else if (result2.length == 6 && num2.indexOf(num1[6])>0) {
+    //   document.write(2);
+    // } else if (result2.length == 6) {
+    //   document.write(3);
+    // } else if (result2.length == 5) {
+    //   document.write(4);
+    // } else if (result2.length == 4) {
+    //   document.write(5);
+    // } else if (result2.length <= 3) {
+    //   document.write(0);
+    // }
+
+    // #1228 비만도 측정 1
+    // let inp = prompt("키와 몸무게를 입력해주세요").split(" ");
+    // let 표준몸무게 = (inp[0] - 100) * 0.9;
+    // let 비만도 = (inp[1]- 표준몸무게)*100/표준몸무게;
+
+    // if(비만도 >20){
+    //     document.write("비만");
+    // }else if(비만도>10 && 비만도<=20){
+    //     document.write("과체중");
+    // }else if(비만도<=10){
+    //     document.write("정상");
+    // }
+
+    // #1229 비만도 측정 2
+    // let k1229 = prompt("키와 체중을 공백을 두고 입력해주세요\n키는 1cm 이상, 신장은 200이하").split(" ")
+    // let k1229a = k1229[0] // 키
+    // let k1229b = k1229[1] // 체중
+    // let temp = 0;
+    // let pyo=0;
+    // if (k1229a < 0 || k1229b < 0) {
+    //     document.write("키와 체중은 실수로 입력해주세요.")
+    // }
+    // else if (k1229b > 200) {
+    //     document.write("체중은 200kg 이하로 입력해주세요.")
+    // }
+    // else
+    // {
+
+    //     if (k1229a < 150)
+    //     {
+    //         pyo = k1229a - 100
+    //         temp = (k1229b - pyo ) * 100 / pyo
+    //         document.write("키 : " + k1229a + "cm 체중 : " + k1229b + "kg   BMI : " + temp + "\n")
+    //         temp < 10 ? document.write("정상") : 10 < temp && temp < 20 ? document.write("과체중") : document.write("비만")
+    //     }
+    //     // 신장 150~160범위 표준체중 공식 (((k1229a - 150) / 2) + 50)
+    //     else if(k1229a >= 150 && k1229a < 160)
+    //     {
+    //         pyo = (k1229a - 150) / 2 + 50
+    //         temp = (k1229b - pyo ) * 100 / pyo
+    //         console.log(pyo)
+    //         document.write("키 : " + k1229a + "cm 체중 : " + k1229b + "kg   BMI : " + temp + "\n")
+    //         temp < 10 ? document.write("정상") : 10 < temp && temp < 20 ? document.write("과체중") : document.write("비만")
+    //     }
+    //     // 키 160 이상 표준체중 공식 ( (k1229a - 100) * 0.9)
+    //     else
+    //     {
+    //         pyo = (k1229a - 100) * 0.9
+    //         temp = (k1229b - pyo ) * 100 / pyo
+    //         document.write("키 : " + k1229a + "cm 체중 : " + k1229b + "kg   BMI : " + temp + "\n")
+    //         temp < 10 ? document.write("정상") : 10 < temp && temp < 20 ? document.write("과체중") : document.write("비만")
+    //     }
+    // }
+
+    // #1230 터널 통과하기 2
+    //     let tunnel = prompt("터널 3개의 높이를 공백을 두고 입력하세요").split(" ")
+    //     let a = Number(tunnel[0])
+    //     let b = Number(tunnel[1])
+    //     let c = Number(tunnel[2])
+    //     let arr = [a,b,c]
+    //     let i = 0;
+
+    //     for(let i=0; i<arr.length; i++){
+    //         if(arr[i]<170 || arr[i]==170){
+    //             document.write("CRASH" + " " + arr[i])
+    //             break;
+    //         } else document.write("PASS")
+    //     }
+
+    // #1231 계산기 1
+    // let num = prompt("연산식을 입력하세요."); // [10+10]
+
+    // let myadd = 0;
+    // let result1 = 0;
+
+    // let myminus = 0;
+    // let result2 = 0;
+
+    // let mymulti = 0;
+    // let result3 = 0;
+
+    // let mydiv = 0;
+    // let result4 = 0;
+
+    // for(i=0; i<num.length; i++) {
+    //     if(num[i]=="+") {
+    //         myadd = num.split("+") // [n, +, n]
+    //         result1 = Number(myadd[0]) + Number(myadd[1]);
+    //         document.write(result1)
+    //     }
+    //     else if(num[i]=="-") {
+    //         myminus = num.split("-") // [n, -, n]
+    //         result2 = myminus[0] - myminus[1];
+    //         document.write(result2)
+    //     }
+    //     else if(num[i]=="*") {
+    //         mymulti = num.split("*") // [n, *, n]
+    //         result3 = mymulti[0] * mymulti[1];
+    //         document.write(result3)
+    //     }
+    //     else if(num[i]=="/") {
+    //         mydiv = num.split("/") // [n, *, n]
+    //         result4 = mydiv[0] / mydiv[1];
+    //         document.write(result4)
+    //     }
+    // }
+
+    // TODO: CodeUp 기초 4-1.단순반복문
+
+    // #1251 1부터 100까지 출력하기
+    // let result = "";
+
+    // for(i=1; i<=100; i++) {
+    //     result = result + " " + i;
+    // }
+
+    // document.write(result)
+
+    // #1252 1부터 n까지 출력하기
+    // let num = Number(prompt("정수를 입력하세요."))
+    // let result = ""
+
+    // for(i=1; i<=num; i++) {
+    //     result = result + " " + i;
+    // }
+
+    // #1253 a부터 b까지 출력하기
+    // let num = prompt("수를 입력하세요.").split(" ").map(Number);
+    // let result = ""
+
+    // for(i=num[0]; i<=num[1]; i++) {
+    //     result = result + " " + i;
+    // }
+
+    // document.write(result)
+
+    // #1254 알파벳 출력하기
+    // let num = prompt("알파벳을 입력하세요.").split(" ");
+    // let first = num[0].charCodeAt(0);
+    // let second = num[1].charCodeAt(0);
+    // let result = "";
+
+    // for(i=first; i<=second; i++) {
+    //     result = result + " " + String.fromCharCode(i);
+    // }
+
+    // document.write(result)
+
+    // #1255 두 실수 사이 출력하기
+    // let num = prompt("수를 입력하세요.").split(" ").map(Number);
+    // let result="";
+
+    // for(i=num[0]*100; i<=num[1]*100+1; i++) {
+    //     result = result + " " + (i/100).toFixed(2);
+    // }
+
+    // document.write(result)
+
+    // #1256 별 출력하기
+    // let num = Number(prompt("정수를 입력하세요."))
+    // let result = ""
+
+    // for(i=0; i<num; i++) {
+    //     result = result + "*"
+    // }
+    // document.write(result)
+
+    // #1257 두 수 사이의 홀수 출력하기
+    // let num = prompt("수를 입력하세요.").split(" ").map(Number);
+    // let result = "";
+
+    // for(let i=num[0]; i<=num[1]; i++) {
+    //     if(i%2!=0) {
+    //         result = result + " " + i
+    //     }
+    // }
+
+    // document.write(result)
+
+    // #1258 1부터 n까지 합 구하기
+    // let num = Number(prompt("정수를 입력하세요."))
+    // let result = 0;
+
+    // for(let i=1; i<=num; i++) {
+    //     result = result + i;
+    // }
+
+    // document.write(result)
+
+    // #1259 1부터 n까지 중 짝수의 합 구하기
+    // let num = Number(prompt("정수를 입력하세요."))
+    // let result = 0;
+
+    // for(let i=1; i<=num; i++) {
+    //     if(i%2==0) {
+    //         result = result + i;
+    //     }
+    // }
+
+    // document.write(result)
+
+    // #1260 3의 배수의 합
+    // let num = prompt("수를 입력하세요.").split(" ").map(Number);
+    // let result = 0;
+
+    // for(let i=num[0]; i<=num[1]; i++) {
+    //     if(i%3==0) {
+    //         result = result + i;
+    //     }
+    // }
+
+    // document.write(result)
+
+    // #1261 First Special Judge (Test)
+    // let num = prompt("수를 입력하세요.").split(" ").map(Number);
+    // let result = 0;
+
+    // for(let i=0; i<=num.length; i++) {
+    //     if(num[i]%5==0) {
+    //         result = num[i]
+    //         break
+    //     } else {
+    //       result
+    //     }
+    // }
+
+    // document.write(result)
+
+    // #1265 구구단 출력하기 1
+    // let num = Number(prompt("정수를 입력하세요."))
+    // let result =0;
+
+    // for(let i=num; i<=num; i++) {
+    //     for(let j=1; j<=9; j++) {
+    //         result = result + i + "*" + j + "=" + i*j + "\n";
+    //     }
+    // }
+
+    // document.write(result)
+
+    // #1266 n개의 수의 합
+    // let num1 = Number(prompt("개수를 입력하세요."))
+    // let num2 = prompt("정수를 입력하세요.").split(" ").map(Number);
+    // let result = 0;
+
+    // for(i=0; i<num1; i++) {
+    //     result = result + num2[i];
+    // }
+
+    // document.write(result)
+
+    // #1267 n개의 수 중 5의 배수의 합
+    // let num1 = Number(prompt("개수를 입력하세요."))
+    // let num2 = prompt("정수를 입력하세요.").split(" ").map(Number);
+    // let result = 0;
+
+    // for(i=0; i<num1; i++) {
+
+    //     if(num2[i]%5==0) {
+    //         result = result + num2[i];
+    //     }
+
+    // }
+
+    // document.write(result)
+
+    // #1268 n개의 수 중 짝수의 개수
+    // let num1 = Number(prompt("개수를 입력하세요."))
+    // let num2 = prompt("정수를 입력하세요.").split(" ").map(Number);
+    // let count = 0;
+
+    // for(i=0; i<num1; i++) {
+
+    //     if(num2[i]%2==0) {
+    //         count++
+    //     }
+
+    // }
+
+    // document.write(count)
+
+    // #1269 n개의 수 중 짝수의 개수
+    // let num = prompt("정수를 입력하세요.").split(" ").map(Number);
+    // let result = 1;
+
+    // for(let i=1; i<=num[3]-1; i++) {
+    //     result = result*num[1]+num[2];
+    // }
+    // let result2 = num[0]*result
+
+    // document.write(result2)
+
+    // #1270 1의 개수는? 1
+    // let num = Number(prompt("개수를 입력하세요."))
+    // let count = 0
+
+    // for(let i=1; i<=num; i++) {
+
+    //     if(i%10==1) {
+    //         count++
+    //     }
+    // }
+
+    // document.write(count)
+
+    // #1271 최댓값 구하기
+    // let num1 = Number(prompt("개수를 입력하세요."))
+    // let num2 = prompt("정수를 입력하세요.").split(" ").map(Number);
+
+    // document.write(Math.max(...num2))
+
+    // #1272 기부
+    // let num = prompt("정수를 입력하세요.").split(" ").map(Number);
+    // let result1 = 0;
+    // let result2 = 0;
+
+    // if (num[0] % 2 == 1) {
+    //   result1 = (num[0] + 1) / 2;
+    // } else {
+    //   result1 = (num[0] / 2) * 10;
+    // }
+    // if (num[1] % 2 == 1) {
+    //   result2 = (num[1] + 1) / 2;
+    // } else {
+    //   result2 = (num[1] / 2) * 10;
+    // }
+
+    // document.write(result1 + result2);
+
+    // #1273 약수 구하기
+    // let num = Number(prompt("숫자를 입력하세요."))
+    // let result = ""
+
+    // for(let i=1; i<=num; i++) {
+    //   if(num%i==0) {
+    //     result = result + i + " ";
+    //   }
+    // }
+
+    // document.write(result)
+
+    // #1274 소수 판별
+    // let num = Number(prompt("숫자를 입력하세요."));
+
+    // if (num == 2) {
+    //   document.write("prime");
+    // }
+    // else if(num <= 1) {
+    //     document.write("not prime")
+    // }
+    // for (let i = 2; i < num; i++) {
+    //   if (num % i === 0) {
+    //     //이 부분에서 num이  다른 수로 나눠떨어진다면 소수가 아님
+    //     document.write("not prime");
+    //     break
+    //   } else {
+    //     document.write("prime")
+    //     break
+    //   }
+    // }
+
+    // #1275 k 제곱 구하기
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+    // let result = 1;
+
+    // for(let i=0; i<num[1]; i++) {
+    //     result = result*num[0]
+    // }
+
+    // document.write(result)
+
+    // #1276 팩토리얼 계산
+    // let num = Number(prompt("숫자를 입력하세요."));
+    // let result = 1;
+
+    // for (i=5; i>0; i--) {
+    //     result = result*i;
+    // }
+
+    // document.write(result)
+
+    // #1277 몇 번째 데이터 출력하기
+    // // 풀이 1)
+    // let num1 = Number(prompt("개수를 입력하세요."));
+    // let num2 = prompt("정수를 입력하세요.").split(" ");
+    // let first = "";
+    // let second = "";
+    // let third = "";
+    // let result =""
+
+    // for(let i=0; i<num1; i++) {
+    //     if(i==0) {
+    //         first = num2[i];
+    //     }
+    //     if(i==(num1-1)/2) {
+    //         second = num2[i];
+    //     }
+    //     if(i==num1-1) {
+    //         third = num2[i];
+    //     }
+    //     result = first + " " + second + " " + third
+    // }
+
+    // document.write(result)
+
+    // 풀이 2)
+
+    // let num1 = Number(prompt("개수를 입력하세요."));
+    // let num2 = prompt("정수를 입력하세요.").split(" ");
+
+    // let first = num2[0];
+    // let second = num2[(num1-1)/2];
+    // let third = num2[num1-1];
+    // let result =""
+
+    // result = first + " " + second + " " + third
+
+    // document.write(result)
+
+    // #1278 자릿수 계산
+    // // length() 함수를 이용하여 배열의 크기를 반환함.
+    // let num = prompt("숫자를 입력하세요.");
+    // document.write(num.length)
+
+    // #1279 홀수는 더하고 짝수는 빼고 1
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+    // let result1 = 0;
+    // let result2 = 0;
+
+    // for(i=num[0]; i<=num[1]; i++) {
+    //     if(i%2==1) {
+    //         result1 = result1 + i;
+    //     }
+    //     if(i%2==0) {
+    //         result2 = result2 + i;
+    //     }
+    // }
+
+    // document.write(result1-result2)
+
+    // #1280 홀수는 더하고 짝수는 빼고 2
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+    // let result1 = "";
+    // let result2 = 0;
+
+    // for(let i=num[0]; i<=num[1]; i++) {
+    //     if(i%2==1) {
+    //         result1 = result1 + "+" + i;
+    //         result2 = result2 + i;
+    //     }
+    //     else if(i%2==0) {
+    //         result1 = result1 + "-" +i;
+    //         result2 = result2 - i;
+    //     };
+    // }
+
+    // document.write(result1+"="+result2)
+
+    // #1281 홀수는 더하고 짝수는 빼고 3
+    // let num = prompt("숫자를 입력하세요.").split(" ").map(Number);
+    // let result1 = "";
+    // let result2 = 0;
+
+    // for(let i=num[0]; i<=num[1]; i++) {
+    //     if(i%2==1) {
+    //         if(i==num[0]) {
+    //             result1 = result1 + i;
+    //         } else {
+    //             result1 = result1 + "+" + i;
+    //         }
+    //         result2 = result2 + i;
+    //     }
+    //     if(i%2==0) {
+    //         if(i==num[0]) {
+    //             result1 = result1 + i;
+    //         } else {
+    //             result1 = result1 + "-" +i;
+    //         }
+    //         result2 = result2 - i;
+    //     };
+    // }
+
+    // document.write(result1+"="+result2)
+
+    // #1282 제곱수 만들기
+    // 문제 설명: n이 입력되면 k를 빼서 제곱수를 만들 수 있는 k를 구하고, 그 제곱수에 루트를 씌운 수(제곱근) t를 구하여라.
+    // 이 때 k는 여러가지가 될 수 있는데 가장 작은 k를 출력한다.
+    // 입력: n이 입력된다.(0<k<n<=231): 34
+    // 출력: 9 5
+
+    // let a = Number(prompt("정수를 입력하세요"));
+    // let b = parseInt(Math.sqrt(a));
+    // document.write(a - b * b + " " + b);
+
+    // #1283 주식 투자
+    // 풀이 1)
+    // 입력 : 10000, 4, 10 -10 5 -5
+    // 출력 -125 bad
+
+    // let a = Number(prompt(`입력1`));
+    // let b = Number(prompt(`입력2`));
+    // let c = prompt(`입력3`).split(" ");
+    // let d = a;
+
+    // for (let i = 0; i < b; i++) {
+    //     a += ((a / 100) * c[i]);
+    //     document.write(`${a} \n ${d}`);
+    // }
+    // if (a > d) {
+    //     document.write(`${d - a} good`);
+    // } else if (a == d) {
+    //     document.write(`${a} same`);
+    // } else { document.write(`${d - a} bad`); }
+
+    // 풀이 2)
+    // // 첫째줄에 투자한 액수 a가 입력됩니다. (100 <= a <= 10,000)
+
+    // // 둘째 줄에 투자 일 수 b가 입력됩니다.(1 <= b <= 10)
+
+    // // 그 다음줄에 일별 변동폭인 데이터가 날짜 갯수(b개)만큼 퍼센트 정수로 입력됩니다. (변동폭는 음수도 될 수 있습니다.) ( 범위 -100 ~ +100)
+
+    // let k1283a = prompt("투자액수를 입력해주세요\n단 100 <= a <= 10000")
+    // let temp = Number(k1283a)
+    // let output_sw = false
+
+    // if(99 > k1283a || k1283a > 10000 )
+    // {
+    //     document.write("투자액수의 범위는 100 ~ 10000")
+    // }
+    // else
+    // {
+    //     let k1283b = prompt("투자일수를 입력해주세요\n단 투자일수는 1<=b<=10")
+
+    //     if(k1283b < 1 || k1283b > 10)
+    //     {
+    //         document.write("투자일수 범위는 1일~10일")
+    //     }
+    //     else
+    //     {
+    //         let k1283c = prompt("주식의 변동폭을 공백을 두고 입력해주세요\n단 변동폭은 -100 ~ 100").split(" ")
+
+    //         if(k1283c.length != k1283b)
+    //         {
+    //             document.write("투자일수와 변동폭 입력값이 일치하지 않습니다")
+    //         }
+    //         else
+    //         {
+
+    //             for(let i = 0; i < k1283c.length ; i++)
+    //             {
+    //                 if(k1283c[i] < -100 || k1283c[i] > 100)
+    //                 {
+    //                     document.write((i+1) + "번째 변동폭값 이상, 변동폭의 범위는 -100 ~ 100 입니다")
+    //                     break
+    //                 }
+    //                 else if(i == k1283c.length)
+    //                 {
+    //                     output_sw = true
+    //                 }
+    //                 else
+    //                 {
+    //                     temp = temp + ((Number(k1283c[i]) * 0.01) * temp)
+    //                     console.log(i + "번째" + temp)
+    //                 }
+    //             }
+
+    //         }
+    //     }
+    //     if(output_sw == true && (temp == k1283a ||  (temp-k1283a < 0.5 && temp-k1283a > -0.5))  )
+    //     {
+    //         document.write ("0, SAME")
+    //     }
+    //     else if(output_sw = true && (temp > k1283a && temp-k1283a > 0.5) )
+    //     {
+    //         document.write("+" + (Number(temp - k1283a)).toFixed(0) + " GOOD")
+    //     }
+    //     else if(output_sw = true && (temp < k1283a && temp-k1283a < 0.5) )
+    //     {
+    //         document.write( (Number(temp - k1283a)).toFixed(0) + " BAD")
+    //     }
+    //     else
+    //     {
+    //         document.write("\n버그발생")
+    //     }
+
+    // }
+
+    // #1284 암호 해독
+    // 입력 : 어떤 수 n이 입력된다.(단, 1<=n<=10,000,000)
+    // 출력 : n을 두 소수의 곱으로 나타낼 수 있으면 두 수를 오름차순으로 출력한다.
+    // (단, 가능한 소수 중 가장 작은 소수와의 곱으로 나타낸다.)
+    // 하고, 그렇지 않으면 "wrong number"를 출력한다.
+
+    // function check(num) {
+    //     for (let i = 2; i * i <= num; i++) {
+    //         if (num % i == 0) return 0;
+    //     }
+    //     return 1;
+    // }
+
+    // let flag = true;
+    // let input = Number(prompt("수 입력"));
+
+    // for (let i = 2; i <= input; i++) {
+    //     if (i != 2 && i % 2 == 0) continue;
+    //     for (let j = 2; j <= i; j++) {
+    //         if (check(i) == 1 && check(j) == 1) {
+    //             if (i * j == input) {
+    //                 document.write(j + " " + i);
+    //                 flag = false;
+    //             }
+    //         }
+    //     }
+    // }
+    // if (flag) { document.write("wrong number"); }
+
+    // #1285 계산기 2
+    // let inp=prompt('');
+    // document.write(eval(inp));
+
+    // #1286 최댓값, 최솟값
+    //     let nums = prompt("정수 5개를 공백으로 구분해 입력하세요").split(" ")
+    //     let a = Number(nums[0])
+    //     let b = Number(nums[1])
+    //     let c = Number(nums[2])
+    //     let d = Number(nums[3])
+    //     let e = Number(nums[4])
+    //     let arr = [a, b, c, d, e]
+    //     let max = Math.max.apply(null, arr)
+    //     let min = Math.min.apply(null, arr)
+
+    //     document.write("최대값: " + max + " " + "최소값: " + min)
+
+    // #1287 구구단을 *로 출력하기
+    // let inp = Number(prompt());
+    // let result ="";
+    // for(let i = 1;i<=9;i++){
+    //     for(let j = 1; j<=(inp*i);j++){
+    //         result += "*";
+    //     }
+    //     result += "\n";
+    // }document.write(result);
+
+    // #1294 시저의 암호 2
+    // let words = prompt("문장을 입력하세요.").split(" "); //[never, trust, brutus]
+
+    // let first = words[0]; // "naver"
+    // let second = words[1]; // "trust"
+    // let third = words[2]; // "brutus"
+
+    // let result1 = 0
+    // let result2 = 0
+    // let result3 = 0
+
+    // for(i=0; i<first.length; i++) {
+    //     result1 = result1 + (first[i].charCodeAt(0) + 3) + " "; // "n n n n n (공백)" -> n(숫자)로 변환
+    // }
+    // for(i=0; i<second.length; i++) {
+    //     result2 = result2 + (second[i].charCodeAt(0) + 3) + " "; // "n n n n n (공백)" -> n(숫자)로 변환
+    // }
+    // for(i=0; i<third.length; i++) {
+    //     result3 = result3 + (third[i].charCodeAt(0) + 3) + " "; // "n n n n n n (공백)" -> n(숫자)로 변환
+    // }
+
+    // let result1_2 = result1.split(" ") // [n, n, n, n, n, (공백)]
+    // let result2_2 = result2.split(" ")
+    // let result3_2 = result3.split(" ")
+
+    // let final1 = ""
+    // let final2 = ""
+    // let final3 = ""
+
+    // for(i=0; i<result1_2.length-1; i++) {
+    //     final1 = final1 + String.fromCodePoint(result1_2[i]);
+    // }
+    // for(i=0; i<result2_2.length-1; i++) {
+    //     final2 = final2 + String.fromCodePoint(result2_2[i]);
+    // }
+    // for(i=0; i<result3_2.length-1; i++) {
+    //     final3 = final3 + String.fromCodePoint(result3_2[i]);
+    // }
+
+    // document.write(final1+ " " + final2 + " " + final3)
+
+    // #1295 알파벳 대소문자 변환
+    // let char = prompt("문자를 입력해주세요.");
+    // let result = ""
+
+    // for (i = 0; i < char.length; i++) {
+    //   if (97 <= char[i].charCodeAt(0) && char[i].charCodeAt(0) <= 122) {
+    //     // 소문자면
+    //     result += char[i].toUpperCase();
+    //   }
+    //   else if (65 <= char[i].charCodeAt(0) && char[i].charCodeAt(0) <= 90) {
+    //     // 대문자면
+    //     result += char[i].toLowerCase();
+    //   } else if (0<=char[i]&&char[i]<=9) {
+    //     // 숫자면
+    //     result += char[i]
+    //   }
+    // }
+    // document.write(result);
+
+    // #1675 시저의 암호 1
+    // 입력 : qhyhu wuxvw euxwxv
+    // 출력 : never trust brutus
+    // let input = prompt(`입력`);
+    // let num = Number(prompt(`수 입력`));
+    // let output = solution(input, num);
+    // document.write(output);
+
+    // function solution(s, n) {
+    //     var chars =
+    //         "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXY                          ";
+    //     return s
+    //         .split("")
+    //         .map((e) => chars[chars.indexOf(e) + n])
+    //         .join("");
+    // }
+
+    // TODO: CodeUp 기초 5-1.1차원 배열
+
+    // #1402 거꾸로 출력하기 3
+    // let num1 = Number(prompt("개수를 입력하세요."));
+    // let num2 = prompt("정수를 입력하세요.").split(" ");
+    // let result = ""
+
+    // for(let i=num1-1; i>=0; i--) {
+    //     result = result + num2[i] + " ";
+    // }
+    // document.write(result)
+
+    // #1403 배열 두번 출력하기
+    // let num1 = Number(prompt("개수를 입력하세요."));
+    // let num2 = prompt("정수를 입력하세요.").split(" ");
+    // let result = ""
+
+    // for(i=0; i<num1; i++) {
+    //     result = result + num2[i] + "\n";
+    // }
+
+    // document.write(result+result)
+
+    // #1405 숫자 로테이션
+    // let num1 = Number(prompt("개수를 입력하세요.")); // 5
+    // let num2 = prompt("정수를 입력하세요.").split(" "); // [1, 2, 3, 4, 5]
+    // let first = "";
+
+    // for (let i = 0; i < num1; i++) {
+    //   for (let j = i; j < num1; j++) {
+    //     first = first + num2[j] + " ";
+    //   }
+    //   for (let j = 0; j < i; j++) {
+    //     first = first + num2[j] + " ";
+    //   }
+    //   first += "\n";
+    // }
+
+    // document.write(first);
+
+    // #1407 문자열 출력하기 1
+    // let char = prompt("입력하세요.").split(" ");
+    // let result = ""
+
+    // for(i=0; i<char.length; i++) {
+    //     result = result + char[i];
+    // }
+
+    // document.write(result)
+
+    // #1409 기억력 테스트 1
+    // let num1 = prompt("숫자를 입력하세요.").split(" ");
+    // let num2 = Number(prompt("개수를 입력하세요."));
+
+    // document.write(num1[num2-1]);
+
+    // #1410 올바른 괄호 1 (괄호 개수 세기)
+    // let char = prompt("입력하세요.");
+    // let count=0;
+    // let count1=0;
+
+    // for(let i=0; i<char.length; i++) {
+
+    //     if(char[i]=='(') {
+    //         count++
+    //     }
+    //     if(char[i]==')') {
+    //         count1++
+    //     }
+    // }
+
+    // document.write(count + " " + count1)
+
+    // #1411 빠진 카드
+    // let num = prompt("정수를 입력하세요.").split(" ").map(Number);
+    // let result = 0
+    // let result1 = 0
+
+    // for(i=1; i<num.length; i++) {
+    //     result = result + num[i]
+    // }
+
+    // for(i=1; i<=num.length; i++) {
+    //     result1 = result1 + i
+    // }
+    // document.write(result1-result)
+
+    // #1412 알파벳 개수 출력하기
+    // let all = prompt("문장을 입력하세요.").split(" ").join(""); // [oh!mygod!]
+    // let result = "";
+
+    // for (i = 0; i < all.length; i++) {
+    //   result = result + all[i].charCodeAt(0) + " "; // 111 104 33 109 121 103 111 100 33 (공백)
+    // }
+
+    // let result2 = result.split(" "); // [ 111,104,33,109,121,103,111,100,33,(공백) ]
+    // let final = "";
+
+    // // count에 배열 추가
+    // let count = new Array(26);
+
+    // for (let i = "a".charCodeAt(0); i <= "z".charCodeAt(0); i++) {
+    //   count[i] = 0;
+    // }
+
+    // for (let i = "a".charCodeAt(0); i <= "z".charCodeAt(0); i++) {
+    //   // 97 ~ 122
+
+    //   for (let j = 0; j < result2.length - 2; j++) {
+    //     // index: 0~8
+    //     if (i == result2[j]) {
+    //       count[i]++;
+    //     }
+    //   }
+    //   final = final + String.fromCharCode(i) + ":" + count[i] + "<br>";
+    // }
+
+    // document.write(final);
+
+    // #1416 2진수 변환
+    // let num = Number(prompt("숫자를 입력하세요."))
+    // let bi = parseInt(num, 10).toString(2); // 10진수를 2진수로
+
+    // document.write(bi)
+
+    // #1420 3등 찾기
+    // let num = Number(prompt("숫자를 입력하세요."))
+    // let grade = prompt("입력하세요.").split(" "); //[minsu, 78, gunho, 64, sumin, 84, jiwon, 96, woosung, 55]
+    // let result = ""
+
+    // for(let i=0; i<grade.length; i++) {
+    //     if(i%2==1) {
+    //         result = result + grade[i] + " ";
+    //     }
+    // }
+
+    // let result2 = result.split(" "); // [78, 64, 84, 96, 55]
+
+    // result2.sort(function(a, b){
+    //     return b - a;
+    //   });
+
+    // let result3 = result2[2]; // 세 번째로 높은 점수 => 78
+    // let result4 = grade.indexOf(result3); //1
+
+    // document.write(grade[result4-1])
+
+    // #1425 자리배치
+    // let stu = prompt("입력하세요.").split(" ").map(Number)
+
+    // let num1 = prompt("입력하세요.").split(" ").map(Number);
+    // let result1 = num1.sort(function (a, b) {
+    //   return a - b;
+    // }); // 학생 키를 작은 수부터 큰 수까지
+
+    // let first = "";
+    // let second = "";
+
+    // for (i = 0; i < stu[1]; i++) {
+    //     first = first + result1[i] + " ";
+    // }
+    // for (i=stu[1]; i<stu[0]; i++) {
+    //     second = second + result1[i] + " ";
+    // }
+
+    // document.write(first + "\n" + second)
+
+    // #1430 기억력 테스트 2
+    // let datanum = Number(prompt("숫자를 입력하세요."));
+    // let data = prompt("입력하세요.").split(" "); // [2,52,23,55,100]
+    // let quenum = Number(prompt("숫자를 입력하세요."));
+    // let que = prompt("입력하세요.").split(" "); // [5, 2, 55, 99]
+    // let result = ""
+
+    // for (i = 0; i < quenum; i++) {
+    //   if (data.indexOf(que[i]) >= 0) {
+    //     que[i] =  "1";
+    //   }
+    //   else {
+    //     que[i] =  "0";
+    //   }
+    //   result = result + que[i] + " "
+    // }
+
+    // document.write(result)
+
+    // #1440 비교
+    // let num = Number(prompt("숫자를 입력하세요."));
+    // let nums = prompt("입력하세요.").split(" ").map(Number); // [1,2,3,4,5]
+    // let result = ""
+
+    // for(i=0; i<num; i++) {
+    //   result += (i+1) + ":"
+    //     for(j=0; j<num; j++) {
+    //         if(i == j) {
+    //           continue
+    //         }
+    //         else if (nums[i]<nums[j]) {
+    //           result += "<"
+    //         }
+    //         else if (nums[i]==nums[j]) {
+    //           result += "="
+    //         }
+    //         else if (nums[i]>nums[j]) {
+    //           result += ">"
+    //         }
+
+    //     }
+    //     result += "\n"
+    // }
+
+    // TODO: CodeUp 기초 5-2.문자열
+    // #1131 문자 출력하기
+    // let char = prompt("문자를 입력해주세요.")
+
+    // document.write(char)
+
+    // #1132 문자열 출력하기
+    // let word = prompt("문자를 입력해주세요.")
+
+    // document.write(word)
+
+    // #1133 공백이 있는 문자열 입출력
+    // let words = prompt("입력해주세요.")
+
+    // document.write(words)
+
+    // #1295 알파벳 대소문자 변환
+    // let char = prompt("문자를 입력해주세요.");
+    // let result = ""
+
+    // for (i = 0; i < char.length; i++) {
+    //   if (97 <= char[i].charCodeAt(0) && char[i].charCodeAt(0) <= 122) {
+    //     // 소문자면
+    //     result += char[i].toUpperCase();
+    //   }
+    //   else if (65 <= char[i].charCodeAt(0) && char[i].charCodeAt(0) <= 90) {
+    //     // 대문자면
+    //     result += char[i].toLowerCase();
+    //   } else if (0<=char[i]&&char[i]<=9) {
+    //     // 숫자면
+    //     result += char[i]
+    //   }
+    // }
+
+    // document.write(result)
+
+    // #1406 love
+    // let word = prompt("문자를 입력해주세요.");
+
+    // if(word=="love") {
+    //     document.write("I" + " " + word + " " + "you")
+
+    // } else {null}
+
+    // #1407 문자열 출력하기 1
+    // 공백 제거 함수: .trim() .replace()
+    // let words = prompt("입력해주세요.").replace(/ /g,"")
+    // document.write(words)
+
+    // #1408 암호 처리
+    // let word = prompt("문자를 입력해주세요.");
+    // let result1 = ""
+    // let result2 = ""
+
+    // for(i=0; i<4; i++) {
+    //     result1 = result1 +  (word[i].charCodeAt(0) + 2) + " ";
+    // }
+    // for(i=0; i<4; i++) {
+    //     result2 = result2 + ((word[i].charCodeAt(0)*7)%80 + 48) + " ";
+    // }
+
+    // let result1_2 = result1.split(" ")
+    // let result2_2 = result2.split(" ")
+
+    // let final1 = ""
+    // let final2 = ""
+
+    // for(i=0; i<4; i++) {
+    //     final1 = final1 + String.fromCodePoint(result1_2[i]);
+    // }
+    // for(i=0; i<4; i++) {
+    //     final2 = final2 + String.fromCodePoint(result2_2[i]);
+    // }
+
+    // document.write(final1 + "\n" + final2)
+
+    // #1410 올바른 괄호 1 (괄호 개수 세기)
+    // let char = prompt("입력하세요.");
+    // let count=0;
+    // let count1=0;
+
+    // for(let i=0; i<char.length; i++) {
+
+    //     if(char[i]=='(') {
+    //         count++
+    //     }
+    //     if(char[i]==')') {
+    //         count1++
+    //     }
+    // }
+
+    // document.write(count + " " + count1)
+
+    // #1414 C언어를 찾아라
+    // let char = prompt("입력하세요.");
+    // let a = "CC";
+    // let b = "cC";
+    // let c = "Cc";
+    // let d = "cc";
+    // let count = 0;
+    // let count2 = 0;
+
+    // for (i = 0; i < char.length; i++) {
+    //   if (char[i].indexOf("C") >= 0 || char[i].indexOf("c") >= 0) {
+    //     count++;
+    //   }
+    // }
+
+    // if (char.indexOf(a)) {
+    //   count2++;
+    // } if (char.indexOf(b)) {
+    //   count2++;
+    // } if (char.indexOf(c)) {
+    //   count2++;
+    // } if (char.indexOf(d)) {
+    //   count2++;
+    // }
+
+    // document.write(count + "\n" + count2);
+
+    // #1418 t를 찾아라
+    // let word = prompt("입력하세요.")
+    // let result = 0;
+
+    // for(i=0; i<word.length; i++) {
+    //     if(word[i]=="t") {
+    //         result = result + (i+1) + " "
+    //     }
+    // }
+
+    // document.write(result)
+
+    // #1419 love 2
+    // let words = prompt("입력하세요.").split(" ")
+    // let result = 0;
+    // let result2 = 0;
+
+    // for(i=0; i<words.length; i++) {
+    //     if(words[i].indexOf("love")>=0) {
+    //         result = 1;
+    //     }
+    //     else {
+    //         result = 0;
+    //     }
+    //     result2 = result2 + result;
+    // }
+
+    // document.write(result2)
+
+    // #1733 I.O.I
+    // let word = prompt("입력하세요.");
+
+    // if(word == "IOI") {
+    //     document.write("IOI is the International Olympiad in Informatics.")
+    // }
+    // else {
+    //     document.write("I don't care.")
+    // }
+
+    // #1734 welcome!
+    // let ID = prompt("ID를 입력하세요.")
+
+    // document.write("welcom!" + " " + ID)
+
+    // #1754 큰 수 비교
+    // let nums = prompt("입력하세요.").split(" ");
+
+    // if(nums[0]>nums[1]) {
+    //     document.write(nums[1] + " " + nums[0])
+    // } else if(nums[0]<nums[1]) {
+    //     document.write(nums[0] + " " + nums[1])
+    // } else {}
+
+    // #1990 3의 배수 판별하기
+    // let num = Number(prompt("숫자를 입력하세요."))
+
+    // if(num%3==0) {
+    //     document.write(1)
+    // } else {
+    //     document.write(0)
+    // }
+
+    // #2721 순환 문자열
+    // let word1 = prompt("입력하세요.");
+    // let word2 = prompt("입력하세요.");
+    // let word3 = prompt("입력하세요.");
+
+    // if(word1[word1.length-1] == word2[0] && word2[word2.length-1] ==  word3[0]) {
+    //     document.write("good")
+    // } else {
+    //     document.write("bad")
+    // }
+
+    // TODO: CodeUp 기초 6.함수
+    // #1526 [기초-함수작성] 함수로 hello 문자열 출력하기
+    // function basic() {
+    //     document.write( "Hello" );
+    //   }
+    //   basic();
+
+    // #1527 [기초-함수작성] 함수로 123 값 출력하기
+    // function basic() {
+    //     document.write("123");
+    // }
+
+    // basic();
+
+    // 문제 1528 [기초-함수작성] 함수로 *문자 출력하기
+    // function basic() {
+    //     document.write("*")
+    // }
+
+    // basic()
+
+    // 문제 1529 [기초-함수작성] 함수로 **문자 출력하기
+    // function basic() {
+    //     document.write("**")
+    // }
+
+    // basic()
+
+    // 문제 1530 [기초-함수작성] 함수로 문자 A 리턴하기
+    // let basic = function() {
+    //     document.write("A")
+    // }
+
+    // basic()
+
+    // 문제 1531 [기초-함수작성] 함수로 정수(int) 1 리턴하기
+    // function basic() {
+    //     document.write(1)
+    // }
+
+    // basic()
+
+    // 문제 1532 [기초-함수작성] 함수로 정수(long long int) -2147483649 리턴하기
+    // let basic = function() {
+    //     document.write(-2147483649)
+    // }
+
+    // basic()
+
+    // 문제 1533 [기초-함수작성] 함수로 실수(float) 3.14 리턴하기
+    // let basic = function() {
+    //     document.write("3.140000")
+    // }
+
+    // basic()
+
+    // 문제 1534 [기초-함수작성] 함수로 실수(double) 3.1415926535897 리턴하기
+    // function basic() {
+    //     document.write(3.1415926535897)
+    // }
+
+    // basic()
+
+    // 문제 1535 [기초-함수작성] 함수로 가장 큰 값 위치 리턴하기
+    // let num1 = Number(prompt("수를 입력하세요."));
+    // let num2 = prompt("수를 입력하세요.").split(" ").map(Number);
+    // let result = 0;
+    // let max = Math.max(...num2) //3
+
+    // function basic() {
+    //   for (i = 0; i < num1; i++) {
+    //     if (num2[i] == max) {
+    //       result = num2[i];
+    //       break;
+    //     }
+    //   }
+    //   document.write(i+1);
+    // }
+
+    // basic();
+
+    // 문제 1536 [기초-함수작성] 함수로 가장 작은 값 리턴하기
+    // let num1 = Number(prompt("수를 입력하세요."));
+    // let num2 = prompt("수를 입력하세요.").split(" ").map(Number);
+
+    // function min() {
+    //     document.write(Math.min(...num2))
+    //   }
+
+    //   min()
+
+    // 문제 1537 [기초-함수작성] 함수로 hello 또는 world 출력하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function result() {
+    //     if(num==1) {
+    //         document.write("hello")
+    //     }
+    //     else if(num==2) {
+    //         document.write("world")
+    //     }
+    // }
+
+    // result()
+
+    // 문제 1538 [기초-함수작성] 함수로 odd 또는 even 출력하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function result() {
+    //     if(num%2==0) {
+    //         document.write("even")
+    //     }
+    //     else {
+    //         document.write("odd")
+    //     }
+    // }
+
+    // result()
+
+    // 문제 1539 [기초-함수작성] 함수로 false 또는 true 출력하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function result() {
+    //     if(num==0) {
+    //         document.write("false")
+    //     }
+    //     else {
+    //         document.write("true")
+    //     }
+    // }
+
+    // result()
+
+    // 문제 1540 [기초-함수작성] 함수로 zero 또는 non zero 출력하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function result() {
+    //     if(num==0) {
+    //         document.write("zero")
+    //     }
+    //     else {
+    //         document.write("non zero")
+    //     }
+    // }
+
+    // result()
+
+    // 문제 1541 [기초-함수작성] 함수로 negative/zero/positive 출력하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function result() {
+    //     if(num<0) {
+    //         document.write("negative")
+    //     }
+    //     else if(num==0) {
+    //         document.write("zero")
+    //     }
+    //     else {
+    //         document.write("positive ")
+    //     }
+    // }
+
+    // result()
+
+    // 문제 1542 [기초-함수작성] 함수로 prime 또는 composite 출력하기
+    // let num = Number(prompt("숫자를 입력하세요."));
+
+    // function isPrime() {
+    //   if (num == 2) {
+    //     document.write("prime");
+    //   } else if (num <= 1) {
+    //     document.write("not prime");
+    //   }
+    //   for (let i = 2; i < num; i++) {
+    //     if (num % i === 0) {
+    //       //이 부분에서 num이  다른 수로 나눠떨어진다면 소수가 아님
+    //       document.write("not prime");
+    //       break;
+    //     } else {
+    //       document.write("prime");
+    //       break;
+    //     }
+    //   }
+    // }
+
+    // isPrime()
+
+    // 문제 1543 [기초-함수작성] 함수로 love 출력하기
+    // let num = Number(prompt("수를 입력하세요."));
+    // let result = ""
+
+    // function love() {
+    //     for(i=0; i<num; i++) {
+    //         result = result + "love" + "\n"
+    //     }
+    // }
+    // love()
+    // document.write(result)
+
+    // 문제 1544 [기초-함수작성] 함수로 * n개 출력하기
+    // let num = Number(prompt("수를 입력하세요."));
+    // let result = ""
+
+    // function star() {
+    //     for(i=1; i<=num; i++) {
+    //         result = result + "*"
+    //     }
+    //     document.write(result)
+    // }
+
+    // star()
+
+    // 문제 1545 [기초-함수작성] 함수로 true(1) / false(0) 리턴하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function basic() {
+    //     if(num==0) {
+    //         document.write("zero")
+    //     }
+    //     else {
+    //         document.write("non zero")
+    //     }
+    // }
+
+    // basic()
+
+    // 문제 1546 [기초-함수작성] 함수로 plus/minus/0 판별하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function basic() {
+    //     if(num>0) {
+    //         document.write("plus")
+    //     }
+    //     else if(num<0) {
+    //         document.write("minus")
+    //     }
+    //     else {
+    //         document.write(" zero")
+    //     }
+    // }
+
+    // basic()
+
+    // 문제 1547[기초-함수작성] 함수로 prime/composite 판별하기
+    // let num = Number(prompt("입력하세요."));
+
+    // // document.write(prime(num));
+    // if (prime(num)) {
+    //   document.write("Prime number");
+    // } else {
+    //   document.write("composite");
+    // }
+
+    // function prime(num) {
+    //   for (let i = 2; i <= num / 2; i++) {
+    //     if (num % i == 0) {
+    //       return false;
+    //     }
+    //     return true;
+    //   }
+    // }
+
+    // 문제 1548 [기초-함수작성] 함수로 학점 리턴하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function grade() {
+    //   if (90 <= num && num <= 100) {
+    //     document.write("A");
+    //   }
+    //   else if (80 <= num && num < 90) {
+    //     document.write("B");
+    //   }
+    //   else if (70 <= num && num < 80) {
+    //     document.write("C");
+    //   }
+    //   else if (60 <= num && num < 70) {
+    //     document.write("D");
+    //   }
+    //   else if (num < 60) {
+    //     document.write("F");
+    //   }
+    // }
+
+    // grade()
+
+    // 문제 1549 [기초-함수작성] 함수로 절댓값 리턴하기
+    // Math.abs() -> 절대값 구하기 함수 (Absolute Value)
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // document.write(Math.abs(num))
+
+    // 문제 1550 [기초-함수작성] 함수의 양의 제곱근의 정수 부분만 리턴하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // document.write(Math.sqrt(num))
+
+    // 문제 1551 [기초-함수작성] 함수로 원하는 값의 위치 리턴하기 1
+    // let num1 = Number(prompt("데이터의 개수를 입력하세요."));
+    // let num2 = prompt("데이터를 입력하세요.").split(" ");
+    // let num3 = prompt("찾아야하는 값을 입력하세요.");
+    // let result = ""
+
+    // function basic() {
+    //     for(i=0; i<num1; i++) {
+    //         if(num2[i]==num3) {
+    //             result = num2[i];
+    //             break
+    //         }
+    //     }
+    //     document.write(result)
+    // }
+
+    // basic()
+
+    // 문제 1552 [기초-함수작성] 함수로 소수 부분만 리턴하기
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // function result() {
+    //     document.write(num%1)
+    // }
+
+    // result()
+
+    // 문제 1553 [기초-함수작성] 함수로 정수 올림 한 값 리턴하기
+    // Math.ceil() : 올림함수
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // document.write(Math.ceil(num))
+
+    // 문제 1554 [기초-함수작성] 함수로 정수 내림 한 값 리턴하기
+    // Math.floor() : 내림함수
+    // let num = Number(prompt("수를 입력하세요."));
+
+    // document.write(Math.floor(num))
+
+    // 문제 1555 [기초-함수작성] 함수로 n까지의 합 리턴하기
+    // let num = Number(prompt("수를 입력하세요."));
+    // let result = 0;
+
+    // function sum() {
+    //     for(i=1; i<=num; i++) {
+    //         result = result + i;
+    //     }
+
+    //     document.write(result)
+    // }
+
+    // sum(num)
+
+    // 문제 1556 [기초-함수작성] 함수로 n! 리턴하기
+    // let num = Number(prompt("수를 입력하세요."));
+    // let result = 1;
+
+    // function fac() {
+    //     for(i=1; i<=num; i++) {
+    //         result = result*i;
+    //     }
+    //     document.write(result)
+    // }
+
+    // fac()
+
+    // 문제 1557 [기초-함수작성] 함수로 n의 약수의 개수 리턴하기
+    // let num = Number(prompt("수를 입력하세요."));
+    // let result = "";
+    // let count = 0;
+
+    // function fac() {
+    //     for(let i=1; i<=num; i++) {
+    //         if(num%i==0) {
+    //             count++
+    //         }
+    //     }
+    //     document.write(count)
+    // }
+
+    // fac()
+
+    // 문제 1558 [기초-함수작성] 함수로 정수 뒤집어 리턴하기
+    // let num = prompt("수를 입력하세요.");
+    // let result = ""
+
+    // function rev() {
+    //     for(i=4; i>=0; i--) {
+    //         result = result + num[i]
+    //     }
+    //     document.write(result)
+    // }
+
+    // rev(num)
+
+    // 문제 1559 [기초-함수작성] 함수로 두 정수의 합 리턴하기
+    // let nums = prompt("수를 입력하세요.").split(" ").map(Number);
+
+    // function sum() {
+    //     document.write(nums[0]+nums[1])
+    // }
+
+    // sum()
+
+    // 문제 1560 [기초-함수작성] 함수로 두 정수의 차이 값 리턴하기
+    // let nums = prompt("수를 입력하세요.").split(" ").map(Number);
+
+    // function result() {
+    //     if(nums[0]<nums[1]) {
+    //         document.write(nums[1]-nums[0]);
+    //     }
+    //     else if(nums[0]=nums[1]) {
+    //         document.write(nums[1]-nums[0]);
+    //     }
+    //     else if(nums[0]>nums[1]) {
+    //         document.write(nums[0]-nums[1]);
+    //     }
+    // }
+
+    // result(nums)
+
+    // 문제 1561 [기초-함수작성] 함수로 두 정수의 큰 값 리턴하기
+    // let nums = prompt("수를 입력하세요.").split(" ").map(Number);
+
+    // function max() {
+    //     document.write(Math.max(...nums))
+    // }
+
+    // max()
+
+    // 문제 1562 [기초-함수작성] 함수로 두 정수의 작은 값 리턴하기
+    // let nums = prompt("수를 입력하세요.").split(" ").map(Number);
+
+    // function min() {
+    //     document.write(Math.min(...nums))
+    // }
+
+    // min()
+
+    // 문제 1563 [기초-함수작성] 함수로 세 정수 중 중간 값 리턴하기
+    // compare() : 비교함수
+    // let nums = prompt("세 수를 입력하세요.").split(" ").map(Number);
+    // let result1 = 0;
+
+    // function mid() {
+    //   result1 = nums.sort(function compare(a, b) {
+    //     return a - b;
+    //   });
+    //   document.write(result1[1]);
+    // }
+
+    // mid();
+
+    // 문제 1564 [기초-함수작성] 함수로 최대공약수 리턴하기
+    // let nums = prompt("수를 입력하세요.").split(" ").map(Number); // [160, 96]
+    // let result = "";
+    // let result2 = "";
+
+    // for (i = 1; i <= nums[0]; i++) {
+    //     if(nums[0]%i==0) {
+    //         result += i + " " // 1 2 4 5 8 10 16 20 32 40 80 160 (공백)
+    //     }
+    // }
+
+    // for (i = 1; i <= nums[1]; i++) {
+    //     if(nums[1]%i==0) {
+    //         result2 += i + " " // 1 2 3 4 6 8 12 16 24 32 48 96 (공백)
+    //     }
+    // }
+
+    // let result_1 = result.split(" ").map(Number); //[1,2,4,5,8,10,16,20,32,40,80,160,0]
+    // let result2_1 = result2.split(" ").map(Number); //[1,2,3,4,6,8,12,16,24,32,48,96,0]
+    // let result3 = ""
+
+    // for(i=0; i<result_1.length-1; i++) {
+    //     for(j=0; j<result2_1.length-1; j++) {
+    //         if(result_1[i] == result2_1[j]) {
+    //             result3 = result3 + result2_1[j] + " "; // 1 2 4 8 16 32 (공백)
+    //         }
+    //     }
+    // }
+
+    // let result3_1 = result3.split(" ").map(Number); // [1,2,4,8,16,32,0]
+    // let final = Math.max(...result3_1)
+
+    // document.write(final)
+
+    // 문제 1565 [기초-함수작성] 함수로 최소공배수 리턴하기
+    // let result = 1;
+
+    // let nums = prompt("수를 입력하세요.").split(" ").map(Number);
+
+    // while(true){
+    //   if((result % nums[0] == 0) && (result % nums[1] == 0)){
+    //     break;
+    //   }
+    //   result++;
+    // }
+
+    // document.write(result);
+
+    // 문제 1566 [기초-함수작성] 함수로 거듭제곱 리턴하기
+    // let nums = prompt("수를 입력하세요.").split(" ").map(Number);
+    // let result = 1;
+
+    // function basic() {
+    //     for(i=1; i<=nums[1]; i++) {
+    //         result = result*nums[0]
+    //     }
+    //     document.write(result)
+    // }
+
+    // basic()
+
+    // 문제 1567 [기초-함수작성] 함수로 배열의 부분합 리턴하기
+    // let num1 = Number(prompt("데이터의 개수를 입력하세요."));
+    // let num2 = prompt("데이터를 입력하세요.").split(" ").map(Number);
+    // let num3 = prompt("찾아야하는 값의 부분을 입력하세요.").split(" ").map(Number);
+    // let result = 0;
+
+    // function part() {
+    //     for(i=num3[0]-1; i<=num3[1]-1; i++) {
+    //         result = result + num2[i]
+    //     }
+    //     document.write(result)
+    // }
+
+    // part()
+
+    // 문제 1568 [기초-함수작성] 함수로 배열의 최대값 위치 리턴하기
+    // // let n = Number(prompt("데이터의 개수를 입력하세요."));
+    // let d = prompt("데이터를 입력하세요.").split(" "); // [1, 5, 4, 3, 2]
+    // let a = Number(prompt("찾아야하는 시작값의 부분을 입력하세요.")); // [3, 5]
+    // let b = Number(prompt("찾아야하는 끝값의 부분을 입력하세요.")); // [3, 5]
+
+    // function maxi(a, b, d) {
+    //   let max = d[a];
+    //   let fin = null;
+    //   let i = null;
+
+    //   for (i = a + 1; i <= b; i++) {
+    //     if (max < d[i]) {
+    //       fin = i;
+    //       max = d[i];
+    //     }
+    //     if (max > d[i]) {
+    //       fin = a;
+    //       max = d[i - 1];
+    //     }
+    //     if (max == d[i]) {
+    //       fin = i - 1;
+    //       max = d[i];
+    //     }
+    //   }
+    //   return fin;
+    // }
+    // document.write(maxi(a, b, d));
+
+    // 문제 1569 [기초-함수작성] 함수로 배열의 최대값 위치 리턴하기 2
+    // 풀이 1)
+    // let num1 = prompt("데이터의 개수를 입력하세요.");
+    // let num2 = prompt("데이터를 입력하세요.").split(" "); //[1,3,5,7,9]
+    // let num3 = prompt("찾아야하는 값을 입력하세요.");
+    // let result = -1;
+
+    // function findNum() {
+    //     for(i=0; i<num1; i++){
+    //         if(num2[i]==num3) {
+    //             result = i+1
+    //         }
+    //     }
+    //     if(result==-1) {
+    //         document.write(-1)
+    //     } else {
+    //         document.write(result)
+    //     }
+    // }
+
+    // findNum()
+
+    // 풀이2) *.indexOf() 함수 사용 but 결과 다르게 나와서 x 참고만 하기
+    // .indexOf() -> 그 값이 배열에 있으면 인덱스 번호 없으면 -1 출력하는 함수
+
+    // let num1 = prompt("데이터의 개수를 입력하세요.");
+    // let num2 = prompt("데이터를 입력하세요.").split(" ").map(Number); //[1,3,5,7,9]
+    // let num3 = Number(prompt("찾아야하는 값을 입력하세요."));
+
+    // function findNum() {
+    //     let result = num2.indexOf(num3);
+
+    //     document.write(result)
+    // }
+
+    // findNum()
+
+    // 문제 1570 [기초-함수작성] 함수로 Lower Bound 위치 리턴하기
+    // let num1 = Number(prompt("데이터의 개수를 입력하세요."));
+    // let num2 = prompt("데이터를 입력하세요.").split(" ").map(Number); //[1,3,5,7,9]
+    // let num3 = Number(prompt("찾아야하는 값을 입력하세요."));
+    // let result = -1;
+
+    // function findNum() {
+    //     for(i=0; i<num1; i++){
+    //         if(num2[i]>=num3) {
+    //             result = i+1
+    //             break
+    //         }
+    //     }
+    //     if(result==-1) {
+    //         document.write(num1+1) // 모든 값보다 크면 n+1
+    //     } else {
+    //         document.write(result)
+    //     }
+    // }
+
+    // findNum()
+
+    // 문제 1571 [기초-함수작성] 함수로 Upper Bound 위치 리턴하기
+    // let num1 = Number(prompt("데이터의 개수를 입력하세요."));
+    // let num2 = prompt("데이터를 입력하세요.").split(" ").map(Number); //[1,3,5,7,9]
+    // let num3 = Number(prompt("값을 입력하세요."));
+    // let result = -1;
+
+    // function findNum() {
+    //     for(i=0; i<num1; i++){
+    //         if(num2[i]>num3) {
+    //             result = i + 1
+    //             break
+    //         }
+    //     }
+    //     if(result==-1) {
+    //         document.write(num1+1) // 모든 값보다 크면 n+1
+    //     } else {
+    //         document.write(result)
+    //     }
+    // }
+
+    // findNum()
+
+    // #1576 (함수 작성) void형 함수
+    // 문제 설명: 이 문제는 Hello?를 출력하는 함수를 구현하는 문제입니다.
+    // 다음 조건을 참고해서 함수 본체만 작성해서 제출하시기 바랍니다. 함수명 : f, 매개 변수(parameter) : 없음, 반환 형(return type) : 없음, 함수 내용 : Hello?를 출력하는 함수 구현
+    // 입력: 없음.
+    // 출력: Hello?를 출력하는 f함수를 구현한다. 함수 본체만 작성해서 제출한다.
+    // f();
+
+    // function f() {
+    //     document.write(`Hello?`);
+    // }
+
+    // #1577 (함수 작성) 절댓값 함수 1
+    // let num = Number(prompt("정수를 입력하세요"));
+    // document.write(myabs(num));
+
+    // function myabs(num) {
+    //   return Math.abs(num);
+    // }
+
+    // #1578 (함수 작성) 최댓값 함수
+    // let nums = prompt("두 정수를 입력해주세요.").split(" ").map(Number);
+    // myMax();
+
+    // function myMax() {
+    //   let result = Math.max(...nums);
+    //   document.write(result);
+    // }
+
+    // #1579 (함수 작성) 최솟값 함수
+    // let nums = prompt("두 정수를 입력해주세요.").split(" ").map(Number);
+    // myMin();
+
+    // function myMin() {
+    //   let result = Math.min(...nums);
+    //   document.write(result);
+    // }
+
+    // #1580 (함수 작성) 원의 넓이
+    // let inp = prompt();
+    // function circle (){
+    //     return (inp*inp*3.14).toFixed(2)
+    // }
+    // console.log(circle())
+
+    // #1581 (함수 작성 + 포인터) swap 함수 만들기 (Call by Reference)
+    // 문제 설명: 이 문제는 두 변수의 값을 바꾸는 함수를 구현하는 문제입니다.
+    // 다음 조건을 참고해서 함수 본체만 작성해서 제출하시기 바랍니다. 함수명 : myswap, 매개 변수(parameter) : 정수형 포인터 변수 변수 2개(매개변수를 반드시 int∗로 사용), 반환 형(return type) : 없음(void)
+    // 함수 내용 : 첫 번째 포인터가 가리키는 변수의 값이 두 번째 포인터가 가리키는 변수의 값보다 클 경우 두 값을 서로 바꾼다.
+
+    // 입력: 2개의 정수 a, b가 공백으로 분리되어 입력된다.(−1,000,000<=a,b<=1,000,000)
+    // 출력: 두 수 중 작은 수가 먼저 출력되고, 큰 수가 다음에 출력된다.(이 부분은 신경쓰지 않아도 됩니다.)
+
+    // let num = prompt('수를 입력하시오.').split(` `);
+    // document.write(num.sort());
+
+    // #1602 절대값 함수
+    // let inp = prompt()
+    // function inp2(){
+    //     if(inp>0){
+    //         return inp
+    //     }else{
+    //         return -inp
+    //     }
+    // }
+    // console.log(inp2())
+
+    // #1610 서브 스트링
+    // 100글자 이하 문자열에서 시작위치, 글자 개수를 입력받아 출력한다
+
+    // let k1610c = prompt("문자열을 입력해주세요\n 단 문자열은 100자 이하").split(
+    //   ""
+    // );
+
+    // // 초기 입력된 문자열이 100자 이하에 해당하는지 확인, 100자를 초과할 경우 document.write발생
+    // if (k1610c.length > 100) {
+    //   document.write("문자열 입력 조건을 초과하였습니다");
+    // } else {
+    //   // 시작 위치와 글자 갯수를 공백을 두고 입력받는다
+    //   let k1610 = prompt("시작 위치, 글자 갯수를 입력해주세요").split(" ");
+    //   let k1610a = Number(k1610[0]); // 시작위치
+    //   let k1610b = Number(k1610[1]); // 추출할 글자 갯수
+
+    //   // 만약, 입력받은 문자열의 길이보다 시작위치와 글자의 갯수가 초과할 경우 document.write 발생. (정상적인 출력 불가)
+    //   if (k1610c.length < k1610a + k1610b) {
+    //     document.write("출력 조건이 잘못 입력되었습니다");
+    //   } else {
+    //     // 문자열 길이 조건(100자이하) 과 substring의 조건이 모두 부합할 경우에만 subString()함수를 통해 글자 추출
+    //     document.write(subString(k1610c, k1610a, k1610b));
+    //   }
+    // }
+
+    // function subString(arr, st, cnt) {
+    //   // 추출된 글자를 반환하기 위한 temp 변수 선언
+    //   let temp = "";
+
+    //   // 반복문은 배열의 시작위치[i] 부터 [시작위치i+갯수cnt] 까지 탐색한다.
+    //   for (let i = st; i < st + cnt; i++) {
+    //     temp += arr[i];
+    //   }
+    //   // 추출되어 temp에 저장된 문자열을 반환
+    //   return temp;
+    // }
+
+    // #1615 셀프 넘버(Self-Number)
+    // 풀이 1)
+    // 셀프넘버 구하는 식을 for문 돌리기
+    // let plus = 0;
+
+    // function NotSelfnumber(N) {
+    //     let sum = N //(1)(2)
+
+    //     while (true) {
+    //         if (N == 0) break;  //(4) 1의자리수를 계속 없애기 때문에 결국 1의자리 수는 0이 된다.
+    //         sum += N % 10  //(2) 1의자리수 더하기
+    //         N = parseInt(N / 10)  //(3) 1의자리수 없애기
+    //     }
+    //     return sum; // 무엇을 return 할 것인지 꼭 써주기
+    // }
+
+    // function selfnumber(N) {
+    //     let selfnum = []
+    //     let result = []
+
+    //     for (let i = 1; i <= N; i++) {
+    //         let index = NotSelfnumber(i); //index라는 새로운 변수에 생성자 갚을 넣는다
+
+    //         if (index <= N) {  // 생성자 값 중에 N이 넘는 값이 있을 수 있으니 범위를 제한하고
+    //             selfnum[index] = true; //selfnum이라는 새로운 배열의 각 인덱스 자리에 생성자 값을 넣는다.
+    //         }
+    //     }
+
+    //     for (let i = 1; i <= N; i++) {
+    //         if (!selfnum[i]) result.push(i);
+    //     }
+    //     console.log(result.join('\n'));
+
+    //     for (let i = 0; i < result.length; i++) {
+    //         plus += result[i];
+    //     }
+    // }
+
+    // let input = Number(prompt("숫자입력"));
+    // selfnumber(input);
+    // document.write(plus);
+
+    // let plus = 0;
+
+    // 풀이 2)
+    // function NotSelfnumber(N) {
+    //     let sum = N //(1)(2)
+
+    //     while (true) {
+    //         if (N == 0) break;  //(4) 1의자리수를 계속 없애기 때문에 결국 1의자리 수는 0이 된다.
+    //         sum += N % 10  //(2) 1의자리수 더하기
+    //         N = parseInt(N / 10)  //(3) 1의자리수 없애기
+    //     }
+    //     return sum; // 무엇을 return 할 것인지 꼭 써주기
+    // }
+
+    // function selfnumber(N) {
+    //     let selfnum = []
+    //     let result = []
+
+    //     for (let i = 1; i <= N; i++) {
+    //         let index = NotSelfnumber(i); //index라는 새로운 변수에 생성자 갚을 넣는다
+
+    //         if (index <= N) {  // 생성자 값 중에 N이 넘는 값이 있을 수 있으니 범위를 제한하고
+    //             selfnum[index] = true; //selfnum이라는 새로운 배열의 각 인덱스 자리에 생성자 값을 넣는다.
+    //         }
+    //     }
+
+    //     for (let i = 1; i <= N; i++) {
+    //         if (!selfnum[i]) result.push(i);
+    //     }
+    //     console.log(result.join('\n'));
+
+    //     for (let i = 0; i < result.length; i++) {
+    //         plus += result[i];
+    //     }
+    // }
+
+    // let input = Number(prompt("숫자입력"));
+    // selfnumber(input);
+    // alert(plus);
+
+    // #1620 자릿수의 합
+    // 어떤 수 n이 입력되면 n의 각 자릿수의 합이 한 자리가 될때까지 계산하여 출력하시오.
+    // 예) 1234567 > 1234567 → 1+2+3+4+5+6+7 = 28 → 2 + 8 = 10 → 1 + 0 = 1
+    // 입력: 자연수 n이 입력된다. (1 <= n <= 10,000,000)
+    // 출력: 자릿수의 합이 한자리가 될때까지 계산하여 출력한다.
+
+    // let num = prompt(`입력해주세요`).split('');
+    // let sum = null;
+
+    // document.write(num.length);
+    // while (true) {
+    //     for (let i = 0; i < num.length; i++) {
+    //         sum += Number(num[i]) + 0;
+    //         // document.write(sum);
+    //     }
+    //     if (sum <= 9) {
+    //         document.write("최종: " + sum);
+    //         break;
+    //     }
+    //     num = sum.toString();
+    //     num.split('');
+    //     sum = 0;
+    // }
+  </script>
+</html>

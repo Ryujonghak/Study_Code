@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+/**
+ * packageName : chap04
+ * fileName : IntQueue
+ * author : gangsubin
+ * date : 2022/10/29
+ * description :
+ * ===========================================================
+ * DATE AUTHOR NOTE
+ * —————————————————————————————
+ * 2022/10/29 gangsubin 최초 생성
+ */
+public class IntQueue {
+
+    /*
+     * 큐는 언제사용하는지.. 활용예시 찾아보기
+     * 
+     * 큐는 주로 데이터가 입력된 시간 순서대로 처리해야 할 필요가 있는 상황에 이용함.
+     * 
+     * 우선순위가 같은 작업 예약 (프린터인쇄 대기열)
+     * 은행 업무
+     * 콜센터 고객 대기시간
+     * 프로세스 관리
+     * 너비 우선 탐색(BFS, Breadth-First Search) 구현
+     * 캐시(Cache) 구현
+     */
+
+    public static void main(String[] args) {
+        Scanner stdIn = new Scanner(System.in);
+        IntQueue s = new IntQueue(64); // 최대 64개 인큐할 수 있는 큐
+
+        while (true) {
+            System.out.printf("현재 데이터 개수 : %d / %d\n", s.size(), s.getCapacity());
+            System.out.print("(1) 인큐　(2) 디큐　(3) 피크　" +
+                    "(4) 덤프　(5) 검색 (0) 종료 : ");
+
+            int menu = stdIn.nextInt();
+            if (menu == 0)
+                break;
+
+            int x;
+            switch (menu) {
+                case 1: // 인큐
+                    System.out.print("데이터 : ");
+                    x = stdIn.nextInt();
+                    try {
+                        s.enque(x);
+                    } catch (IntQueue.OverflowIntQueueException e) {
+                        System.out.println("큐가 가득 찼습니다.");
+                    }
+                    break;
+
+                case 2: // 디큐
+                    try {
+                        x = s.deque();
+                        System.out.println(" 디큐한 데이터는 " + x + "입니다.");
+                    } catch (IntQueue.EmptyIntQueueException e) {
+                        System.out.println("큐가 비어 있습니다.");
+                    }
+                    break;
+
+                case 3: // 피크
+                    try {
+                        x = s.peek();
+                        System.out.println("피크한 데이터는 " + x + "입니다.");
+                    } catch (IntQueue.EmptyIntQueueException e) {
+                        System.out.println("큐가 비어 있습니다.");
+                    }
+                    break;
+
+                case 4: // 덤프
+                    s.dump();
+                    break;
+
+                case 5: { // 검색
+                    System.out.print("데이터 : ");
+                    x = stdIn.nextInt();
+                    int n = s.search(x);
+                    if (n != 0)
+                        System.out.printf("%d번째 데이터로 인덱스%d의 위치에 저장되어 있습니다.\n", n, s.indexOf(x));
+                    else
+                        System.out.println("그 데이터는 등록되어 있지 않습니다.");
+                    break;
+                }
+            }
+
+        }
+    }
+
+}

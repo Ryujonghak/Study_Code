@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    부트스트랩 cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<!--m(margin) t(top) -->
+<div class="container mt-5">
+<!--    입력폼 -->
+    <div>
+        <form action="/exam04/emp/add" method="post">
+            <div class="mb-3">
+                <label for="ename" class="form-label">ENAME</label>
+                <input type="text" class="form-control" id="ename" required name="ename">
+            </div>
+
+            <div class="mb-3">
+                <label for="job" class="form-label">JOB</label>
+                <input type="text" class="form-control" id="job" required name="job">
+            </div>
+            <div class="mb-3">
+                <label for="hiredate" class="form-label">HIREDATE</label>
+                <input type="number" class="form-control" id="hiredate" required name="hiredate">
+            </div>
+            <div class="mb-3">
+                <label for="manager" class="form-label">MANAGER</label>
+                <input type="number" class="form-control" id="manager" required name="manager">
+            </div>
+            <div class="mb-3">
+                <label for="salary" class="form-label">SALARY</label>
+                <input type="number" class="form-control" id="salary" required name="salary">
+            </div>
+            <div class="mb-3">
+                <label for="dno" class="form-label">DNO</label>
+                <input type="number" class="form-control" id="dno" required name="dno">
+            </div>
+<!--            서브밋(제출) 버튼 -->
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script th:inline="javascript">
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // // #1001 Hello 출력
+        // document.write("#1001 Hello<br>")
+
+        // // #1002 Hello World 출력
+        // document.write("#1002 Hello World<br>")
+
+        // // #1003 Hello World 출력
+        // document.write("#1003 Hello" + "<br> World<br>")
+
+        // // #1004 'hello' 출력
+        // document.write("#1004 'Hello'<br>")
+
+        // // #1005 "Hello World" 출력 // 큰따옴표, 작은따옴표 병행사용
+        // document.write('#1005 "Hello World"<br>')
+
+        // // #1006 특수문자 출력
+        // document.write('#1006 "!@#$%^&*()"<br>')
+
+        // // #1007 파일 경로 출력 // 역슬래시 2개 사용
+        // document.write('#1007 "C:\\Download\hello.cpp"<br>')
+
+        // // #1008 유니코드 특수문자(선문자) 출력
+        // document.write('#1008<br>' + "\u250F\u2533\u2513" +'<br>' + "\u2523\u254b\u252b" + '<br>' + "\u2517\u253b\u251b")
+
+        // // #1010 정수 1개 입력받아 그대로 출력하기
+        // let k1010 = Number(prompt("#1010 정수를 입력하세욥"))
+        // document.write("#1010  " + k1010 + "<br>")
+
+        // #1011 문자 1개 입력받아 그대로 출력하기
+        // let k1011 = prompt("#1011 문자를 입력하세욥")
+        // document.write("#1011  " + k1011+ "<br>")
+
+        // #1012 실수 1개 입력받아 그대로 출력하기
+        // let k1012 = Number(prompt("#1012 실수를 입력하세욥"))
+        // document.write("#1012  " + k1012+ "<br>")
+
+        // // #1013 정수 2개 입력받아 그대로 출력하기
+        // let k1013 = prompt("#1013 정수 2개를 입력하세욥 입력사이 공백").split(" ")
+        // // 1개 변수에 split(공백) 으로 정수 2개를 동시 입력받은 뒤
+        // let a1013 = Number(k1013[0]); let b1013 = Number(k1013[1])
+        // // 변수 2개에 각각 Number 형변환 하여 저장해준다. (입력조건 충족위해)
+        // document.write("#1013  " + a1013 + " " + b1013 + "<br>")
+
+        // // #1014 문자 2개 입력 받아 순서 바꿔 출력하기
+        // let k1014 = prompt("문자 2개 입력 해주세요 입력사이 공백").split(" ");
+        // // 문자 2개를 스플릿(공백)으로 입력을 받고
+        // document.write("#1014  " + k1014[1] + k1014[0] + "<br>")
+        // // 배열화된 변수를 인덱스 순서를 바꿔 출력
+
+        // #1015 실수 입력받아 소숫점 둘째자리까지 출력하기
+        // let k1015 = Number(prompt());
+        // document.write("입력값 : " + k1015 + "    출력값 : " + k1015.toFixed(2))
+        // // .toFixed(n) n+1째 자리에서 반올림하여 n번째 자리까지 출력
+
+        // #1017 1개 정수 입력 받아 3번 출력
+        // let k1017 = Number(prompt("정수를 입력해주세욥"))
+        // document.write("#1016  " + k1017 + " " + k1017 + " " + k1017 + "<br>")
+
+        // #1018 시간 입력 받아 그대로 출력하기, 시와 분은 : 으로 구분되어 입력 입력예시(8:45)
+        // let k1018 = prompt("시간을 입력해주세요   입력예)8:45").split(":");
+        // document.write("#1018  " + k1018[0] + ":" + k1018[1] + "<br>")
+
+        // // #1019 연원일을 입력받아 지정형식으로 출력, 입력예시 2013.8.5
+        // let k1019 = prompt("시간을 입력해주세요   입력예)2015.5.19").split(".");
+        // k1019[1] = k1019[1] >= 10 ? k1019[1] : '0'+k1019[1];
+        // k1019[2] = k1019[2] >= 10 ? k1019[2] : '0'+k1019[2];
+        // // 삼항연산자를 이용, 월(k1019[1])과 일(k1019[2])가 10보다 작을경우 문자열'0'을 앞에 붙여 출력을 충족시킨다
+        // document.write("#1019  " + k1019[0] + "." + k1019[1] + "." + k1019[2] +"<br>")
+
+        // #1020 주민등록번호 13자리 입력받아 앞6, 뒤7자리를 붙여서 한줄로 출력
+        // let k1020 = prompt("주민등록번호를 입력해주세요").split("-")
+        // document.write("#1020  " + k1020[0] + k1020[1])
+
+        // #1021 1개 단어 입력받아 그대로 출력(단, 단어의 길이는 50자 이하)
+        // let k1021 = prompt("단어를 입력해주세요, 단 단어는 50자 이하")
+        // k1021 = k1021.length > 50 ? alert("50자 초과") :   document.write("#1021  " + k1021);
+        // 삼항연산자 사용, 50자 초과시 alert 발생, 50자 이하시 출력
+
+        // #1022 문장 1개 입력받아 그대로 출력하기(단, 문장의 길이는 2000자 이하)
+        // let k1022 = prompt("문장을 입력해주세요, 단 문장의 총 길이는 2000자 이하")
+        // k1022 = k1022.length > 2000 ? alert("2000자 초과") : document.write("#1022  " + k1022);
+
+        // #1023 실수 1개 입력 받아 부분별로 출력하기 // 정수(10000이하) 출력 , 실수부분(소숫점 최대 6자리) 출력
+        // let k1023 = prompt("실수를 입력해주세요, 절대값 10000 이하, 소숫점 6자리 까지").split(".")
+        // if(k1023[0] < 10000 && k1023[1].length < 7)
+        //     // 정수부가 1만보다 작고, 소숫점자리의 길이가 7보다 작을 때 결과 출력
+        // document.write("#1023  " + k1023[0] + "<br>#1023  " + k1023[1])
+        // else
+        // alert("입력조건 미충족")
+
+        // // #1024 단어 1개 입력받아 나누어 출력하기, 단 길이는 20자 이하
+        // let k1024 = prompt("단어를 입력해주세요, 단 길이는 20자 이하")
+        // if (k1024.length < 21) {
+        //     for (let i = 0; i < k1024.length; i++)
+        //         document.write("#1024  " + k1024[i] + "<br>")
+        // }
+        // else
+        //     alert("입력조건 미충족")
+
+        // #1025 다섯자리의 정수 1개를 입력받아 각 자리로 나누어 출력 입력값은 10000 <= n <= 99999
+        // let k1025 = prompt("다섯자리 정수를 입력해주세요, 10000 <= n <= 99999")
+        // if(Number(k1025) < 10000 || Number(k1025) > 100000)        //
+        //     alert("입력조건 미충족")        //
+        // else
+        //     document.write("#1025  " + k1025[0]+"0000<br>#1025  " + k1025[1] + "000<br>#1025  " +
+        //      k1025[2] + "00<br>#1025  " + k1025[3]+ "0<br>#1025  " + k1025[4])
+
+        // #1026 시분초 입력받아 분만 출력하기 (입력예시 17:18:19) 출력 : 18
+        // let k1026 = prompt("시간을 입력해주세요, 입력예시 11:22:33").split(":")
+        // if(k1026[0] < 24 && k1026[1] < 60 && k1026[2] < 60)
+        // 시가 24 이하이며 분과 초가 60 이하일때만 정상출력, 외에 오류처리
+        //     document.write("#1026  " + k1026[1])
+        //     else
+        //     alert("시간 범위 초과")
+
+
+        // // #1027 년월일 입력받아 형식 바꿔서 출력 (입력예시 2015.05.19 -> 출력예시 19-05-2015)
+        // let k1027 = prompt("년월일을 입력해주세요. 입력예시 2015.05.19").split(".");
+        // document.write("#1027  " + k1027[2] + "-" + k1027[1] + "-" + k1027[0])
+
+        // #1028 입력받은 정수(0 ~ 4294967295) 그대로 출력
+        // let k1028 = Number(prompt("정수를 입력해주세요 입력범위 0 ~ 4294967295"))
+        // if(k1028 >= 0 && k1028 < 4294967296)
+        //     document.write("#1028  " + k1028)
+        //     else
+        //     alert("입력범위 미충족")
+
+        // #1029 실수 1개 입력받아 그대로 출력하기, 소수점 이하 11자리 까지 반올림하여 출력.
+        // 코드업의 문제 출제 의도는 C에서 자료형의 사용이지만 귀찮아서 대충함..
+        // let k1029 = prompt("실수를 입력해주세요").split(".")
+        // if (k1029[1].length < 309) {
+        //     let aa = k1029[0] + "."+k1029[1]
+        //     let bb = Number(aa)
+        //     // 실수 범위 충족시 입력된 값 string을 aa에(정수 + . + 실수) 다시 모은뒤 bb로 Number로 형변환
+        //     document.write("#1029  " +bb.toFixed(11))
+        //     // toFixed(11) 로 11번째 자리까지 출력
+        // }
+        // else
+        //     alert("입력범위 초과")
+
+
+        // #1030 정수 1개 입력받아 그대로 출력하기
+        // let k1030 = Number(prompt("정수를 입력해주세요"))
+        // document.write("#1030  " + k1030)
+
+        // #1031 10진수 입력받아 8진수로 출력
+        // let k1031 = Number(prompt("정수를 입력해주세요"))
+        // document.write("#1031  " + k1031.toString(8))
+
+        // #1032 10진수 입력받아 16진수(소문자)로 출력
+        // let k1032 = Number(prompt("정수를 입력해주세요"))
+        // document.write("#1032  " + k1032.toString(16))
+
+        // // #1033 10진수 입력받아 16진수(대문자)로 출력
+        // let k1033 = Number(prompt("정수를 입력해주세요"))
+        // document.write("#1033  " + k1033.toString(16).toUpperCase())
+
+        // #1034 8진수 입력받아 10진수로 출력
+        // let k1034 = prompt("8진수를 입력해주세요")
+        // document.write("#1034  " + parseInt(k1034, 8))
+
+        // #1035 16진수 1개 입력 받아 8진수로 출력
+        // let k1035 = prompt("16진수를 입력해주세요")
+        //  k1035 =  parseInt(k1035, 16)
+        // document.write("#1035  " + k1035.toString(8))
+
+        // #1036 영문자 1개 입력받아 ASCI 코드 출력
+        // let k1036 = prompt("영단어 1자를 입력해주세요")
+        // let regExp = /[A-Za-z/]/;
+        // // regExp = /[A-Za-z]/ -> 영어 대소문자 알파벳만 들어왔는지 검사 .test 메소드 사용
+        // if (regExp.test(k1036)) {
+        //     k1036 = k1036.charCodeAt()
+        //     document.write("#1036  " + k1036)
+        // }
+        // else
+        // { alert("영단어 대/소문자만 입력"); }
+
+        // #1037 정수 입력받아 아스키 문자 출력하기
+        // let k1037 = Number(prompt("정수를 입력해주세요 0-255 범위"))
+        // if(k1037 >= 0 && k1037 < 256)
+        //     document.write("#1037  " + String.fromCharCode(k1037))
+        //     else
+        //     alert("입력범위 오류, 0-255")
+
+
+        // #1038, #1039 2개의 정수 입력받아 합 출력하기 // C언어 자료형 문제라 하나로 묶어서 감
+        // let k1038 = prompt("정수 2개를 입력해주세요").split(" ")
+        // let k1038a = Number(k1038[0])
+        // let k1038b = Number(k1038[1])
+        // document.write("#1038  " + k1038[0] + " + " + k1038[1] + " = " + (k1038a+k1038b))
+
+        // #1041 문자 1개 입력받아 다음 문자 출력하기
+        // let k1041 = prompt("영문자 1개 입력 해주세요")
+        // let regExp = /[A-Za-z/]/;
+        // // regExp = /[A-Za-z]/ -> 영어 대소문자 알파벳만 들어왔는지 검사 .test 메소드 사용
+        // if (regExp.test(k1041))
+        //     document.write("#1041  " + String.fromCharCode(k1041.charCodeAt() + 1))
+        // else { alert("영문자만 입력") }
+
+        // // #1042 정수 2개 입력받아 나눈 몫 출력하기
+        // let k1042 = prompt("정수 2개를 입력해주세요\n단, -2147483648 <= a <= b <= +2147483647, b는 0이 아니다.").split(" ")
+        // let k1042a = Number(k1042[0])
+        // let k1042b = Number(k1042[1])
+        // if (k1042a > -2147483649 && k1042a < 2147483648)
+        // {
+        //     if (k1042b > -2147483649 && k1042b < 2147483648)
+        //     {
+        //         if (k1042b != 0)
+        //         {
+        //             document.write("#1042  " + k1042a + " / " + k1042b + " = " k1042a / k1042b)
+        //         }
+        //         else
+        //             alert("입력조건 불충족 b = 0")
+        //     }
+        //     else
+        //         alert("입력조건 불충족 b")
+        // }
+        // else
+        //     alert("입력조건 불충족 a")
+
+        // #1043 정수 2개 입력받아 나눈 나머지 출력하기 단, 0 <= a, b <= +2147483647, b는 0이 아니다.
+        // let k1043 = prompt("정수 2개를 입력해주세요\n단, 0 <= a, b <= +2147483647, b는 0이 아니다.").split(" ")
+        // let k1043a = Number(k1043[0])
+        // let k1043b = Number(k1043[1])
+
+        // if (k1043a > -1 && k1043b < 2147483648)
+        // {
+        //     if (k1043b != 0) {
+        //         document.write("#1043  " + k1043a + " % " + k1043b + " = " + k1043a % k1043b)
+        //     }
+        //     else
+        //         alert("입력조건 불충족 b는 0이 아니다")
+        // }
+        // else
+        //     alert("입력조건 불충족 a가 0보다 작거나 b 입력범위 초과")
+
+
+        // #1044 정수 1개 입력받아 1 증가하여 출력하기
+        // let k1044 = Number(prompt("정수 1개를 입력해주세요\n단, -2147483648 ~ +2147483647 의 범위로 입력"))
+        // if(k1044 > -2147483649 && k1044 < 2147483648 )
+        //     document.write("#1044  " + (k1044+1))
+        //     else alert("입력조건 미충족")
+
+        // #1045 정수 2개 입력받아 자동 계산하기
+        // let k1045 = prompt("정수 2개를 공백을 두고 입력해주세요\n단 0 <= a, b <= 2147483647, b는 0이 아니다.").split(" ")
+        // let k1045a = Number(k1045[0])
+        // let k1045b = Number(k1045[1])
+        // if(k1045a > -1 && k1045b < 2147483648)
+        // {
+        //     if(k1045b != 0)
+        //     {
+        //         document.write("#1045 정수 2개 합/차/곱/몫/나머지/나눈 값<br>")
+        //         document.write("#1045 합   :  " + k1045a + " + " + k1045b + " = " + (k1045a+k1045b) + "<br>")
+        //         document.write("#1045 차   :  " + k1045a + " - " + k1045b + " = " + (k1045a-k1045b) + "<br>")
+        //         document.write("#1045 곱   :  " + k1045a + " * " + k1045b + " = " + (k1045a*k1045b) + "<br>")
+        //         document.write("#1045 몫   :  " + k1045a + " / " + k1045b + " = " + parseInt(k1045a/k1045b) + "<br>")
+        //         document.write("#1045 나머지 :  " + k1045a + " % " + k1045b + " = " + (k1045a%k1045b) + "<br>")
+        //         document.write("#1045 나눈값 :  " + k1045a + " / " + k1045b + " = " + (k1045a/k1045b).toFixed(2) + "<br>")
+        //         // 연산 확인위해 출력예시 임의변경
+        //     }
+        //     else
+        //     alert("b가 0입니다")
+        // }
+        // else
+        // alert("입력조건 미충족")
+
+        // #1046 정수 3개 입력받아 합과 평균 출력하기
+        // let k1046 = prompt("정수 3개를 공백을 두고 입력해주세요\n 단 -2147483648 ~ +2147483647").split(" ")
+        // if ( Number(k1046[0]) > -2147483649 && k1046[0] < 2147483648)
+        // {
+        //     let k1046a = Number(k1046[0])
+        //     if (k1046[1] > -2147483649 && k1046[1] < 2147483648)
+        //     {
+        //         let k1046b = Number(k1046[1])
+        //         if (k1046[2] > -2147483649 && k1046[2] < 2147483648)
+        //         {
+        //             let k1046c = Number(k1046[2])
+        //             let summ = k1046a+k1046b+k1046c
+        //             document.write("#1046  " + k1046a + " " + k1046b + " " + k1046c + "<br>")
+        //             document.write("#1046  합 : " + summ + " 평균 : " + (summ/3).toFixed(1))
+        //         }
+        //         else alert("세번째 입력값 범위 초과")
+        //     }
+        //     else alert("두번째 입력값 범위 초과")
+        // }
+        // else alert("첫번째 입력값 범위 초과")
+
+        // #1047 비트시프트 - 정수 1개 입력받아 2배 곱해 출력하기
+        // let k1047 = Number(prompt("정수 1개 입력해주세요\n단, -1073741824 ~ +1073741823"))
+        // if(k1047 > -1073741825 && k1047 < 1073741823)
+        // document.write("#1047  입력값 : " + k1047 + " 시프트 연산값 : " + (k1047<<1))
+        // else alert("입력범위 미충족")
+
+        //#1048 비트시프트 - 정수 2개 입력받아 a를 2^b배 곱한 값으로 출력
+        // let k1048 = prompt("정수 2개 입력해주세요\n0 <= a <= 10, 0 <= b <= 10").split(" ")
+        // let k1048a = Number(k1048[0])
+        // let k1048b = Number(k1048[1])
+
+        // if(k1048a > -1 && k1048a < 11)
+        // {
+        //     if(k1048b > -1 && k1048b < 11)
+        //     {
+        //         document.write("#1048  " + k1048a + "*2^" + k1048b + " : " + (k1048a<<k1048b))
+
+        //     }
+        //     else alert("두번째 입력값 범위초과")
+        // }
+        // else alert("첫번째 입력값 범위초과")
+
+        // // #1049 두 정수 입력받아 비교하기 a가 b보다 크면 1을, a가 b보다 작거나 같으면 0
+        // let k1049 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+        // let k1049a = k1049[0]
+        // let k1049b = k1049[1]
+
+        // if(k1049a > -2147483649 && k1049a < 2147483648)
+        // {
+        //     if(k1049b > -2147483649 && k1049b < 2147483648)
+        //     {
+        //         if(k1049a > k1049b) document.write("#1049  a : " + k1049a + " b : " + k1049b + " 결과 1 ")
+        //         else document.write("#1049  a : " + k1049a + " b : " + k1049b + " 결과 0 ")
+        //     }
+        //     else alert("b 입력범위 초과")
+        // }else alert("a 입력범위 초과")
+
+        // #1050 두 정수 입력받아 비교하기 a=b 면 1을, A!=b 면 0
+
+        // let k1050 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+        // let k1050a = k1050[0]
+        // let k1050b = k1050[1]
+
+        // if(k1050a > -2147483649 && k1050a < 2147483648)
+        // {
+        //     if(k1050b > -2147483649 && k1050b < 2147483648)
+        //     {
+        //         if(k1050a == k1050b) document.write("#1050  a : " + k1050a + " b : " + k1050b + " 결과 1 ")
+        //         else document.write("#1050  a : " + k1050a + " b : " + k1050b + " 결과 0 ")
+        //     }
+        //     else alert("b 입력범위 초과")
+        // }else alert("a 입력범위 초과")
+
+
+        // #1051 두 정수 입력받아 비교하기 3 
+
+        // let k1051 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+        // let k1051a = k1051[0]
+        // let k1051b = k1051[1]
+
+        // if(k1051a > -2147483649 && k1051a < 2147483648)
+        // {
+        //     if(k1051b > -2147483649 && k1051b < 2147483648)
+        //     {
+        //         if(k1051a <= k1051b) document.write("#1051  a : " + k1051a + " b : " + k1051b + " 결과 1 ")
+        //         else document.write("#1051  a : " + k1051a + " b : " + k1051b + " 결과 0 ")
+        //     }
+        //     else alert("b 입력범위 초과")
+        // }else alert("a 입력범위 초과")
+
+
+        // #1052 두 정수 입력받아 비교하기4
+        // let k1052 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+        // let k1052a = k1052[0]
+        // let k1052b = k1052[1]
+
+        // if(k1052a > -2147483649 && k1052a < 2147483648)
+        // {
+        //     if(k1052b > -2147483649 && k1052b < 2147483648)
+        //     {
+        //         if(k1052a != k1052b) document.write("#1052  a : " + k1052a + " b : " + k1052b + " 결과 1 ")
+        //         else document.write("#1052  a : " + k1052a + " b : " + k1052b + " 결과 0 ")
+        //     }
+        //     else alert("b 입력범위 초과")
+        // }else alert("a 입력범위 초과")
+
+
+        // #1053 참 거짓 바꾸기
+
+        // let k1053 = Number(prompt("정수 하나(0 or 1)를 입력해주세요"))
+        // if(k1053 == 1 || k1053 == 0)
+        // {
+        //     document.write("#1053  : " + !k1053)
+        // }
+        // else alert("정수 0 or 1 만 입력해주세요")
+
+
+        // #1054 둘 다 참일때 참 and
+
+        // let k1054 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+        // let k1054a = k1054[0]
+        // let k1054b = k1054[1]
+
+        // if(k1054a == 1 || k1054a == 0)
+        // {
+        //     if(k1054b == 1 || k1054b == 0)
+        //     {
+        //         if(k1054a == 1 & k1054b == 1)
+        //         {
+        //             document.write("#1054  : 1")
+        //         }
+        //         else document.write("#1054  : 0")
+        //     }
+        //     else alert("두번째 입력값은 0 또는 1입니다")
+        // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+
+        // #1055 하나라도 참이면 참 or
+        // let k1055 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+        // let k1055a = k1055[0]
+        // let k1055b = k1055[1]
+
+        // if(k1055a == 1 || k1055a == 0)
+        // {
+        //     if(k1055b == 1 || k1055b == 0)
+        //     {
+        //         if(k1055a == 1 || k1055b == 1)
+        //         {
+        //             document.write("#1055  : 1")
+        //         }
+        //         else document.write("#1055  : 0")
+        //     }
+        //     else alert("두번째 입력값은 0 또는 1입니다")
+        // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+
+        // #1056 XOR 연산
+        // let k1056 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+        // let k1056a = k1056[0]
+        // let k1056b = k1056[1]
+
+        // if(k1056a == 1 || k1056a == 0)
+        // {
+        //     if(k1056b == 1 || k1056b == 0)
+        //     {
+        //         if(k1056a != k1056b)
+        //         {
+        //             document.write("#1056  : 1")
+        //         }
+        //         else document.write("#1056  : 0")
+        //     }
+        //     else alert("두번째 입력값은 0 또는 1입니다")
+        // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+
+
+        // #1057 참/거짓이 서로 같을때만 1
+        // let k1057 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+        // let k1057a = k1057[0]
+        // let k1057b = k1057[1]
+
+        // if(k1057a == 1 || k1057a == 0)
+        // {
+        //     if(k1057b == 1 || k1057b == 0)
+        //     {
+        //         if(k1057a == k1057b)
+        //         {
+        //             document.write("#1057  : 1")
+        //         }
+        //         else document.write("#1057  : 0")
+        //     }
+        //     else alert("두번째 입력값은 0 또는 1입니다")
+        // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+
+        // #1058 NAND연산
+        // let k1058 = prompt("정수 2개를 입력해주세요\n 0 or 1").split(" ")
+        // let k1058a = k1058[0]
+        // let k1058b = k1058[1]
+
+        // if(k1058a == 1 || k1058a == 0)
+        // {
+        //     if(k1058b == 1 || k1058b == 0)
+        //     {
+        //         if(k1058a == 0 && k1058b == 0)
+        //         {
+        //             document.write("#1057  : 1")
+        //         }
+        //         else document.write("#1057  : 0")
+        //     }
+        //     else alert("두번째 입력값은 0 또는 1입니다")
+        // } else alert("첫번째 입력값은 0 또는 1입니다")
+
+
+        // //#1059 Bit연산
+        // let k1059 = Number(prompt("정수 1개를 입력해주세요\n-2147483648 ~ +2147483647"))
+
+        // let temp = ~k1059
+
+        // document.write("#1059  :" + temp)
+
+
+       // #1060 BIT연산
+// let k1060 = prompt("정수 2개를 입력해주세요\n단 -2147483648 ~ +2147483647 범위").split(" ")
+//         let k1060a = Number(k1060[0])
+//         let k1060b = Number(k1060[1])
+
+//         if((k1060a < -2147483648 || k1060a > 2147483647 ) ||(k1060b < -2147483648 || k1060b > 2147483647 ) )
+//         {
+//             alert("입력범위 오류")
+//         }
+//         else
+//         {
+//             document.write("#1060  : " + (k1060a & k1060b))
+        // }
+
+        // #1061 bit or연산
+
+        // let k1061 = prompt("정수 2개를 입력해주세요\n단 -2147483648 ~ +2147483647 범위").split(" ")
+        // let k1061a = Number(k1061[0])
+        // let k1061b = Number(k1061[1])
+
+        // if((k1061a < -2147483648 || k1061a > 2147483647 ) ||(k1061b < -2147483648 || k1061b > 2147483647 ) )
+        // {
+        //     alert("입력범위 오류")
+        // }
+        // else
+        // {
+        //     document.write("#1060  : " + (k1061a | k1061b))
+        // }
+
+        // #1062 bit xor연산
+
+        // let k1062 = prompt("정수 2개를 입력해주세요\n단 -2147483648 ~ +2147483647 범위").split(" ")
+        // let k1062a = Number(k1062[0])
+        // let k1062b = Number(k1062[1])
+
+        // if((k1062a < -2147483648 || k1062a > 2147483647 ) ||(k1062b < -2147483648 || k1062b > 2147483647 ) )
+        // {
+        //     alert("입력범위 오류")
+        // }
+        // else
+        // {
+        //     document.write("#1062  : " + (k1062a ^ k1062b))
+        // }
+
+
+        // // #1063 삼항연산
+        // let k1063 = prompt("정수 2개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+        // let k1063a = k1063[0]
+        // let k1063b = k1063[1]
+
+        // if (k1063a > -2147483649 && k1063a < 2147483648) {
+        //     if (k1063b > -2147483649 && k1063b < 2147483648) {
+        //         k1063a = k1063a > k1063b ? document.write("#1063  : " + k1063a) : document.write("#1063  : " + k1063b)
+        //     }
+        //     else alert("b 입력범위 초과")
+        // } else alert("a 입력범위 초과")
+
+
+        // #1064 삼항연산 3개 입력받아 가장 작은값
+        // let k1064 = prompt("정수 3개를 입력해주세요\n-2147483648 <= a, b <= +2147483647").split(" ")
+        // let k1064a = Number(k1064[0])
+        // let k1064b = Number(k1064[1])
+        // let k1064c = Number(k1064[2])
+
+        // if (k1064a > -2147483649 && k1064a < 2147483648) {
+        //     if (k1064b > -2147483649 && k1064b < 2147483648) {
+        //         if (k1064c > -2147483649 && k1064c < 2147483648) {
+
+        //             k1064a = (k1064a < k1064b && k1064a < k1064c) ? document.write("#1064 :" + k1064a) : (k1064a > k1064b && k1064c > k1064b ? document.write("#1064 :" + k1064b) : document.write("#1064 :" + k1064c))
+
+        //             //(k1064b = k1064b > k1064c ? document.write(document.write("#1064  : " + k1064c)) : ("#1064  : " + k1064b)) : document.write("#1064  : " + k1064a)
+        //         }
+        //         else alert("c 입력범위 초과")
+        //     }
+
+        //     else alert("b 입력범위 초과")
+        // }
+        // else alert("a 입력범위 초과")
+
+
+
+
+        // // #1065 정수 3개 입력받아 짝수만
+
+        // let k1065 = prompt("정수 3개를 입력해주세요\na, b, c = 0 ~ +2147483647").split(" ")
+        // let k1065a = Number(k1065[0])
+        // let k1065b = Number(k1065[1])
+        // let k1065c = Number(k1065[2])
+
+        // if (k1065a > -1 && k1065a < 2147483648) {
+        //     if (k1065b > -1 && k1065b < 2147483648) {
+        //         if (k1065c > -1 && k1065c < 2147483649) {
+
+        //             if (k1065a % 2 != 0 && k1065b % 2 != 0 && k1065c % 2 != 0) { alert("짝수가 최소 하나는 있어야함") }
+        //             else {
+        //                 for (let i = 0; i < k1065.length; i++) {
+        //                     if (Number(k1065[i] % 2 == 0)) {
+        //                         document.write("#1065 : " + k1065[i] + "<br>")
+        //                     }
+        //                 }
+        //             }
+
+        //         }
+        //         else alert("세번째 입력값 범위초과")
+        //     } else alert("두번째 입력값 범위초과")
+        // } else alert("첫번째 입력값 범위초과")
+
+
+        // #1066 정수 3개 입력받아 짝수/홀수 출력
+
+        // let k1066 = prompt("정수 3개를 입력해주세요\na, b, c = 0 ~ +2147483647").split(" ")
+        // let k1066a = Number(k1066[0])
+        // let k1066b = Number(k1066[1])
+        // let k1066c = Number(k1066[2])
+
+        // if (k1066a > -1 && k1066a < 2147483648) {
+        //     if (k1066b > -1 && k1066b < 2147483648) {
+        //         if (k1066c > -1 && k1066c < 2147483649)
+        //          {
+        //             for (let i = 0; i < k1066.length; i++)
+        //              {
+        //                 if (Number(k1066[i] % 2 == 0))
+        //                 {
+        //                     document.write("#1066 :  짝수 <br>")
+        //                 }
+        //                 else
+        //                     document.write("#1066 : 홀수 <br>")
+        //             }
+        //         }else alert("세번째 입력값 범위초과")
+        //     } else alert("두번째 입력값 범위초과")
+        // }else alert("첫번째 입력값 범위초과")
+
+
+        // #1067 
+        // let k1067 = Number(prompt("정수 1개 입력\n-2147483648 ~ +2147483647 a != 0"))
+
+        // if (k1067 == 0)
+        //     alert("0 넣으면 안된다고!")
+        // else if (k1067 < -2147483648 || k1067 > 2147483647)
+        //     alert("입력값 범위 초과")
+        // else {
+
+        //     if (k1067 < 0)
+        //         document.write("#1067  : Minus<br>")
+        //     else
+        //         document.write("#1067  : Plus<br>")
+        // }
+
+        // if (k1067 % 2 == 0) {
+        //     document.write("#1067  : Even <br>")
+        // }
+        // else
+        //     document.write("#1067  : Odd<br>")
+
+
+        // #1068 점수 입력받아 평가
+
+        // let k1068 = Number(prompt("점수를 입력해주세요 (0-100"))
+
+        // if(k1068 > -1 && k1068 < 101)
+        // {
+
+        //     if(k1068 >= 90)
+        //     document.write("#1068  : A")
+        //     else if(k1068 < 90 && k1068 > 69)
+        //     document.write("#1068  : B")
+        //     else if(k1068 < 70 && k1068 > 39)
+        //     document.write("#1068  : C")
+        //     else
+        //     document.write("#1068  : D")
+        // }
+        // else
+        // alert("입력범위 초과")
+
+
+        // #1069 평가 입력받아 다르게 출력하기 (switch사용)
+        // let k1069 = prompt("A-D 를 입력해주세욤")
+        // let regExp = /[A-Za-z/]/;  
+        // if (regExp.test(k1069))
+        // {
+        //    k1069 = k1069.charCodeAt()
+
+        //     switch(k1069)
+        //     {
+        //         case 65 : case 97 : document.write("#1069  Best!!!");
+        //         break;
+        //         case 66 : case 98 : document.write("#1069  Good!!!");
+        //         break;
+        //         case 67 : case 99 : document.write("#1069  Run!!!");
+        //         break;
+        //         case 68 : case 100 : document.write("#1069  Slowly!!!");
+        //         break;
+        //         default: document.write("#1069  What are you Doing!?");
+        //     }            
+        // }
+        // else
+        // { alert("영단어 대/소문자만 입력"); }
+
+        // #1070 월이 입력될떄 계절 출력(switch)
+        // let k1070 = Number(prompt("월을 입력해주세요 1-12"))
+
+        // if(k1070 <= 0 || k1070 > 12)
+        // {
+        //     alert("1-12월 만 입력")
+        // }
+        // else
+        // {
+        //     switch(k1070)
+        //     {
+        //         case 12: case 1: case 2 : document.write("#1070   WINTER");break;                
+        //         case 3 : case 4 : case 5 : document.write("#1070   SPRING"); break;
+        //         case 6 : case 7 : case 8 : document.write("#1070   SUMMER"); break;
+        //         case 9 : case 10 : case 11 : document.write("#1070   FALL"); break;
+        //     }
+        // }
+
+
+
+        // #1071 0이 입력될 때 까지 계속 입력받다가 0이 입력되면 지금까지 입력 순서대로 출력
+
+        // let k1071 = [];
+        // while (1) {
+        //     let inp = Number(prompt("정수를 입력해주세요 0 입력시 종료\n-2147483648 ~ +2147483647"))
+
+        //     if (inp < -2147483648 || inp > 2147483648) {
+        //         alert("입력 범위 초과")
+        //         break;
+        //     }
+        //     else {
+        //         if (inp != 0) {
+        //             k1071 += inp + "<br>";
+        //         }
+        //         else {
+        //             document.write("#1071  :" + k1071)
+        //             break;
+        //         }
+
+        //     }
+        // }
+
+
+        // #1072 첫줄에 정수의 갯수 n개 입력, 둘째줄에 n개의 정수가 공백을 두고 입력된다
+        // n개의 정수를 줄바꿔 출력
+
+        // let k1072 = [];
+        // let k1072_max = Number(prompt("정수의 갯수 n개 입력"));
+
+        // k1072 = prompt("정수 입력\n-2147483648 ~ +2147483647").split(" ");
+
+        // for(let i = 0; i < k1072_max ; i++)
+        // {
+        //     if(k1072[i] < -2147483649 || k1072[i] > 2147483647)
+        //     {
+        //         alert("입력 범위 초과" + i + "번쨰");
+        //     }
+        //     else
+        //         {
+        //         document.write("#1072 "+ (i+1) + "번째 : " + k1072[i] + "<br>")
+        //         }
+        // }
+
+
+
+        // #1073 0 이 들어올때 까지 무한이 입력받고, 0이 들어오면 입력된 값들을 모두 출력.
+        // let k1073 = [];
+        // let temp='';
+        // while (1) {
+        //     temp = Number(prompt("정수를 입력하세요\n-2147483648 ~ +2147483647"))
+
+        //     if (temp < -2147483648 || temp > 2147483647) {
+        //         alert("입력 범위 초과!")
+        //     }
+        //     else if (temp === 0) {
+        //         document.write(k1073)
+        //         break;
+        //     }
+        //     else {
+        //         k1073 += "#1073  " + temp + "<br>"
+
+        //     }
+
+        // }
+
+
+
+        // #1074 정수 1개 입력받아 카운트다운 출력 1이 나올때 까지만(while)
+
+        // let k1074 = Number(prompt("정수를 입력하세요 1-100"))
+        // if(k1074 < 1 || k1074 > 100)
+        // {
+        //     alert("입력범위 초과")
+        // }
+        // else
+        // {
+        //     while(k1074 != 0)
+        //     {
+        //         document.write("#1074  : " + k1074 + "<br>")
+        //         k1074--;
+        //     }
+        // }
+
+
+        // #1075 정수 1개 입력받아 카운트다운 출력 0이 나올때 까지만(while)
+
+        // let k1075 = Number(prompt("정수를 입력하세요 1-100"))
+        // if(k1075 < 1 || k1075 > 100)
+        // {
+        //     alert("입력범위 초과")
+        // }
+        // else
+        // {
+        //     while(k1075 > -1)
+        //     {
+        //         document.write("#1075  : " + k1075 + "<br>")
+        //         k1075--;
+        //     }
+        // }
+
+
+        // #1076 문자 1개 입력받아 알파벳 출력
+
+        // let k1076 = prompt("알파벳 입력 A-Za-z")
+        // let regExp = /[A-Za-z/]/;
+        // if (regExp.test(k1076)) {
+        //     k1076 = k1076.charCodeAt()
+        //     alert(k1076)
+
+        //     if (64 < k1076 && k1076 < 91)
+        //     {
+        //         document.write("#1076  ")
+        //         for (let i = 65; i < (k1076 + 1); i++)
+        //         {
+        //             document.write(String.fromCharCode(i) + " ")
+        //         }
+        //     }
+        //     else {
+        //         document.write("#1076  ")
+        //         for (let j = 97; j < (k1076 + 1); j++)
+        //         {
+        //             document.write(String.fromCharCode(j) + " ")
+        //         }
+        //     }
+        // }
+        // else { alert("영단어 대/소문자만 입력"); }
+
+
+        // #1077 정수 1개 입력받아 그 수까지 출력
+
+        // let k1077 = Number(prompt("정수를 입력하세요 0-100"))
+
+        // if(k1077 > 100 || k1077 < 0)
+        // {
+        //     alert("입력범위 미충족")
+        // }
+        // else
+        // {
+        //     for(let i = 0; i < (k1077+1) ; i++)
+        //     {
+        //         document.write("#1077 : " + i + " <br>")
+        //     }
+        // }
+
+
+        // #1078 
+
+        // let k1078 = Number(prompt("정수를 입력하세요 0-100"))
+        // let evennum =0;
+        // if(k1078 > 100 || k1078 < 0)
+        // {
+        //     alert("입력범위 미충족")
+        // }
+        // else
+        // {
+        //     for(let i = 0; i < (k1078+1) ; i++)
+        //     {
+        //         if(i % 2 == 0)
+        //         {
+        //             evennum += i;
+        //         }
+        //     }
+        //     document.write("#1078 add EVEN : " + evennum)
+        // }
+
+
+        // #1079
+        // while (1) 
+        // {            
+        //     let char = prompt("Q 를 누르면 종료");
+        //     if (char == "q")
+        //     {
+        //         break;
+        //     }
+        //     else
+        //     {
+        //         document.write(char + "<br>")
+        //     }
+        // }
+
+
+        // #1080
+
+        // let k1080 = Number(prompt("정수를 입력하세요 0 ~ 1000 "));
+        // let result=0;
+
+        // if(k1080 < 0 || k1080 > 1000)
+        // {
+        //     alert("입력범위 미충족")
+        // }
+
+        // else
+        // {
+        //     for(let i = 0; i < 1000 ; i++)
+        //     {
+        //         if(k1080 <= result)
+        //         {
+        //             document.write("#1080  " + (i-1))
+        //             break;
+        //         }
+        //         else
+        //         {
+        //             result += i;
+        //         }
+        //     }
+        // }
+
+
+        // #1081 DUAL DICE
+
+        // let dice = prompt().split(" ");
+
+        // let fir = Number(dice[0]);
+        // let sec = Number(dice[1]);
+        // // alert (dice)
+
+
+        // if (fir > 10 || sec > 10) {
+        //     alert("10 이하의 자연수만 입력하세욥")
+        // }
+        // else {
+        //     alert(fir + "  " + sec)
+        //     //           입력값 확인차 alert 발생
+
+        //     for (let i = 1; i <= fir; i++) {
+        //         for (let j = 1; j <= sec; j++) {
+        //             document.write(i + "  " + j + "<br>")
+        //         }
+        //         document.write("<br>")
+        //     }
+        // }
+
+
+        // Codeup #1082 hex
+
+        // let indec = prompt()
+
+        // let inhex = parseInt(indec, 16)
+
+        // document.write( "입력값 hex to dec " + inhex + "<br>" );
+
+        // if(inhex > 9 && inhex< 17)
+        // {
+        //     for(let i = 1 ; i < 17 ; i++)
+        //     {
+        //     document.write("(hex) " + indec.toUpperCase() + " x " + i.toString(16).toUpperCase() + " = " + ((inhex*i).toString(16).toUpperCase()) + "<br>")
+        //     }    
+        // }
+        // else
+        //     alert("입력범위 오류")
+
+
+
+
+        // #1083 369King
+
+        // let k1083 = Number(prompt("정수를 입력하세요 1-9 "))
+
+        // if(k1083 > 0 && k1083 < 10)
+        // {
+        //     for(let i = 1 ; i <= k1083 ; i++)
+        //     {
+        //         if(i % 3 == 0)
+        //         {
+        //             document.write(" X ")
+        //         }
+        //         else
+        //         document.write(" "+i+" ")
+        //     }
+        // }
+        // else alert("입력범위 초과 1-9")
+
+
+        // #1084 R.G.B
+
+        // let k1084 = prompt("숫자 3개를 공백을 두고 입력하세욥\n각 자리마다 0~128").split(" ")
+
+        // let k1084r = Number(k1084[0]);
+        // let k1084g = Number(k1084[1]);
+        // let k1084b = Number(k1084[2]);
+
+        // if(k1084r > -1 && k1084r < 129)
+        // {
+        //     if(k1084g > -1 && k1084g < 129)
+        //     {
+        //         if(k1084b > -1 && k1084b < 129)
+        //         {
+        //             for(let i = 0 ; i < k1084r ; i++)
+        //             {
+        //                 for(let j = 0 ; j < k1084g ; j++)
+        //                 {
+        //                     for(let k = 0 ; k < k1084b ; k++)
+        //                     {
+        //                         document.write(i + " " + j + " " + k + "<br>")
+        //                     }
+
+
+        //                 }document.write("<br>")
+
+        //             }
+        //         }
+        //         else alert("세번째 숫자 입력범위 초과")
+        //     }else alert("두번째 숫자 입력범위 초과")
+        // }else alert("첫번째 숫자 입력범위 초과")
+
+        // // #1085 소리파일 저장용량 계산
+
+        // let k1085 = prompt("HZ BIT CHANNEL SEC 순으로 입력해주세요").split(" ")
+
+        // let k1085h = Number(k1085[0]);
+        // let k1085b = Number(k1085[1]);
+        // let k1085c = Number(k1085[2]);
+        // let k1085s = Number(k1085[3]);
+        // let result = 0;
+
+        // if (k1085h < 48001 && k1085b % 8 == 0 && k1085b < 33 && k1085c < 6 && k1085s < 6001)
+        //  {
+        //     result += (k1085h * k1085b * k1085c * k1085s) / 8 // Byte
+        //     result = result / 1024 // KB
+        //     if (result > 1025) {
+        //         result = result / 1024 // MB
+        //         document.write("#1085  " + result.toFixed(1) + "MB")
+        //     }
+        //     else
+        //         document.write("#1085  " + result.toFixed(1) + "KB")
+        // }
+        // else alert("입력값 오류")
+
+
+
+        // // #1086 그림파일 크기 계산
+        // let k1086 = prompt("Weidh Height Bit 순으로 입력해주세요").split(" ")
+        // let k1086w = Number(k1086[0])
+        // let k1086h = Number(k1086[1])
+        // let k1086b = Number(k1086[2])
+        // let result = 0;
+
+        // if (k1086w > 0 && k1086w < 1025 && k1086h > 0 && k1086h < 1025 && k1086b < 41 && k1086b % 4 == 0)
+        //  {
+        //     result = (k1086w * k1086h * k1086b) / 8 // byte
+        //     if (result > 1024) 
+        //     {
+        //         result = result / 1024 // KB
+
+        //         if (result > 1024) {
+        //             result = result / 1024; // MB
+        //             document.write("#1086  " + result + "MB")
+        //         }
+        //         else {
+        //             document.write("#1086  " + result + "KB")
+        //         }
+
+        //     }
+        //     else document.write("#1086  " + result + "Byte")
+        // }
+        // else alert("W 1-1024 / H 1-1024 / B 40이하 4의배수")
+
+
+
+
+            // #1087
+
+            // let k1087 = Number(prompt("정수를 입력해주세요 \n단100,000,000이하"))
+            // let result =0;
+            // let cnt=0;
+
+            // if(k1087 > 100000000)
+            // {
+            //     alert("입력범위 초과")
+            // }
+            // else
+            // {
+            //     while(result <= k1087)
+            //     {                    
+            //         result += cnt;
+            //         cnt++
+            //     }
+            //     document.write("#1087  :" + result)
+            // }
+            
+
+            // codeup #1088
+
+// let dec = Number(prompt());
+
+// if(dec > 0 && dec < 101)
+// {
+//     for(let i = 1 ; i < dec ; i++)
+//     {
+//         if(i % 3 == 0)
+//         {
+//             continue
+//         }
+//         else if(i % 50 == 0) // 50쯤에서보기 편하게 줄바꿈 한번 해주고 
+//         {
+//             document.write(" <br> ")
+//         }
+//         else
+//         {
+//             document.write(i + " ")
+//         }
+//     }
+// }
+// else
+// {
+//     alert("입력범위 초과 , 입력 범위는 1-100")
+// }
+
+//#1089
+
+// let k1089 = prompt("시작값(a) 등차값(d) 몇번째 수(n)을 공백을 두고 입력해주세요\n단 모든 수는 0-100범위").split(" ")
+// let k1089a = Number(k1089[0])
+// let k1089b = Number(k1089[1])
+// let k1089c = Number(k1089[2])
+
+// if( (k1089a < 0 || k1089a > 100) || (k1089b < 0 || k1089b > 100) || (k1089c < 0 || k1089c > 100) )
+// {
+//     alert("입력범위값은 0-100")
+// }
+// else
+// {
+//     let result = k1089a;
+
+//     for(let i = 1 ; i < k1089c ; i++)
+//     {
+//         result += k1089b;
+//     }
+//     document.write("#1089  : " + result)
+// }
+
+
+
+// #1090
+// codeup #1090
+
+// let targ = prompt().split(" ");
+// let res =  targ[0] * targ[1];
+
+// document.write("step 1 = " + targ[0] + "<br>" + "step 2 = " + res + "<br>")
+
+// for(let i = 2 ; i < targ[2] ; i++)
+// {
+//     res  = (res * targ[1])
+//     document.write("step " + (i+1) + " = " + res + "<br>")
+// }
+
+// document.write( "<<" + res + ">>")
+
+// #1091
+
+// let k1091 = prompt("시작값(a), 곱할값(m), 더할값(d), 몇번째인지(n)을 공백을 두고 입력해주세요\n a,m,d는 -50~+50, n은 10 이하 자연수").split(" ")
+// let k1091a = Number(k1091[0])
+// let k1091b = Number(k1091[1])
+// let k1091c = Number(k1091[2])
+// let k1091d = Number(k1091[3])
+// let result = k1091a;
+
+
+// if( (k1091a < -50 || k1091a > 50) || (k1091b < -50 || k1091b > 50) || (k1091c < -50 || k1091c > 50) || (k1091 > 10) )
+// {
+//     alert("입력값 오류")
+// }
+// else
+// {
+//     for(let i = 1 ; i < k1091d ; i++) // 순서상 첫번째는 시작값 a이기 때문에 for문의 첫번째는 2번째 위치가 된다.
+//     {
+//         result = (result * k1091b) + k1091c       
+//     }
+//     document.write("#1091  :" + result)
+// }
+
+// #1092
+
+ // let k1092 = prompt("숫자 3개를 공백을 두고 입력해주세요\n단 숫자는 100이하 자연수").split(" ")
+        // let k1092a = Number(k1092[0])
+        // let k1092b = Number(k1092[1])
+        // let k1092c = Number(k1092[2])
+        
+
+        // if (k1092a < 101 && k1092b < 101 && k1092c < 101)
+        //  {let day = 1;
+        //     while (1)
+        //     {
+        //         if(day % k1092a == 0 && day % k1092b == 0 && day % k1092c == 0)
+        //         {
+        //             document.write("#1092  : " + day)
+        //             break;
+        //         }
+        //         day++;
+                
+        //     }
+            
+        // }
+        // else alert("입력값 오류")
+
+
+  // #1093
+
+    // let cnt = Number(prompt("정수 입력 1-10000"))
+    // let k1093 = prompt("번호 순서").split(" ")
+    // let pos = new Array(23)
+
+    // for(i = 0; i < pos.length ; i++)
+    //         pos[i] = 0;
+    
+    // for(let i = 0; i < cnt ; i++)
+    // {
+    //     pos[(k1093-1)] =+ 1;    
+    // }
+
+    // document.write("#1093 " )
+    // for(let j = 0; j < cnt ; j++)
+    // { 
+    //  document.write(pos[j] + " ")
+    // }
+
+
+
+// codeup #1094
+
+// let cnt = prompt()
+// let callsign = prompt().split(" ")
+
+// document.write("최초 순서 <br> ")
+// for(let i = 0 ; i < cnt ; i++)
+// {
+//     document.write(callsign[i] + " ")
+// }
+
+// document.write("  <br> 역순 출력 <br> ")
+// for(let j = (cnt-1) ; j >= 0 ; j--)
+// {
+//     document.write(callsign[j] + " ")
+// }
+
+// #1095
+    // let cntr = Number(prompt("정수 입력 1-10000"))
+    // let k1095 = prompt("번호 순서").split(" ")
+    // let call_sign = k1095[0];
+
+
+    // for(let i = 1; i <= cntr-1 ; i++)
+    // {
+    //     if(Number(call_sign) > Number(k1095[i-1]))
+    //     {            
+    //         call_sign = k1095[i-1]
+    //     }
+    // }
+    // document.write("#1095  : " + call_sign)
+
+    </script>
+
+</body>
+
+</html>
